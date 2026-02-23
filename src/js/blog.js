@@ -32,7 +32,7 @@ function renderBlogPosts() {
 
         return `
             <a href="${post.url}" target="_blank" rel="noopener noreferrer" class="card card--article fade-in ${index > 0 ? `fade-in-delay-${Math.min(index, 3)}` : ''}" style="display: flex; flex-direction: column; text-decoration: none; color: inherit;">
-                <img src="${post.image}" alt="${post.title}" class="card__image" loading="lazy" onerror="this.src='/images/og-image.png'">
+                <img src="${post.image}" alt="${post.title}" class="card__image" loading="lazy" onerror="this.src='./images/og-image.png'">
                 <div style="flex: 1;">
                     <div class="card__tags" style="margin-bottom: var(--space-2);">
                         ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}

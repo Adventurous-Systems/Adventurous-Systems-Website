@@ -325,7 +325,7 @@ function showSuccessMessage() {
                 <li style="margin-bottom: 12px">Our team will review your assessment</li>
                 <li style="margin-bottom: 12px">See you in the strategy session</li>
             </ul>
-            <a href="/" class="as-form-btn as-form-btn-next" style="display: inline-block; text-decoration: none;">Return to Home</a>
+            <a href="./" class="as-form-btn as-form-btn-next" style="display: inline-block; text-decoration: none;">Return to Home</a>
         </div>`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }

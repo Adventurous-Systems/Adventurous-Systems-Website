@@ -18,20 +18,20 @@ export function initHeader() {
   headerEl.innerHTML = `
     <header class="header">
       <div class="header__inner container">
-        <a href="/" class="header__logo" aria-label="Adventurous Systems Home">
-          <img src="/images/logo_3_adventurous_systems_cropped.jpg" alt="Adventurous Systems" class="header__logo-img">
+        <a href="./" class="header__logo" aria-label="Adventurous Systems Home">
+          <img src="./images/logo_3_adventurous_systems_cropped.jpg" alt="Adventurous Systems" class="header__logo-img">
           <span class="header__logo-text">adventurous systems</span>
         </a>
 
         <nav class="nav" id="main-nav" aria-label="Main navigation">
-          <a href="/what-we-do.html" class="nav__link ${getActiveClass('/what-we-do')}">What We Do</a>
-          <a href="/our-work.html" class="nav__link ${getActiveClass('/our-work')}">Our Work</a>
-          <a href="/about.html" class="nav__link ${getActiveClass('/about')}">About</a>
-          <a href="/blog.html" class="nav__link ${getActiveClass('/blog')}">Insights</a>
-          <a href="/contact.html" class="nav__link ${getActiveClass('/contact')}">Contact</a>
+          <a href="./what-we-do.html" class="nav__link ${getActiveClass('/what-we-do')}">What We Do</a>
+          <a href="./our-work.html" class="nav__link ${getActiveClass('/our-work')}">Our Work</a>
+          <a href="./about.html" class="nav__link ${getActiveClass('/about')}">About</a>
+          <a href="./blog.html" class="nav__link ${getActiveClass('/blog')}">Insights</a>
+          <a href="./contact.html" class="nav__link ${getActiveClass('/contact')}">Contact</a>
         </nav>
 
-        <a href="/contact.html" class="btn btn--primary btn--sm header__cta">Work With Us</a>
+        <a href="./contact.html" class="btn btn--primary btn--sm header__cta">Work With Us</a>
 
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
           <span class="hamburger__line"></span>
@@ -43,13 +43,13 @@ export function initHeader() {
       <!-- Mobile navigation overlay -->
       <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
         <nav class="mobile-nav__inner">
-          <a href="/" class="mobile-nav__link ${getActiveClass('/')}">Home</a>
-          <a href="/what-we-do.html" class="mobile-nav__link ${getActiveClass('/what-we-do')}">What We Do</a>
-          <a href="/our-work.html" class="mobile-nav__link ${getActiveClass('/our-work')}">Our Work</a>
-          <a href="/about.html" class="mobile-nav__link ${getActiveClass('/about')}">About</a>
-          <a href="/blog.html" class="mobile-nav__link ${getActiveClass('/blog')}">Insights</a>
-          <a href="/contact.html" class="mobile-nav__link ${getActiveClass('/contact')}">Contact</a>
-          <a href="/contact.html" class="btn btn--primary btn--lg mobile-nav__cta">Work With Us</a>
+          <a href="./" class="mobile-nav__link ${getActiveClass('/')}">Home</a>
+          <a href="./what-we-do.html" class="mobile-nav__link ${getActiveClass('/what-we-do')}">What We Do</a>
+          <a href="./our-work.html" class="mobile-nav__link ${getActiveClass('/our-work')}">Our Work</a>
+          <a href="./about.html" class="mobile-nav__link ${getActiveClass('/about')}">About</a>
+          <a href="./blog.html" class="mobile-nav__link ${getActiveClass('/blog')}">Insights</a>
+          <a href="./contact.html" class="mobile-nav__link ${getActiveClass('/contact')}">Contact</a>
+          <a href="./contact.html" class="btn btn--primary btn--lg mobile-nav__cta">Work With Us</a>
         </nav>
       </div>
     </header>

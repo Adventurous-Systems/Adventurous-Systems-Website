@@ -15,8 +15,8 @@ export function initFooter() {
         <div class="footer__grid">
           <!-- Brand column -->
           <div class="footer__brand">
-            <a href="/" class="footer__logo" aria-label="Adventurous Systems Home">
-              <img src="/images/logo_3_adventurous_systems_cropped.jpg" alt="Adventurous Systems" class="footer__logo-img">
+            <a href="./" class="footer__logo" aria-label="Adventurous Systems Home">
+              <img src="./images/logo_3_adventurous_systems_cropped.jpg" alt="Adventurous Systems" class="footer__logo-img">
             </a>
             <p class="footer__tagline">Research-led digital transformation for construction.</p>
             <div class="footer__social">
@@ -37,11 +37,11 @@ export function initFooter() {
           <div class="footer__nav-col">
             <h4 class="footer__heading">Navigate</h4>
             <ul class="footer__links">
-              <li><a href="/what-we-do.html">What We Do</a></li>
-              <li><a href="/our-work.html">Our Work</a></li>
-              <li><a href="/about.html">About Us</a></li>
-              <li><a href="/blog.html">Insights</a></li>
-              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="./what-we-do.html">What We Do</a></li>
+              <li><a href="./our-work.html">Our Work</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./blog.html">Insights</a></li>
+              <li><a href="./contact.html">Contact</a></li>
             </ul>
           </div>
 
@@ -49,10 +49,10 @@ export function initFooter() {
           <div class="footer__nav-col">
             <h4 class="footer__heading">Services</h4>
             <ul class="footer__links">
-              <li><a href="/what-we-do.html#digital-twins">Digital Twin Integration</a></li>
-              <li><a href="/what-we-do.html#blockchain">Blockchain for AEC</a></li>
-              <li><a href="/what-we-do.html#ai-readiness">AI Readiness Assessment</a></li>
-              <li><a href="/what-we-do.html#research-advisory">Research & Advisory</a></li>
+              <li><a href="./what-we-do.html#digital-twins">Digital Twin Integration</a></li>
+              <li><a href="./what-we-do.html#blockchain">Blockchain for AEC</a></li>
+              <li><a href="./what-we-do.html#ai-readiness">AI Readiness Assessment</a></li>
+              <li><a href="./what-we-do.html#research-advisory">Research & Advisory</a></li>
             </ul>
           </div>
 
@@ -70,8 +70,8 @@ export function initFooter() {
         <div class="footer__bottom">
           <p class="footer__copyright">© ${currentYear} Adventurous Systems Ltd — Established 2023</p>
           <div class="footer__legal">
-            <a href="/privacy.html">Privacy Policy</a>
-            <a href="/terms.html">Terms of Use</a>
+            <a href="./privacy.html">Privacy Policy</a>
+            <a href="./terms.html">Terms of Use</a>
           </div>
         </div>
       </div>
