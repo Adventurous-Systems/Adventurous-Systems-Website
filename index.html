@@ -107,29 +107,15 @@
     <!-- Hero Section -->
     <section class="hero section--dark" id="hero">
       <div class="hero__bg">
-        <svg class="hero__network-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"
-          preserveAspectRatio="xMidYMid slice">
-          <!-- Edges -->
-          <line x1="150" y1="100" x2="350" y2="250" class="edge edge-1" />
-          <line x1="350" y1="250" x2="600" y2="150" class="edge edge-2" />
-          <line x1="350" y1="250" x2="450" y2="450" class="edge edge-3" />
-          <line x1="150" y1="100" x2="200" y2="400" class="edge edge-4" />
-          <line x1="200" y1="400" x2="450" y2="450" class="edge edge-5" />
-          <line x1="600" y1="150" x2="700" y2="350" class="edge edge-6" />
-          <line x1="450" y1="450" x2="700" y2="350" class="edge edge-7" />
-          <!-- Nodes -->
-          <circle cx="150" cy="100" r="6" class="node node-1" />
-          <circle cx="350" cy="250" r="8" class="node node-2" />
-          <circle cx="600" cy="150" r="5" class="node node-3" />
-          <circle cx="200" cy="400" r="7" class="node node-4" />
-          <circle cx="450" cy="450" r="9" class="node node-5" />
-          <circle cx="700" cy="350" r="6" class="node node-6" />
-        </svg>
+        <canvas id="hero-network" class="hero__network-canvas"></canvas>
       </div>
-      <div class="container hero__content">
+      <div class="container hero__content parallax" data-speed="0.15">
         <div class="hero__text">
           <p class="kicker">RESEARCH-LED DIGITAL TRANSFORMATION</p>
-          <h1 class="hero__title">We solve the AEC industry's<br>data coordination problem</h1>
+          <h1 class="hero__title">
+            <span class="text-reveal"><span class="reveal-inner">We solve the AEC industry's</span></span><br>
+            <span class="text-reveal"><span class="reveal-inner">data coordination problem</span></span>
+          </h1>
           <p class="hero__description">
             Adventurous Systems builds <strong>Web3- and AI-enabled digital twins</strong> that unify
             design, construction, and operations data. Backed by peer-reviewed research and
@@ -145,19 +131,19 @@
         <!-- Credentials Bar -->
         <div class="hero__credentials">
           <div class="credential fade-in">
-            <span class="credential__number" data-target="375">£375k+</span>
+            <span class="credential__number" data-target="375" data-prefix="£" data-suffix="k+">0</span>
             <span class="credential__label">Research Funded</span>
           </div>
           <div class="credential fade-in fade-in-delay-1">
-            <span class="credential__number">30+</span>
+            <span class="credential__number" data-target="30" data-suffix="+">0</span>
             <span class="credential__label">Publications</span>
           </div>
           <div class="credential fade-in fade-in-delay-2">
-            <span class="credential__number">20+</span>
+            <span class="credential__number" data-target="20" data-suffix="+">0</span>
             <span class="credential__label">Years Experience</span>
           </div>
           <div class="credential fade-in fade-in-delay-3">
-            <span class="credential__number">3</span>
+            <span class="credential__number" data-target="3">0</span>
             <span class="credential__label">Continents</span>
           </div>
         </div>
@@ -342,29 +328,31 @@
           <div class="standing-card fade-in">
             <h4 class="standing-card__title">Academic Roles</h4>
             <ul class="standing-card__list">
-              <li>Vice-Chair, Board of Directors — European Council on Computing in Construction (EC3)</li>
-              <li>Member, Technical Committee — Construction Blockchain Consortium (CBC)</li>
-              <li>Registered Architect (UK, Greece)</li>
+              <li class="fade-in fade-in-delay-1">Vice-Chair, Board of Directors — European Council on Computing in
+                Construction (EC3)</li>
+              <li class="fade-in fade-in-delay-2">Member, Technical Committee — Construction Blockchain Consortium (CBC)
+              </li>
+              <li class="fade-in fade-in-delay-3">Registered Architect (UK, Greece)</li>
             </ul>
           </div>
 
           <div class="standing-card fade-in fade-in-delay-1">
             <h4 class="standing-card__title">Research Partners</h4>
             <ul class="standing-card__list">
-              <li>Heriot-Watt University — Research & Development</li>
-              <li>Robert Gordon University — Research & Validation</li>
-              <li>BE-ST (Construction Scotland Innovation Centre)</li>
-              <li>Scotland Beyond Net Zero</li>
+              <li class="fade-in fade-in-delay-2">Heriot-Watt University — Research & Development</li>
+              <li class="fade-in fade-in-delay-3">Robert Gordon University — Research & Validation</li>
+              <li class="fade-in fade-in-delay-4">BE-ST (Construction Scotland Innovation Centre)</li>
+              <li class="fade-in fade-in-delay-4">Scotland Beyond Net Zero</li>
             </ul>
           </div>
 
           <div class="standing-card fade-in fade-in-delay-2">
             <h4 class="standing-card__title">Funded By</h4>
             <ul class="standing-card__list">
-              <li>EPSRC (Engineering & Physical Sciences Research Council)</li>
-              <li>Scottish Enterprise</li>
-              <li>Interface / SFC Innovation Vouchers</li>
-              <li>£375,000+ in combined research funding</li>
+              <li class="fade-in fade-in-delay-3">EPSRC (Engineering & Physical Sciences Research Council)</li>
+              <li class="fade-in fade-in-delay-4">Scottish Enterprise</li>
+              <li class="fade-in fade-in-delay-4">Interface / SFC Innovation Vouchers</li>
+              <li class="fade-in fade-in-delay-4">£375,000+ in combined research funding</li>
             </ul>
           </div>
         </div>

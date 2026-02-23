@@ -4,8 +4,10 @@
  */
 
 import projectsData from '../components/data/projects.json';
+import { initNetworkAnimation } from './network-animation.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    initNetworkAnimation();
     renderProjectCards();
     initContactForm();
 });

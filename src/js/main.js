@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
     initBackToTop();
+    initCounters();
+    initMagneticButtons();
+    initParallax();
 });
 
 /**
@@ -109,3 +112,80 @@ function initBackToTop() {
         });
     });
 }
+
+/**
+ * Animated number counters
+ */
+function initCounters() {
+    const counters = document.querySelectorAll('[data-target]');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                const prefix = el.getAttribute('data-prefix') || '';
+                const suffix = el.getAttribute('data-suffix') || '';
+
+                animateValue(el, 0, target, 2000, prefix, suffix);
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+function animateValue(obj, start, end, duration, prefix, suffix) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        // easeOutQuart
+        const ease = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(ease * (end - start) + start);
+        obj.innerHTML = `${prefix}${current}${suffix}`;
+
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        } else {
+            obj.innerHTML = `${prefix}${end}${suffix}`;
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+/**
+ * Magnetic button hover effect
+ */
+function initMagneticButtons() {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        });
+    });
+}
+
+/**
+ * Parallax scrolling for background layers
+ */
+function initParallax() {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const elements = document.querySelectorAll('.parallax');
+        elements.forEach(el => {
+            const speed = parseFloat(el.getAttribute('data-speed')) || 0.4;
+            el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    }, { passive: true });
+}
+
