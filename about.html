@@ -7,8 +7,56 @@
     <title>About Us — Adventurous Systems</title>
     <meta name="description"
         content="Where academic innovation meets industry practice. Learn about our story, team, values, and partnerships advancing the AEC industry.">
+    <meta property="og:title" content="About Us — Adventurous Systems">
+    <meta property="og:description"
+        content="Where academic innovation meets industry practice. Our story, team, values, and global research partnerships.">
+    <meta property="og:image" content="/images/og-image.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adventuroussystems.co.uk/about.html">
+    <meta property="og:site_name" content="Adventurous Systems">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://adventuroussystems.co.uk/about.html">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-</head>
+
+    <!-- JSON-LD: AboutPage + Person + affiliations (GEO/AI-Readiness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AboutPage",
+          "url": "https://adventuroussystems.co.uk/about.html",
+          "name": "About Us — Adventurous Systems",
+          "isPartOf": { "@id": "https://adventuroussystems.co.uk/#website" },
+          "mainEntity": { "@id": "https://adventuroussystems.co.uk/#organization" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://adventuroussystems.co.uk/#founder",
+          "name": "Dr Theo Dounas",
+          "jobTitle": "Founder & Director",
+          "description": "Architect, researcher, and technologist with 20 years at the intersection of computational design and emerging technology. Published author of 'Blockchain for Construction' (Springer, 2022). Elected Secretary of the European Council for Computing in Construction (EC3). Registered Architect (ARB).",
+          "worksFor": { "@id": "https://adventuroussystems.co.uk/#organization" },
+          "affiliation": [
+            { "@type": "EducationalOrganization", "name": "Heriot-Watt University", "address": { "@type": "PostalAddress", "addressLocality": "Edinburgh", "addressCountry": "GB" } },
+            { "@type": "EducationalOrganization", "name": "Thomas Jefferson University", "address": { "@type": "PostalAddress", "addressLocality": "Philadelphia", "addressCountry": "US" } },
+            { "@type": "EducationalOrganization", "name": "National Institute of Design", "address": { "@type": "PostalAddress", "addressCountry": "IN" } },
+            { "@type": "EducationalOrganization", "name": "Xi'an Jiaotong-Liverpool University", "address": { "@type": "PostalAddress", "addressLocality": "Suzhou", "addressCountry": "CN" } }
+          ],
+          "knowsAbout": ["Digital Twins", "Blockchain", "Computational Design", "Shape Grammars", "Graph Databases", "Building Information Modelling"],
+          "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "Professional Registration", "name": "ARB Registered Architect" }
+          ],
+          "memberOf": {
+            "@type": "Organization",
+            "name": "European Council for Computing in Construction (EC3)",
+            "description": "International research organization advancing digital construction"
+          },
+          "sameAs": ["https://www.linkedin.com/in/theodounas/"]
+        }
+      ]
+    }
+    </script>
 
 <body>
     <div id="site-header"></div>
