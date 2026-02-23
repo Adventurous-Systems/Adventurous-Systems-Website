@@ -14,6 +14,7 @@ export default defineConfig({
                 'what-we-do': resolve(__dirname, 'what-we-do.html'),
                 'our-work': resolve(__dirname, 'our-work.html'),
                 about: resolve(__dirname, 'about.html'),
+                blog: resolve(__dirname, 'blog.html'),
                 contact: resolve(__dirname, 'contact.html'),
                 assessment: resolve(__dirname, 'assessment.html'),
             },
