@@ -12,26 +12,477 @@
 
 <body>
     <div id="site-header"></div>
+
     <main>
-        <section class="section section--dark" style="padding-top: var(--space-24);">
-            <div class="container text-center">
+        <!-- Page Hero -->
+        <section class="section section--dark page-hero">
+            <div class="container">
                 <p class="kicker" style="color: var(--color-accent-light);">WHAT WE DO</p>
-                <h1 class="section-title" style="color: var(--color-text-inverse);">Services & Capabilities</h1>
-                <p class="section-intro section-intro--centered" style="color: rgba(255,255,255,0.7);">
-                    Research-backed advisory and integrations to unify AEC data and prove outcomes.
+                <h1 class="section-title page-hero__title">Services & Capabilities</h1>
+                <p class="section-intro page-hero__intro">
+                    We transform how the AEC industry coordinates data, proves outcomes, and builds sustainably.
+                    For twenty years, we've researched computational design, blockchain integration, and digital
+                    coordination systems. That research now powers practical implementations.
                 </p>
+                <!-- Service quick-nav -->
+                <nav class="service-nav">
+                    <a href="#digital-twins" class="service-nav__link">Digital Twins</a>
+                    <a href="#blockchain" class="service-nav__link">Blockchain</a>
+                    <a href="#ai-readiness" class="service-nav__link">AI Readiness</a>
+                    <a href="#research-advisory" class="service-nav__link">Research & Advisory</a>
+                </nav>
             </div>
         </section>
 
-        <section class="section"
-            style="text-align: center; min-height: 50vh; display: flex; align-items: center; justify-content: center;">
+        <!-- Service 1: Digital Twin Integration -->
+        <section class="section" id="digital-twins">
             <div class="container">
-                <p style="font-size: var(--text-lg); color: var(--color-text-muted);">
-                    Full service details coming in Phase 3.
+                <div class="service-block">
+                    <div class="service-block__header fade-in">
+                        <span class="service-block__number">01</span>
+                        <p class="kicker">SERVICE</p>
+                        <h2 class="section-title">Digital Twin Integration</h2>
+                        <p class="service-block__tagline">
+                            Unifying design, construction, and operational data through Web3-enabled digital twins.
+                        </p>
+                    </div>
+
+                    <div class="service-block__content">
+                        <div class="service-detail fade-in">
+                            <h3>The Challenge</h3>
+                            <p>
+                                Construction projects generate fragmented data across disconnected systems — BIM models,
+                                project management platforms, IoT sensors, financial software. This fragmentation costs
+                                the industry <strong>£54 billion annually</strong> in rework, delays, and lost insights.
+                            </p>
+                        </div>
+
+                        <div class="service-detail fade-in">
+                            <h3>Our Approach</h3>
+                            <p>We design and implement digital twin architectures that create unified, queryable
+                                representations of built assets throughout their lifecycle. Our twins integrate:</p>
+                            <ul class="service-list">
+                                <li>Building Information Models (BIM/IFC)</li>
+                                <li>Real-time IoT sensor data</li>
+                                <li>Satellite and geospatial information</li>
+                                <li>Blockchain verification layers</li>
+                                <li>Operational and maintenance systems</li>
+                            </ul>
+                        </div>
+
+                        <div class="service-diff grid grid--3 fade-in">
+                            <div class="service-diff__item">
+                                <h4>Research-Validated Frameworks</h4>
+                                <p>Our methodology draws from published research in computational design and graph
+                                    database theory, not vendor marketing.</p>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>Open Standards</h4>
+                                <p>We build on IFC, LBD (Linked Building Data), and open ontologies — no vendor lock-in.
+                                </p>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>Verifiable Provenance</h4>
+                                <p>Blockchain integration ensures every data point has cryptographically-verified
+                                    history.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-outcomes fade-in">
+                            <h3>Outcomes</h3>
+                            <div class="outcomes-grid">
+                                <span class="outcome-item">Single source of truth across stakeholders</span>
+                                <span class="outcome-item">Automated compliance verification</span>
+                                <span class="outcome-item">Predictive maintenance via pattern recognition</span>
+                                <span class="outcome-item">Reduced rework through real-time coordination</span>
+                            </div>
+                        </div>
+
+                        <div class="service-ideal fade-in">
+                            <h3>Ideal For</h3>
+                            <ul class="service-list">
+                                <li>Large infrastructure projects requiring multi-party coordination</li>
+                                <li>Retrofit programmes needing verified carbon savings</li>
+                                <li>Asset operators seeking integrated facility management</li>
+                                <li>Organizations pursuing digital transformation strategies</li>
+                            </ul>
+                        </div>
+
+                        <div class="fade-in">
+                            <a href="/our-work.html" class="btn btn--primary">Explore Our Digital Twin Pilot →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider container">
+
+        <!-- Service 2: Blockchain for Construction -->
+        <section class="section" id="blockchain">
+            <div class="container">
+                <div class="service-block">
+                    <div class="service-block__header fade-in">
+                        <span class="service-block__number">02</span>
+                        <p class="kicker">SERVICE</p>
+                        <h2 class="section-title">Blockchain for Construction</h2>
+                        <p class="service-block__tagline">
+                            Smart contracts and decentralised protocols that automate verification,
+                            enforce transparency, and enable circular material tracking.
+                        </p>
+                    </div>
+
+                    <div class="service-block__content">
+                        <div class="service-detail fade-in">
+                            <h3>The Challenge</h3>
+                            <p>
+                                Construction supply chains lack transparency. Material origins are unverifiable,
+                                carbon calculations are disputed, payments require manual reconciliation, and circular
+                                reuse systems can't scale without trusted provenance.
+                            </p>
+                        </div>
+
+                        <div class="service-diff grid grid--2 fade-in">
+                            <div class="service-diff__item">
+                                <h4>Material Passports</h4>
+                                <p>Blockchain-verified histories of materials from manufacturing through demolition.</p>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>Supply Chain Transparency</h4>
+                                <p>Traceable provenance for sustainability certification.</p>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>Smart Contracts</h4>
+                                <p>Automated payment on verified milestone completion.</p>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>Circular Economy Infrastructure</h4>
+                                <p>Reuse marketplaces with trusted material data.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-detail service-highlight fade-in">
+                            <h3>Authority in This Space</h3>
+                            <p>
+                                We literally wrote the book: <em>"Blockchain for Construction"</em> (Springer, 2022)
+                                synthesizes five years of research and pilot implementations. Our work contributes to
+                                international standards development and has secured competitive research funding from
+                                Scottish Government and European programmes.
+                            </p>
+                        </div>
+
+                        <div class="service-outcomes fade-in">
+                            <h3>Outcomes</h3>
+                            <div class="outcomes-grid">
+                                <span class="outcome-item">Verifiable sustainability claims</span>
+                                <span class="outcome-item">Reduced manual reconciliation</span>
+                                <span class="outcome-item">Enabled circular supply chains</span>
+                                <span class="outcome-item">Trust through transparency</span>
+                            </div>
+                        </div>
+
+                        <div class="service-ideal fade-in">
+                            <h3>Ideal For</h3>
+                            <ul class="service-list">
+                                <li>Material suppliers seeking differentiation through verified sustainability</li>
+                                <li>Contractors managing complex supply chains</li>
+                                <li>Circular economy initiatives requiring scalable trust infrastructure</li>
+                                <li>Organizations facing ESG reporting requirements</li>
+                            </ul>
+                        </div>
+
+                        <div class="fade-in">
+                            <a href="/our-work.html" class="btn btn--primary">Learn About TRACE →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider container">
+
+        <!-- Service 3: AI Readiness Assessment -->
+        <section class="section" id="ai-readiness">
+            <div class="container">
+                <div class="service-block">
+                    <div class="service-block__header fade-in">
+                        <span class="service-block__number">03</span>
+                        <p class="kicker">SERVICE</p>
+                        <h2 class="section-title">AI Readiness Assessment</h2>
+                        <p class="service-block__tagline">
+                            A structured engagement that maps your current state and builds an actionable roadmap.
+                        </p>
+                    </div>
+
+                    <div class="service-block__content">
+                        <div class="service-detail fade-in">
+                            <h3>The Challenge</h3>
+                            <p>
+                                AEC firms recognize AI's potential but don't know where they stand or where to begin.
+                                Generic IT consultancies lack industry-specific knowledge. Vendors push tools without
+                                assessing organizational readiness.
+                            </p>
+                        </div>
+
+                        <div class="service-detail fade-in">
+                            <h3>Six Critical Dimensions</h3>
+                            <div class="dimensions-grid">
+                                <div class="dimension-item">
+                                    <span class="dimension-number">1</span>
+                                    <div>
+                                        <strong>Data Infrastructure</strong>
+                                        <p>Quality, accessibility, and integration of existing systems</p>
+                                    </div>
+                                </div>
+                                <div class="dimension-item">
+                                    <span class="dimension-number">2</span>
+                                    <div>
+                                        <strong>Process Maturity</strong>
+                                        <p>Workflow standardization and documentation levels</p>
+                                    </div>
+                                </div>
+                                <div class="dimension-item">
+                                    <span class="dimension-number">3</span>
+                                    <div>
+                                        <strong>Technical Capability</strong>
+                                        <p>Team skills and technology foundations</p>
+                                    </div>
+                                </div>
+                                <div class="dimension-item">
+                                    <span class="dimension-number">4</span>
+                                    <div>
+                                        <strong>Governance Frameworks</strong>
+                                        <p>Data management policies and decision rights</p>
+                                    </div>
+                                </div>
+                                <div class="dimension-item">
+                                    <span class="dimension-number">5</span>
+                                    <div>
+                                        <strong>Use Case Viability</strong>
+                                        <p>Specific AI applications matched to your workflows</p>
+                                    </div>
+                                </div>
+                                <div class="dimension-item">
+                                    <span class="dimension-number">6</span>
+                                    <div>
+                                        <strong>Organizational Readiness</strong>
+                                        <p>Change capacity and leadership alignment</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-detail fade-in">
+                            <h3>What You Receive</h3>
+                            <div class="grid grid--2">
+                                <div class="receive-card">
+                                    <h4>Week 1: Discovery & Analysis</h4>
+                                    <ul class="service-list">
+                                        <li>Stakeholder interviews across disciplines</li>
+                                        <li>Software ecosystem mapping</li>
+                                        <li>Data flow analysis</li>
+                                        <li>Process documentation review</li>
+                                    </ul>
+                                </div>
+                                <div class="receive-card">
+                                    <h4>Week 2: Strategic Recommendations</h4>
+                                    <ul class="service-list">
+                                        <li>AI Readiness Score across six dimensions</li>
+                                        <li>Priority roadmap with quick wins & strategic initiatives</li>
+                                        <li>ROI projections for recommended improvements</li>
+                                        <li>90-minute strategy session</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="service-diff grid grid--3 fade-in">
+                            <div class="service-diff__item">
+                                <h4>AEC-Native Expertise</h4>
+                                <p>We understand your workflows, data structures, and industry constraints.</p>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>Research-Grounded Framework</h4>
+                                <p>Methodology developed through academic research and 20+ industry implementations.</p>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>Actionable, Not Theoretical</h4>
+                                <p>Specific recommendations for your tech stack with clear prioritization.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-outcomes fade-in">
+                            <h3>Outcomes</h3>
+                            <div class="outcomes-grid">
+                                <span class="outcome-item">Clear understanding of digital maturity</span>
+                                <span class="outcome-item">Immediate implementation opportunities</span>
+                                <span class="outcome-item">Multi-year transformation roadmap</span>
+                                <span class="outcome-item">Competitive positioning insights</span>
+                            </div>
+                        </div>
+
+                        <div class="fade-in">
+                            <a href="/contact.html" class="btn btn--primary">Request Assessment Information →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider container">
+
+        <!-- Service 4: Research & Advisory -->
+        <section class="section" id="research-advisory">
+            <div class="container">
+                <div class="service-block">
+                    <div class="service-block__header fade-in">
+                        <span class="service-block__number">04</span>
+                        <p class="kicker">SERVICE</p>
+                        <h2 class="section-title">Research & Advisory</h2>
+                        <p class="service-block__tagline">
+                            Retained advisory relationships where we function as your research and innovation arm.
+                        </p>
+                    </div>
+
+                    <div class="service-block__content">
+                        <div class="service-detail fade-in">
+                            <h3>The Challenge</h3>
+                            <p>
+                                Many organizations need ongoing strategic guidance rather than project-based
+                                implementation.
+                                Complex initiatives require research depth that typical consultancies cannot provide.
+                            </p>
+                        </div>
+
+                        <div class="service-detail fade-in">
+                            <h3>Our Approach</h3>
+                            <ul class="service-list">
+                                <li>Technology strategy development</li>
+                                <li>Research partnership facilitation</li>
+                                <li>Funding proposal development</li>
+                                <li>Standards and specification contribution</li>
+                                <li>Innovation programme design</li>
+                                <li>Executive education and workshops</li>
+                            </ul>
+                        </div>
+
+                        <div class="service-diff grid grid--3 fade-in">
+                            <div class="service-diff__item">
+                                <h4>For Industry</h4>
+                                <ul class="service-list--compact">
+                                    <li>Digital transformation strategy</li>
+                                    <li>Innovation pipeline development</li>
+                                    <li>Research partnership structuring</li>
+                                    <li>Technology evaluation & selection</li>
+                                </ul>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>For Academia</h4>
+                                <ul class="service-list--compact">
+                                    <li>Industry collaboration design</li>
+                                    <li>Research impact pathways</li>
+                                    <li>Funding application development</li>
+                                    <li>Knowledge exchange programmes</li>
+                                </ul>
+                            </div>
+                            <div class="service-diff__item">
+                                <h4>For Public Sector</h4>
+                                <ul class="service-list--compact">
+                                    <li>Policy development support</li>
+                                    <li>Standards contribution</li>
+                                    <li>Programme evaluation</li>
+                                    <li>Innovation ecosystem building</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="service-detail fade-in">
+                            <h3>Engagement Models</h3>
+                            <div class="outcomes-grid">
+                                <span class="outcome-item">Monthly retainer for ongoing access</span>
+                                <span class="outcome-item">Project-specific advisory</span>
+                                <span class="outcome-item">Research collaboration partnerships</span>
+                                <span class="outcome-item">Board-level technology advisory</span>
+                            </div>
+                        </div>
+
+                        <div class="fade-in">
+                            <a href="/contact.html" class="btn btn--primary">Discuss Advisory Needs →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work -->
+        <section class="section section--alt" id="how-we-work">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">OUR PROCESS</p>
+                    <h2 class="section-title">How We Work</h2>
+                </div>
+
+                <div class="process-timeline">
+                    <div class="process-step fade-in">
+                        <div class="process-step__number">1</div>
+                        <div class="process-step__content">
+                            <h3>Initial Consultation</h3>
+                            <p>45-minute conversation to understand your challenges, context, and objectives. No charge,
+                                no obligation.</p>
+                        </div>
+                    </div>
+                    <div class="process-step fade-in fade-in-delay-1">
+                        <div class="process-step__number">2</div>
+                        <div class="process-step__content">
+                            <h3>Scoping & Proposal</h3>
+                            <p>We develop a clear scope of work with defined deliverables, timeline, and investment
+                                level.</p>
+                        </div>
+                    </div>
+                    <div class="process-step fade-in fade-in-delay-2">
+                        <div class="process-step__number">3</div>
+                        <div class="process-step__content">
+                            <h3>Collaborative Delivery</h3>
+                            <p>Regular communication, iterative review, and adaptation as understanding deepens.</p>
+                        </div>
+                    </div>
+                    <div class="process-step fade-in fade-in-delay-3">
+                        <div class="process-step__number">4</div>
+                        <div class="process-step__content">
+                            <h3>Knowledge Transfer</h3>
+                            <p>Documentation, training, and capability building ensure your team can sustain and extend
+                                the work.</p>
+                        </div>
+                    </div>
+                    <div class="process-step fade-in fade-in-delay-4">
+                        <div class="process-step__number">5</div>
+                        <div class="process-step__content">
+                            <h3>Ongoing Partnership</h3>
+                            <p>Many clients return for adjacent challenges or evolving needs. We're here when you need
+                                us.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section--dark cta-section">
+            <div class="container text-center">
+                <h2 class="section-title fade-in" style="color: var(--color-text-inverse);">Ready to discuss your
+                    project?</h2>
+                <p class="section-intro section-intro--centered fade-in"
+                    style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-8);">
+                    Whether you're facing a specific technical challenge or exploring strategic digital transformation,
+                    let's start a conversation.
                 </p>
+                <div class="fade-in">
+                    <a href="/contact.html" class="btn btn--primary btn--lg">Contact Us</a>
+                </div>
             </div>
         </section>
     </main>
+
     <div id="site-footer"></div>
     <script type="module" src="/src/js/main.js"></script>
 </body>

@@ -6,34 +6,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact — Adventurous Systems</title>
     <meta name="description"
-        content="Get in touch with Adventurous Systems. Book a free AI readiness strategy session or discuss how we can help transform your AEC firm's digital capabilities.">
+        content="Get in touch with Adventurous Systems for digital transformation, research partnerships, or technical challenges in the AEC industry.">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
     <div id="site-header"></div>
+
     <main>
-        <section class="section section--dark" style="padding-top: var(--space-24);">
-            <div class="container text-center">
+        <!-- Page Hero -->
+        <section class="section section--dark page-hero">
+            <div class="container">
                 <p class="kicker" style="color: var(--color-accent-light);">CONTACT</p>
-                <h1 class="section-title" style="color: var(--color-text-inverse);">Let's Build Together</h1>
-                <p class="section-intro section-intro--centered" style="color: rgba(255,255,255,0.7);">
-                    Tell us about your project. We'll figure out the best way to collaborate.
+                <h1 class="section-title page-hero__title">Let's Start a Conversation</h1>
+                <p class="section-intro page-hero__intro">
+                    Whether you're exploring digital transformation, seeking research partnership,
+                    or facing a specific technical challenge, we'd like to hear from you.
                 </p>
             </div>
         </section>
 
-        <section class="section"
-            style="text-align: center; min-height: 50vh; display: flex; align-items: center; justify-content: center;">
+        <!-- Contact Form + Info -->
+        <section class="section" id="get-in-touch">
             <div class="container">
-                <p style="font-size: var(--text-lg); color: var(--color-text-muted);">
-                    Full contact form and details coming in Phase 6.
-                </p>
+                <div class="contact-grid">
+                    <!-- Left: Info -->
+                    <div class="contact-info fade-in">
+                        <h2 class="section-title" style="font-size: var(--text-2xl);">Get in Touch</h2>
+
+                        <div class="contact-info__block">
+                            <h3>Direct Contact</h3>
+                            <p>
+                                <strong>Email:</strong>
+                                <a href="mailto:hello@adventuroussystems.co.uk">hello@adventuroussystems.co.uk</a>
+                            </p>
+                        </div>
+
+                        <div class="contact-info__block">
+                            <h3>Office</h3>
+                            <p>Heriot-Watt University<br>School of Textiles and Design<br>Edinburgh, Scotland</p>
+                        </div>
+
+                        <div class="contact-info__block">
+                            <h3>Company Details</h3>
+                            <p>
+                                Adventurous Systems Ltd<br>
+                                <a href="https://find-and-update.company-information.service.gov.uk/company/SC815558"
+                                    target="_blank" rel="noopener noreferrer">
+                                    Companies House ↗
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="contact-info__block">
+                            <h3>Connect</h3>
+                            <div class="contact-social">
+                                <a href="https://www.linkedin.com/company/adventurous-systems/" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--outline btn--sm">LinkedIn ↗</a>
+                                <a href="https://adventuroussystems.substack.com/" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--outline btn--sm">Substack ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="contact-form-wrap fade-in fade-in-delay-1">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Name *</label>
+                                <input type="text" id="contact-name" name="name" required autocomplete="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-org">Organisation</label>
+                                <input type="text" id="contact-org" name="organisation" autocomplete="organization">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email">Email *</label>
+                                <input type="email" id="contact-email" name="email" required autocomplete="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message">What are you trying to accomplish? *</label>
+                                <textarea id="contact-message" name="message" rows="6" required
+                                    placeholder="Tell us about your project, challenge, or question…"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--lg" id="contact-submit">
+                                Send Message
+                            </button>
+
+                            <div id="contact-status" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Can Help With -->
+        <section class="section section--alt" id="help-with">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">HOW WE CAN HELP</p>
+                    <h2 class="section-title">What We Can Help With</h2>
+                </div>
+
+                <div class="grid grid--3">
+                    <div class="help-card fade-in">
+                        <h3>For Industry</h3>
+                        <ul class="service-list--compact">
+                            <li>Digital twin implementation strategy</li>
+                            <li>Blockchain integration for supply chains</li>
+                            <li>AI readiness assessment</li>
+                            <li>R&D partnerships</li>
+                            <li>Technology evaluation & selection</li>
+                        </ul>
+                    </div>
+                    <div class="help-card fade-in fade-in-delay-1">
+                        <h3>For Academia</h3>
+                        <ul class="service-list--compact">
+                            <li>Research collaboration proposals</li>
+                            <li>Industry partnership facilitation</li>
+                            <li>Funding application development</li>
+                            <li>Knowledge exchange programmes</li>
+                        </ul>
+                    </div>
+                    <div class="help-card fade-in fade-in-delay-2">
+                        <h3>For Public Sector</h3>
+                        <ul class="service-list--compact">
+                            <li>Policy development support</li>
+                            <li>Innovation programme design</li>
+                            <li>Standards & specification contribution</li>
+                            <li>Evaluation and assessment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Happens Next -->
+        <section class="section" id="next-steps">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">OUR PROCESS</p>
+                    <h2 class="section-title">What Happens Next?</h2>
+                </div>
+
+                <div class="next-steps-grid">
+                    <div class="next-step fade-in">
+                        <span class="next-step__number">1</span>
+                        <h3>Initial Review</h3>
+                        <p>We review your inquiry within 48 hours</p>
+                    </div>
+                    <div class="next-step fade-in fade-in-delay-1">
+                        <span class="next-step__number">2</span>
+                        <h3>Initial Call</h3>
+                        <p>30-45 minute conversation to understand your context and objectives</p>
+                    </div>
+                    <div class="next-step fade-in fade-in-delay-2">
+                        <span class="next-step__number">3</span>
+                        <h3>Proposal</h3>
+                        <p>If there's potential fit, we develop a clear scope and engagement structure</p>
+                    </div>
+                    <div class="next-step fade-in fade-in-delay-3">
+                        <span class="next-step__number">4</span>
+                        <h3>Collaboration</h3>
+                        <p>We begin work with defined deliverables and regular communication</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speaking & Research -->
+        <section class="section section--alt" id="speaking">
+            <div class="container text-center">
+                <div class="fade-in">
+                    <p class="kicker">SPEAKING & RESEARCH</p>
+                    <h2 class="section-title">Research & Speaking Inquiries</h2>
+                    <p class="section-intro section-intro--centered" style="margin-bottom: 0;">
+                        For conference presentations, workshop facilitation, or research collaboration proposals,
+                        please indicate this in your message. We regularly present at EC3 conferences, academic
+                        symposia, and industry events.
+                    </p>
+                </div>
             </div>
         </section>
     </main>
+
     <div id="site-footer"></div>
     <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/contact.js"></script>
 </body>
 
 </html>

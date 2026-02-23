@@ -1,0 +1,328 @@
+/* ============================================================================
+   ABOUT PAGE STYLES
+   ============================================================================ */
+
+/* ---------- Story Block ---------- */
+.story-block {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+}
+
+.story-block__content p {
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+}
+
+/* Visual Timeline */
+.story-block__timeline {
+    position: relative;
+    padding-left: var(--space-8);
+    margin-top: var(--space-6);
+}
+
+.story-block__timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-bg));
+}
+
+.timeline-item {
+    margin-bottom: var(--space-6);
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--space-8) - 5px);
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    border: 3px solid var(--color-surface);
+}
+
+.timeline-year {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    margin-bottom: 2px;
+}
+
+.timeline-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+}
+
+/* ---------- Team Card ---------- */
+.team-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-8);
+    align-items: start;
+}
+
+.team-card__photo {
+    width: 180px;
+    height: 180px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--color-surface-alt);
+    border: 2px solid var(--color-border);
+}
+
+.team-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card__name {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+}
+
+.team-card__role {
+    font-size: var(--text-base);
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: var(--space-4);
+}
+
+.team-card__bio {
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+}
+
+/* ---------- Values Grid ---------- */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+}
+
+.value-card {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: transform var(--transition-base);
+}
+
+.value-card:hover {
+    transform: translateY(-3px);
+}
+
+.value-card__icon {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+}
+
+.value-card h3 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+}
+
+.value-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+}
+
+/* ---------- Diff Grid ---------- */
+.diff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+}
+
+.diff-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: var(--space-6);
+}
+
+.diff-card h4 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.diff-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+}
+
+/* ---------- Partnerships Grid ---------- */
+.partnerships-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+}
+
+.partnership-card {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+}
+
+.partnership-card h3 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+}
+
+.partnership-card__location {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+}
+
+.partnership-card p:last-child {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+}
+
+/* ---------- Affiliations & Funding ---------- */
+.affiliation-item {
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.affiliation-item:last-child {
+    border-bottom: none;
+}
+
+.affiliation-item strong {
+    display: block;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-1);
+}
+
+.affiliation-item p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.funding-item {
+    display: flex;
+    gap: var(--space-4);
+    align-items: start;
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.funding-item:last-child {
+    border-bottom: none;
+}
+
+.funding-amount {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    padding: 6px 12px;
+    background: var(--color-accent-bg);
+    color: var(--color-accent);
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    white-space: nowrap;
+}
+
+.funding-item strong {
+    display: block;
+    font-size: var(--text-sm);
+    margin-bottom: 2px;
+}
+
+.funding-item p {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+/* ---------- Sustainability Block ---------- */
+.sustainability-block {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-10);
+    align-items: start;
+    background: var(--color-accent-bg);
+    border: 1px solid rgba(34, 135, 84, 0.15);
+    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+}
+
+.sustainability-block .section-title {
+    margin-bottom: var(--space-4);
+}
+
+.sustainability-block__content p {
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .story-block {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .team-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .team-card__photo {
+        margin: 0 auto;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diff-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partnerships-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sustainability-block {
+        grid-template-columns: 1fr;
+        padding: var(--space-6);
+    }
+}
+
+@media (max-width: 991px) and (min-width: 769px) {
+    .partnerships-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

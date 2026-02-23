@@ -1,0 +1,355 @@
+/* ============================================================================
+   WHAT WE DO PAGE STYLES
+   ============================================================================ */
+
+/* ---------- Page Hero ---------- */
+.page-hero {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-16);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #0f3324 80%, #0f172a 100%);
+}
+
+.page-hero__title {
+    color: var(--color-text-inverse);
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+    margin-bottom: var(--space-5);
+}
+
+.page-hero__intro {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 680px;
+    margin-bottom: var(--space-8);
+}
+
+/* Service Quick-Nav */
+.service-nav {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.service-nav__link {
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all var(--transition-base);
+}
+
+.service-nav__link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-inverse);
+}
+
+/* ---------- Service Block ---------- */
+.service-block {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+}
+
+.service-block__header {
+    margin-bottom: var(--space-10);
+}
+
+.service-block__number {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    color: var(--color-accent-bg);
+    line-height: 1;
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.04em;
+}
+
+.service-block__tagline {
+    font-size: var(--text-lg);
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+    max-width: 600px;
+}
+
+/* ---------- Service Details ---------- */
+.service-detail {
+    margin-bottom: var(--space-10);
+}
+
+.service-detail h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+}
+
+.service-detail p {
+    font-size: var(--text-base);
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+}
+
+.service-list li {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+    padding-left: var(--space-6);
+    position: relative;
+}
+
+.service-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+}
+
+.service-list--compact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.service-list--compact li {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+    padding-left: var(--space-4);
+    position: relative;
+}
+
+.service-list--compact li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: var(--text-xs);
+}
+
+/* ---------- Service Differentiators ---------- */
+.service-diff {
+    margin-bottom: var(--space-10);
+}
+
+.service-diff__item {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+}
+
+.service-diff__item h4 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-2);
+}
+
+.service-diff__item p {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+}
+
+/* ---------- Service Highlight ---------- */
+.service-highlight {
+    background: var(--color-surface-alt);
+    border-left: 4px solid var(--color-accent);
+    padding: var(--space-6) var(--space-8);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+/* ---------- Service Outcomes ---------- */
+.service-outcomes {
+    margin-bottom: var(--space-10);
+}
+
+.service-outcomes h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+}
+
+.outcomes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.outcome-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 8px 16px;
+    background: var(--color-accent-bg);
+    color: var(--color-accent);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+.outcome-item::before {
+    content: '✓';
+    font-weight: 700;
+}
+
+/* ---------- Service Ideal For ---------- */
+.service-ideal {
+    margin-bottom: var(--space-10);
+}
+
+.service-ideal h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+}
+
+/* ---------- Dimensions Grid ---------- */
+.dimensions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+}
+
+.dimension-item {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-surface-alt);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.dimension-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-text-inverse);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+}
+
+.dimension-item strong {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+}
+
+.dimension-item p {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* ---------- Receive Cards ---------- */
+.receive-card {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+}
+
+.receive-card h4 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-accent-bg);
+}
+
+/* ---------- Process Timeline ---------- */
+.process-timeline {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+    position: relative;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.process-step {
+    display: flex;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+    position: relative;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.process-step__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-text-inverse);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+    z-index: 1;
+    box-shadow: 0 0 0 6px var(--color-surface-alt);
+}
+
+.process-step__content {
+    padding-top: var(--space-2);
+}
+
+.process-step__content h3 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.process-step__content p {
+    font-size: var(--text-sm);
+    color: var(--color-text-body);
+    line-height: var(--leading-relaxed);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .service-nav {
+        flex-direction: column;
+    }
+
+    .service-nav__link {
+        text-align: center;
+    }
+
+    .dimensions-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -8,6 +8,9 @@ import '../styles/main.css';
 import '../styles/components.css';
 import '../styles/layout.css';
 import '../styles/home.css';
+import '../styles/services.css';
+import '../styles/our-work.css';
+import '../styles/about.css';
 
 import { initHeader } from '../components/header.js';
 import { initFooter } from '../components/footer.js';

@@ -12,29 +12,322 @@
 
 <body>
     <div id="site-header"></div>
+
     <main>
-        <section class="section section--dark" style="padding-top: var(--space-24);">
-            <div class="container text-center">
+        <!-- Page Hero -->
+        <section class="section section--dark page-hero">
+            <div class="container">
                 <p class="kicker" style="color: var(--color-accent-light);">OUR WORK</p>
-                <h1 class="section-title" style="color: var(--color-text-inverse);">Projects & Research</h1>
-                <p class="section-intro section-intro--centered" style="color: rgba(255,255,255,0.7);">
-                    Active pilots, publications, and partnerships advancing transparent, verifiable construction
-                    delivery.
+                <h1 class="section-title page-hero__title">Projects & Research</h1>
+                <p class="section-intro page-hero__intro">
+                    Research pilots and industry implementations advancing the state of the art.
+                    Our project portfolio spans blockchain marketplaces, digital twin systems, and
+                    computational design tools.
                 </p>
             </div>
         </section>
 
-        <section class="section"
-            style="text-align: center; min-height: 50vh; display: flex; align-items: center; justify-content: center;">
+        <!-- Featured Project: TRACE -->
+        <section class="section" id="trace">
             <div class="container">
-                <p style="font-size: var(--text-lg); color: var(--color-text-muted);">
-                    Full project portfolio and publications coming in Phase 4.
+                <div class="project-case">
+                    <div class="project-case__header fade-in">
+                        <span class="badge badge--active">Active Pilot</span>
+                        <h2 class="section-title">TRACE Marketplace</h2>
+                        <p class="project-case__subtitle">Blockchain-Enabled Circular Economy for Construction Materials
+                        </p>
+                        <div class="project-case__meta">
+                            <span>Scotland Beyond Net Zero Funded</span>
+                            <span>£101,000</span>
+                            <span>2024–2025</span>
+                        </div>
+                    </div>
+
+                    <div class="project-case__grid fade-in">
+                        <div class="project-case__content">
+                            <h3>The Problem</h3>
+                            <p>
+                                Construction generates 62% of UK waste while simultaneously extracting virgin materials.
+                                Reuse could significantly reduce both, but current systems lack the trust infrastructure
+                                to operate at scale. Builders can't verify material quality, sellers can't prove
+                                provenance,
+                                and transactions involve prohibitive friction.
+                            </p>
+
+                            <h3>Our Solution</h3>
+                            <p>
+                                TRACE creates a blockchain-verified marketplace connecting demolition contractors, reuse
+                                hubs,
+                                and builders through digital material passports. Every material receives a
+                                cryptographically-signed identity.
+                            </p>
+                            <ul class="service-list">
+                                <li>Origin and manufacturing data</li>
+                                <li>Performance specifications and test results</li>
+                                <li>Environmental product declarations</li>
+                                <li>Handling and storage history</li>
+                                <li>Quality certifications</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-case__sidebar">
+                            <div class="project-case__detail-card">
+                                <h4>Technical Architecture</h4>
+                                <ul class="service-list--compact">
+                                    <li>Ethereum-compatible smart contracts</li>
+                                    <li>BIM/IFC format integration</li>
+                                    <li>Multi-party consensus verification</li>
+                                    <li>Web portal for listing & transactions</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-case__detail-card">
+                                <h4>Outcomes to Date</h4>
+                                <ul class="service-list--compact">
+                                    <li>Live pilot with real material transactions</li>
+                                    <li>Blockchain-verified material passports</li>
+                                    <li>Framework for scaling across Scotland</li>
+                                    <li>Policy recommendations for circular economy</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-case__detail-card">
+                                <h4>Partners</h4>
+                                <ul class="service-list--compact">
+                                    <li>Scottish Government (Beyond Net Zero)</li>
+                                    <li>Robert Gordon University</li>
+                                    <li>Stirling Reuse Hub</li>
+                                    <li>Demolition & construction firms</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-case__cta fade-in">
+                        <p class="project-case__status-text">
+                            TRACE demonstrates that blockchain can solve real coordination problems in construction's
+                            circular economy transition. <strong>Seeking expansion partners for 2025–2026.</strong>
+                        </p>
+                        <a href="/contact.html" class="btn btn--primary">Express Interest in TRACE Partnership →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider container">
+
+        <!-- Project: Digital Twin Blockchain Pilot -->
+        <section class="section" id="dt-blockchain">
+            <div class="container">
+                <div class="project-case">
+                    <div class="project-case__header fade-in">
+                        <span class="badge badge--active">Active Development</span>
+                        <h2 class="section-title">Digital Twin Blockchain Pilot</h2>
+                        <p class="project-case__subtitle">Space- and Web3-Enabled Coordination for Verifiable Retrofit
+                            Delivery</p>
+                    </div>
+
+                    <div class="project-case__grid fade-in">
+                        <div class="project-case__content">
+                            <h3>The Challenge</h3>
+                            <p>
+                                UK's retrofit programme aims to upgrade millions of homes, but current delivery models
+                                suffer from unverified work quality, disputed energy savings, payment delays, and
+                                limited outcome accountability.
+                            </p>
+
+                            <h3>Our Approach</h3>
+                            <div class="process-timeline process-timeline--compact">
+                                <div class="process-step process-step--compact">
+                                    <div class="process-step__number process-step__number--sm">1</div>
+                                    <div class="process-step__content">
+                                        <strong>Pre-Retrofit Baseline</strong>
+                                        <p>Satellite thermal imaging establishes energy performance</p>
+                                    </div>
+                                </div>
+                                <div class="process-step process-step--compact">
+                                    <div class="process-step__number process-step__number--sm">2</div>
+                                    <div class="process-step__content">
+                                        <strong>Installation Verification</strong>
+                                        <p>IoT sensors confirm work completion and specification compliance</p>
+                                    </div>
+                                </div>
+                                <div class="process-step process-step--compact">
+                                    <div class="process-step__number process-step__number--sm">3</div>
+                                    <div class="process-step__content">
+                                        <strong>Performance Validation</strong>
+                                        <p>Continuous monitoring proves actual energy savings</p>
+                                    </div>
+                                </div>
+                                <div class="process-step process-step--compact">
+                                    <div class="process-step__number process-step__number--sm">4</div>
+                                    <div class="process-step__content">
+                                        <strong>Automated Payment</strong>
+                                        <p>Smart contracts release funds upon verified milestones</p>
+                                    </div>
+                                </div>
+                                <div class="process-step process-step--compact">
+                                    <div class="process-step__number process-step__number--sm">5</div>
+                                    <div class="process-step__content">
+                                        <strong>Carbon Accounting</strong>
+                                        <p>Blockchain-recorded savings create verifiable carbon credits</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-case__sidebar">
+                            <div class="project-case__detail-card">
+                                <h4>Technical Components</h4>
+                                <ul class="service-list--compact">
+                                    <li>Satellite data integration (thermal imaging)</li>
+                                    <li>IoT sensor networks</li>
+                                    <li>Digital twin model (unified building)</li>
+                                    <li>Blockchain verification layer</li>
+                                    <li>Smart contract automation</li>
+                                </ul>
+                            </div>
+
+                            <div class="project-case__detail-card">
+                                <h4>Applications Beyond Retrofit</h4>
+                                <ul class="service-list--compact">
+                                    <li>New construction quality assurance</li>
+                                    <li>Infrastructure maintenance verification</li>
+                                    <li>ESG compliance documentation</li>
+                                    <li>Insurance and performance bonding</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-case__cta fade-in">
+                        <p class="project-case__status-text">
+                            Technical architecture complete. <strong>Seeking pilot deployment properties and retrofit
+                                programme partners.</strong>
+                        </p>
+                        <a href="/contact.html" class="btn btn--primary">Discuss Pilot Partnership →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider container">
+
+        <!-- Smaller Projects Grid -->
+        <section class="section section--alt" id="more-projects">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">DISCOVERY & RESEARCH</p>
+                    <h2 class="section-title">Emerging Projects</h2>
+                </div>
+
+                <div class="grid grid--2">
+                    <!-- DeFab -->
+                    <div class="card fade-in">
+                        <span class="badge badge--discovery">Discovery Phase</span>
+                        <h3 class="card__title" style="margin-top: var(--space-3);">DeFab — Decentralised Fabrication
+                        </h3>
+                        <p class="card__subtitle">Blockchain-Verified Additive Manufacturing for Construction</p>
+                        <p class="card__body">
+                            DeFab explores blockchain-enabled distributed fabrication where designs are tokenized,
+                            print parameters are cryptographically verified, and local fabricators join a trusted
+                            network.
+                        </p>
+                        <div class="card__tags">
+                            <span class="tag">3D Printing</span>
+                            <span class="tag">Blockchain</span>
+                            <span class="tag">Distributed Manufacturing</span>
+                        </div>
+                        <a href="/contact.html" class="btn btn--secondary btn--sm">Join DeFab Discovery →</a>
+                    </div>
+
+                    <!-- Blockchain Weaving -->
+                    <div class="card fade-in fade-in-delay-1">
+                        <span class="badge badge--discovery">Concept Development</span>
+                        <h3 class="card__title" style="margin-top: var(--space-3);">Blockchain Weaving</h3>
+                        <p class="card__subtitle">Encoding Traditional Craft Through Blockchain and Parametric Design
+                        </p>
+                        <p class="card__body">
+                            Exploring whether blockchain and parametric design can create "living" digital preservation
+                            of Al Sadu weaving heritage — patterns as grammars, variations as NFTs with cultural
+                            attribution.
+                        </p>
+                        <div class="card__tags">
+                            <span class="tag">Cultural Heritage</span>
+                            <span class="tag">NFTs</span>
+                            <span class="tag">Parametric Design</span>
+                        </div>
+                        <a href="/contact.html" class="btn btn--secondary btn--sm">Discuss Heritage Collaboration →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section class="section" id="publications">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">PUBLICATIONS & RESEARCH</p>
+                    <h2 class="section-title">Turning peer-reviewed insight into impact</h2>
+                    <p class="section-intro section-intro--centered">
+                        We collaborate with universities, reuse hubs, and industry partners to publish open
+                        research advancing digital twins, material circularity, and AI readiness in AEC.
+                    </p>
+                </div>
+
+                <!-- Filter pills -->
+                <div class="pub-filters fade-in" id="pub-filters"></div>
+
+                <!-- Publication count -->
+                <div class="pub-meta-row">
+                    <span class="pub-count" id="pub-count"></span>
+                </div>
+
+                <!-- Publications grid -->
+                <div class="pub-grid" id="pub-grid"></div>
+
+                <div class="text-center" style="margin-top: var(--space-8);">
+                    <p class="pub-featured-link">
+                        📚 Featured: <a href="https://link.springer.com/book/10.1007/978-981-19-3759-0" target="_blank"
+                            rel="noopener noreferrer"><strong>Blockchain for Construction</strong></a> — Springer, 2022
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="section section--alt" id="partners">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">OUR NETWORK</p>
+                    <h2 class="section-title">Partners & Collaborators</h2>
+                </div>
+
+                <div class="partners-grid" id="partners-grid">
+                    <!-- Populated by JS from partners.json -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section--dark cta-section">
+            <div class="container text-center">
+                <h2 class="section-title fade-in" style="color: var(--color-text-inverse);">Want to build together?</h2>
+                <p class="section-intro section-intro--centered fade-in"
+                    style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-8);">
+                    We're always looking for research partners, pilot properties, and organisations
+                    ready to lead their industry's digital transformation.
                 </p>
+                <div class="fade-in">
+                    <a href="/contact.html" class="btn btn--primary btn--lg">Start a Conversation</a>
+                </div>
             </div>
         </section>
     </main>
+
     <div id="site-footer"></div>
     <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/our-work.js"></script>
 </body>
 
 </html>

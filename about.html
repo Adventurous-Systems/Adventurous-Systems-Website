@@ -4,36 +4,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — Adventurous Systems</title>
+    <title>About Us — Adventurous Systems</title>
     <meta name="description"
-        content="Meet the co-founders of Adventurous Systems — Dr Theo Dounas and Hico Mc Donald — and learn about our mission, values, and research partnerships.">
+        content="Where academic innovation meets industry practice. Learn about our story, team, values, and partnerships advancing the AEC industry.">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
     <div id="site-header"></div>
+
     <main>
-        <section class="section section--dark" style="padding-top: var(--space-24);">
-            <div class="container text-center">
+        <!-- Page Hero -->
+        <section class="section section--dark page-hero">
+            <div class="container">
                 <p class="kicker" style="color: var(--color-accent-light);">ABOUT US</p>
-                <h1 class="section-title" style="color: var(--color-text-inverse);">Our Story</h1>
-                <p class="section-intro section-intro--centered" style="color: rgba(255,255,255,0.7);">
-                    A small, dedicated team with over thirty years of combined AEC experience across three continents.
-                </p>
+                <h1 class="section-title page-hero__title">Where Academic Innovation<br>Meets Industry Practice</h1>
             </div>
         </section>
 
-        <section class="section"
-            style="text-align: center; min-height: 50vh; display: flex; align-items: center; justify-content: center;">
+        <!-- Our Story -->
+        <section class="section" id="story">
             <div class="container">
-                <p style="font-size: var(--text-lg); color: var(--color-text-muted);">
-                    Full team profiles, story, and values coming in Phase 5.
+                <div class="story-block">
+                    <div class="story-block__content fade-in">
+                        <h2 class="section-title">Our Story</h2>
+                        <p>
+                            Adventurous Systems emerged from twenty years at the intersection of architecture,
+                            computational design, and emerging technology.
+                        </p>
+                        <p>
+                            Since 2004, through Adventurous Architecture studio and academic positions across
+                            three continents, we've pursued a consistent question: <em>How can advanced computation
+                                transform how we design, build, and operate the built environment?</em>
+                        </p>
+                        <p>
+                            Early research explored parametric design, digital fabrication, and shape grammars.
+                            By the mid-2010s, we recognized that computational design's real challenge wasn't
+                            form generation — it was data coordination across fragmented industry systems.
+                        </p>
+                        <p>
+                            That realization led to deep research into graph databases, blockchain, and digital twins.
+                            We weren't interested in applying trendy technology for its own sake. We wanted to solve
+                            construction's fundamental problems: lack of trust, fragmented information, and inability
+                            to verify outcomes.
+                        </p>
+                        <p>
+                            In 2022, we published <strong>"Blockchain for Construction"</strong> with Springer,
+                            synthesizing five years of research. By then, we'd secured competitive funding, built
+                            working prototypes, and established that these technologies could solve real problems.
+                        </p>
+                        <p>
+                            Adventurous Systems formalized in 2023 to bridge our academic research and industry
+                            implementation. We remain deeply embedded in university research environments while
+                            actively deploying what we've validated.
+                        </p>
+                    </div>
+
+                    <div class="story-block__timeline fade-in fade-in-delay-1">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2004</span>
+                            <span class="timeline-label">Adventurous Architecture studio founded</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2010s</span>
+                            <span class="timeline-label">Shift to data coordination & blockchain research</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2022</span>
+                            <span class="timeline-label">"Blockchain for Construction" published (Springer)</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2023</span>
+                            <span class="timeline-label">Adventurous Systems Ltd formalised</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2024</span>
+                            <span class="timeline-label">TRACE pilot funded & launched</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="section section--alt" id="team">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">OUR TEAM</p>
+                    <h2 class="section-title">Meet the Founder</h2>
+                </div>
+
+                <div class="team-profile fade-in" id="team-grid">
+                    <!-- Populated by JS from team.json + detailed info -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="section" id="values">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">WHAT DRIVES US</p>
+                    <h2 class="section-title">Our Values</h2>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card fade-in">
+                        <div class="value-card__icon">🔬</div>
+                        <h3>Research Integrity</h3>
+                        <p>Every recommendation stems from validated research, not vendor marketing. If we haven't
+                            researched it, tested it, or implemented it, we won't recommend it.</p>
+                    </div>
+                    <div class="value-card fade-in fade-in-delay-1">
+                        <div class="value-card__icon">🌐</div>
+                        <h3>Open Development</h3>
+                        <p>We contribute to open-source tooling, publish our methodologies, and advance industry
+                            standards. Competitive advantage comes from execution, not information hoarding.</p>
+                    </div>
+                    <div class="value-card fade-in fade-in-delay-2">
+                        <div class="value-card__icon">🔗</div>
+                        <h3>Academic-Industry Bridge</h3>
+                        <p>We operate at the intersection of university research and commercial implementation —
+                            pursuing long-term innovation while delivering immediate practical value.</p>
+                    </div>
+                    <div class="value-card fade-in fade-in-delay-3">
+                        <div class="value-card__icon">📖</div>
+                        <h3>Knowledge Sharing</h3>
+                        <p>Through teaching, EC3 leadership, publications, and client engagements, we raise the entire
+                            industry's capability rather than capture proprietary advantage.</p>
+                    </div>
+                    <div class="value-card fade-in fade-in-delay-4">
+                        <div class="value-card__icon">🌱</div>
+                        <h3>Sustainable Systems</h3>
+                        <p>We focus on circular economy, material reuse, and verifiable sustainability. Technology
+                            should enable construction's transition to dramatically reduced environmental impact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We're Different -->
+        <section class="section section--alt" id="difference">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">OUR POSITION</p>
+                    <h2 class="section-title">How We're Different</h2>
+                </div>
+
+                <div class="diff-grid">
+                    <div class="diff-card fade-in">
+                        <h4>Not a typical consultancy</h4>
+                        <p>We don't implement standard solutions. We develop novel approaches grounded in research.</p>
+                    </div>
+                    <div class="diff-card fade-in fade-in-delay-1">
+                        <h4>Not purely academic</h4>
+                        <p>We focus on practical implementation and industry impact, not just publication.</p>
+                    </div>
+                    <div class="diff-card fade-in fade-in-delay-2">
+                        <h4>Not vendor-aligned</h4>
+                        <p>We maintain independence from software vendors and platform providers.</p>
+                    </div>
+                    <div class="diff-card fade-in fade-in-delay-3">
+                        <h4>Research-to-practice pipeline</h4>
+                        <p>What we recommend, we've researched. What we've researched, we implement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Partnerships -->
+        <section class="section" id="partnerships">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="kicker">GLOBAL RESEARCH NETWORK</p>
+                    <h2 class="section-title">Academic Partnerships</h2>
+                </div>
+
+                <div class="partnerships-grid">
+                    <div class="partnership-card fade-in">
+                        <h3>Heriot-Watt University</h3>
+                        <p class="partnership-card__location">Edinburgh, Scotland</p>
+                        <p>Current faculty position and primary research base.</p>
+                    </div>
+                    <div class="partnership-card fade-in fade-in-delay-1">
+                        <h3>Thomas Jefferson University</h3>
+                        <p class="partnership-card__location">Philadelphia, USA</p>
+                        <p>International partnership development and knowledge exchange.</p>
+                    </div>
+                    <div class="partnership-card fade-in fade-in-delay-2">
+                        <h3>National Institute of Design</h3>
+                        <p class="partnership-card__location">India</p>
+                        <p>Collaborative research and academic programme development.</p>
+                    </div>
+                    <div class="partnership-card fade-in fade-in-delay-3">
+                        <h3>Xi'an Jiaotong-Liverpool University</h3>
+                        <p class="partnership-card__location">Suzhou, China</p>
+                        <p>Former faculty position, ongoing research collaboration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Standing -->
+        <section class="section section--alt" id="affiliations">
+            <div class="container">
+                <div class="grid grid--2">
+                    <div class="fade-in">
+                        <p class="kicker">AFFILIATIONS</p>
+                        <h3 style="margin-bottom: var(--space-6);">Professional Standing</h3>
+                        <div class="affiliation-item">
+                            <strong>European Council for Computing in Construction (EC3)</strong>
+                            <p>Elected Secretary — International research organization advancing digital construction
+                            </p>
+                        </div>
+                        <div class="affiliation-item">
+                            <strong>Architects Registration Board (ARB)</strong>
+                            <p>Registered Architect — UK statutory regulator</p>
+                        </div>
+                    </div>
+
+                    <div class="fade-in fade-in-delay-1">
+                        <p class="kicker">RESEARCH FUNDING</p>
+                        <h3 style="margin-bottom: var(--space-6);">Secured Funding</h3>
+                        <div class="funding-item">
+                            <span class="funding-amount">£101k</span>
+                            <div>
+                                <strong>Scottish Government Beyond Net Zero</strong>
+                                <p>TRACE Marketplace pilot</p>
+                            </div>
+                        </div>
+                        <div class="funding-item">
+                            <span class="funding-amount">€275k</span>
+                            <div>
+                                <strong>Marie Curie Programme Coordination</strong>
+                                <p>International research mobility</p>
+                            </div>
+                        </div>
+                        <div class="funding-item">
+                            <span class="funding-amount">Active</span>
+                            <div>
+                                <strong>UKRI & ARIA Proposals</strong>
+                                <p>Design Generators, multi-agent systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability -->
+        <section class="section" id="sustainability">
+            <div class="container">
+                <div class="sustainability-block fade-in">
+                    <div class="sustainability-block__content">
+                        <p class="kicker">OUR COMMITMENT</p>
+                        <h2 class="section-title">Sustainability</h2>
+                        <p>
+                            Construction accounts for 38% of global carbon emissions. We focus our work on
+                            technologies that enable circular economy, verifiable carbon accounting, and reduced
+                            material consumption.
+                        </p>
+                    </div>
+                    <div class="sustainability-block__initiatives">
+                        <ul class="service-list">
+                            <li>TRACE circular materials marketplace</li>
+                            <li>Carbon verification in retrofit digital twins</li>
+                            <li>Material passport standards development</li>
+                            <li>Sustainable procurement frameworks</li>
+                        </ul>
+                        <p
+                            style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-4);">
+                            Committed to net-zero operations, supporting Scotland's 2045 target.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section--dark cta-section">
+            <div class="container text-center">
+                <h2 class="section-title fade-in" style="color: var(--color-text-inverse);">Want to work with us?</h2>
+                <p class="section-intro section-intro--centered fade-in"
+                    style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-8);">
+                    For research collaborations, pilot partnerships, advisory engagements, or general inquiries.
                 </p>
+                <div class="fade-in">
+                    <a href="/contact.html" class="btn btn--primary btn--lg">Get in Touch</a>
+                </div>
             </div>
         </section>
     </main>
+
     <div id="site-footer"></div>
     <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/about.js"></script>
 </body>
 
 </html>
