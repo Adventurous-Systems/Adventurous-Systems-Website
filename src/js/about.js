@@ -16,10 +16,11 @@ function renderTeam() {
   if (!grid) return;
 
   const members = teamData.members;
+  const base = import.meta.env.BASE_URL;
   grid.innerHTML = members.map(member => `
     <div class="team-card">
       <div class="team-card__photo">
-        <img src="${member.photo}" alt="${member.name}" loading="lazy">
+        <img src="${base}${member.photo.replace(/^\//, '')}" alt="${member.name}" loading="lazy">
       </div>
       <div class="team-card__info">
         <h3 class="team-card__name">${member.name}</h3>

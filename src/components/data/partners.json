@@ -5,37 +5,37 @@
         {
             "name": "Heriot-Watt University",
             "role": "Research & Development Partner",
-            "logo": "./images/heriot_watt_university_logo.jpeg",
+            "logo": "/images/heriot_watt_university_logo.jpeg",
             "link": "https://www.hw.ac.uk/"
         },
         {
             "name": "Robert Gordon University",
             "role": "Research & Validation Partner",
-            "logo": "./images/robertgordonuniversity_logo.jpeg",
+            "logo": "/images/robertgordonuniversity_logo.jpeg",
             "link": "https://www.rgu.ac.uk/"
         },
         {
             "name": "BE-ST",
             "role": "Innovation Partner",
-            "logo": "./images/construction_scotland_innovation_centre_logo.jpeg",
+            "logo": "/images/construction_scotland_innovation_centre_logo.jpeg",
             "link": "https://be-st.build/"
         },
         {
             "name": "Stirling Reuse Hub",
             "role": "TRACE Pilot Partner",
-            "logo": "./images/stirlingresusehub.jpg",
+            "logo": "/images/stirlingresusehub.jpg",
             "link": "https://www.stirlingreusehub.org.uk/"
         },
         {
             "name": "SuperFusion Labs",
             "role": "Technology Partner",
-            "logo": "./images/superfusionlab.jpg",
+            "logo": "/images/superfusionlab.jpg",
             "link": "https://www.superfusionlab.com/"
         },
         {
             "name": "ArchiDAO",
             "role": "Web3 Collaboration Partner",
-            "logo": "./images/ArchiDAO.jpg",
+            "logo": "/images/ArchiDAO.jpg",
             "link": "https://archidao.io/"
         }
     ]

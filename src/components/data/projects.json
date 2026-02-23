@@ -5,7 +5,7 @@
             "title": "Digital Twin Blockchain Pilot",
             "subtitle": "Space- and Web3-enabled coordination for verifiable AEC delivery",
             "description": "Using satellite data, IoT, AI, and blockchain, our pilot automates approvals and payments for cutting rework, verifying carbon savings, and speeding up retrofit delivery.",
-            "image": "./images/digital-twin-blockchain-pilot.png",
+            "image": "/images/digital-twin-blockchain-pilot.png",
             "status": "active",
             "statusLabel": "ACTIVE",
             "tags": [
@@ -22,7 +22,7 @@
             "title": "TRACE Marketplace Pilot",
             "subtitle": "Blockchain-enabled material passports & circular supply for construction materials",
             "description": "TRACE connects reuse hubs, demolition contractors, and builders through blockchain-verified material passports — turning waste into traceable, reusable resources.",
-            "image": "./images/trace-marketplace-pilot.png",
+            "image": "/images/trace-marketplace-pilot.png",
             "status": "partners",
             "statusLabel": "OPEN TO PARTNERS",
             "tags": [
@@ -39,7 +39,7 @@
             "title": "DeFab Pilot",
             "subtitle": "Decentralised 3D printing for verifiable construction supply chains",
             "description": "Localised, on-demand fabrication using blockchain and AI to verify materials, automate provenance, and advance circular 3D construction.",
-            "image": "./images/defab-pilot.png",
+            "image": "/images/defab-pilot.png",
             "status": "discovery",
             "statusLabel": "IN DISCOVERY",
             "tags": [
@@ -56,7 +56,7 @@
             "title": "Blockchain Weaving Pilot",
             "subtitle": "Encoding cultural heritage through blockchain and parametric design",
             "description": "Preserving Al Sadu weaving heritage through blockchain and parametric design — turning traditional craft into verifiable digital memory.",
-            "image": "./images/blockchain-weaving-pilot.png",
+            "image": "/images/blockchain-weaving-pilot.png",
             "status": "discovery",
             "statusLabel": "IN DISCOVERY",
             "tags": [

@@ -162,10 +162,11 @@ function renderPartners() {
     if (!grid) return;
 
     const partners = partnersData.partners;
+    const base = import.meta.env.BASE_URL;
     grid.innerHTML = partners.map(partner => `
     <a href="${partner.link}" target="_blank" rel="noopener noreferrer" class="partner-card fade-in"
        title="${partner.name} — ${partner.role}">
-      <img src="${partner.logo}" alt="${partner.name}" class="partner-card__logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <img src="${base}${partner.logo.replace(/^\//, '')}" alt="${partner.name}" class="partner-card__logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
       <span class="partner-card__initials" style="display:none; width:64px; height:64px; align-items:center; justify-content:center; font-size:20px; font-weight:700; background:var(--color-surface-muted); color:var(--color-text-primary); border-radius:50%; margin:0 auto var(--space-4); border:1px solid var(--color-border);">${partner.name.substring(0, 2).toUpperCase()}</span>
       <span class="partner-card__name">${partner.name}</span>
       <span class="partner-card__role">${partner.role}</span>

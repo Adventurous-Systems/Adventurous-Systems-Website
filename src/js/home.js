@@ -24,10 +24,11 @@ function renderProjectCards() {
 
     grid.innerHTML = projects.map((project, index) => {
         const statusClass = getStatusClass(project.status);
+        const imgSrc = `${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`;
         return `
       <div class="card fade-in ${index > 0 ? `fade-in-delay-${Math.min(index, 3)}` : ''}">
         <img
-          src="${project.image}"
+          src="${imgSrc}"
           alt="${project.title}"
           class="card__image"
           loading="lazy"

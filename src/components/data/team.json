@@ -6,7 +6,7 @@
         {
             "name": "Dr Theo Dounas",
             "role": "Co-Founder",
-            "photo": "./images/theo1200.jpg",
+            "photo": "/images/theo1200.jpg",
             "linkedin": "https://www.linkedin.com/in/theodoredounas/",
             "bioShort": "Dr Theo Dounas is a registered Architect (UK, Greece), a Web3 engineer and a researcher with expertise in digital generative systems (A.I), decentralised systems (blockchain)",
             "bioFull": ", having worked in Greece, Belgium, China and the UK. He has worked in multiple projects in the data and systems integration, governance and innovation in the architecture, engineering, and construction industry, spanning from graph theory, Digital Twins and digital modelling techniques for architectural design to design for manufacture and (dis)assembly, and decentralised additive manufacturing processes. Dounas is a member of the Construction Blockchain Consortium Technical committee, vice-chair of the board of directors of the European Council on Computing in Construction, and is regularly invited to present his work on blockchain and Smart Contracts in industry, DfMA, and engineering systems. He has taught in architecture and design schools in Greece, Belgium, China and the UK. Dounas holds an Engineering Doctorate and Architecture Engineering diploma, both from Aristotle University of Thessaloniki, Greece."
@@ -14,7 +14,7 @@
         {
             "name": "Hico Mc Donald",
             "role": "Co-Founder",
-            "photo": "./images/hico1200.jpg",
+            "photo": "/images/hico1200.jpg",
             "linkedin": "https://www.linkedin.com/in/hico-mc-donald-97b97864/",
             "bioShort": "Hico Mc Donald is a Civil and Web3 Engineer who bridges traditional engineering with emerging decentralised technologies. Having worked on projects across South Africa and Thailand",
             "bioFull": ", his background spans construction quality, project management, and renewable infrastructure shaping his approach to building digital systems that bring trust and transparency to the built environment. A certified blockchain developer and mentor, Hico has contributed to research connecting blockchain with architecture and design. Known for driving collaboration across disciplines and fostering strategic partnerships, he brings a unique blend of technical expertise and coordination skills to advancing innovation in the AEC industry."
