@@ -1,0 +1,1178 @@
+<!-- 
+================================================================================
+AI READINESS ASSESSMENT FORM - PART 1 of 2: HTML & CSS
+================================================================================
+This file contains the HTML structure and CSS styles for the assessment form.
+It must be embedded FIRST in Webflow as a custom code embed.
+
+IMPORTANT: This is Part 1 of 2. Part 2 (JavaScript) must be embedded AFTER this.
+Both parts are required for the form to function properly.
+
+Character count: See bottom of file for current count
+================================================================================
+-->
+
+<style>
+/* ============================================================================
+   GLOBAL STYLES & RESET
+   ============================================================================ */
+
+/* Base body styling with system font stack for optimal cross-platform rendering */
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f6f7f9;
+}
+
+/* ============================================================================
+   FORM CONTAINER & LAYOUT
+   ============================================================================ */
+
+/* Main form container - replaces modal wrapper for standalone page */
+.as-form-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* ============================================================================
+   HEADER SECTION
+   ============================================================================ */
+
+/* Form header with title and description */
+.as-form-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+/* Company logo styling */
+.as-form-logo {
+    max-height: 50px;
+    margin-bottom: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Company name styling */
+.as-form-company-name {
+    font-size: 14px;
+    color: #2D8659;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Main form title with responsive sizing */
+.as-form-header h1 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    color: #1d1d1f;
+    margin: 0 0 8px;
+}
+
+/* Form description text */
+.as-form-header p {
+    font-size: 15px;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   PROGRESS INDICATOR
+   ============================================================================ */
+
+/* Progress bar container with sticky positioning */
+.as-form-progress {
+    background: #f6f7f9;
+    padding: 20px 40px;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+/* Progress bar background */
+.as-form-progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+/* Progress bar fill with gradient animation */
+.as-form-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2D8659, #4ade80);
+    transition: width 0.3s ease;
+}
+
+/* Progress text display */
+.as-form-progress-text {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ============================================================================
+   FORM SECTIONS
+   ============================================================================ */
+
+/* Individual form sections - hidden by default */
+.as-form-section {
+    display: none;
+    padding: 40px 60px;
+    animation: fadeInUp 0.4s ease;
+}
+
+/* Active section display */
+.as-form-section.active {
+    display: block;
+}
+
+/* Section transition animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section title styling */
+.as-form-section-title {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    color: #1d1d1f;
+    margin: 0 0 8px;
+}
+
+/* Section subtitle/description */
+.as-form-section-subtitle {
+    font-size: 15px;
+    color: #666;
+    margin: 0 0 32px;
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   FORM FIELDS
+   ============================================================================ */
+
+/* Individual form field container */
+.as-form-field {
+    margin-bottom: 24px;
+}
+
+/* Form label styling */
+.as-form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+/* Required field indicator */
+.as-form-label .required {
+    color: #dc2626;
+    margin-left: 4px;
+}
+
+/* ============================================================================
+   INPUT ELEMENTS
+   ============================================================================ */
+
+/* Base styling for all input types */
+.as-form-input,
+.as-form-select,
+.as-form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Focus states for all inputs */
+.as-form-input:focus,
+.as-form-select:focus,
+.as-form-textarea:focus {
+    outline: none;
+    border-color: #2D8659;
+    box-shadow: 0 0 0 3px rgba(45, 134, 89, 0.1);
+}
+
+/* Textarea specific styling */
+.as-form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ============================================================================
+   CHECKBOX & RADIO GROUPS
+   ============================================================================ */
+
+/* Container for checkbox and radio groups */
+.as-form-checkbox-group,
+.as-form-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Individual checkbox/radio item styling */
+.as-form-checkbox-item,
+.as-form-radio-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover state for interactive elements */
+.as-form-checkbox-item:hover,
+.as-form-radio-item:hover {
+    background: #f9fafb;
+    border-color: #2D8659;
+}
+
+/* Input element styling within items */
+.as-form-checkbox-item input,
+.as-form-radio-item input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Label styling within items */
+.as-form-checkbox-item label,
+.as-form-radio-item label {
+    flex: 1;
+    cursor: pointer;
+    font-size: 15px;
+    color: #4a4a4a;
+}
+
+/* ============================================================================
+   VALIDATION & ERRORS
+   ============================================================================ */
+
+/* Error message styling */
+.as-form-error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+}
+
+/* Show error state */
+.as-form-error.show {
+    display: block;
+}
+
+/* ============================================================================
+   NAVIGATION BUTTONS
+   ============================================================================ */
+
+/* Navigation container with sticky positioning */
+.as-form-navigation {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 24px 60px;
+    border-top: 1px solid #e5e7eb;
+    position: sticky;
+    bottom: 0;
+    background: #ffffff;
+    z-index: 99;
+}
+
+/* Base button styling */
+.as-form-btn {
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    letter-spacing: 0.3px;
+}
+
+/* Back button styling */
+.as-form-btn-back {
+    background: transparent;
+    color: #666;
+    border: 1px solid #d1d5db;
+}
+
+/* Back button hover state */
+.as-form-btn-back:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+/* Next/Submit button styling */
+.as-form-btn-next,
+.as-form-btn-submit {
+    background: #2D8659;
+    color: #ffffff;
+}
+
+/* Next/Submit button hover state */
+.as-form-btn-next:hover,
+.as-form-btn-submit:hover {
+    background: #246e47;
+    transform: translateY(-2px);
+}
+
+/* Disabled button state */
+.as-form-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* ============================================================================
+   REVIEW SECTION
+   ============================================================================ */
+
+/* Review section container */
+.as-form-review-section {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+/* Review section title */
+.as-form-review-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin: 0 0 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+/* Individual review item */
+.as-form-review-item {
+    display: flex;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Remove border from last item */
+.as-form-review-item:last-child {
+    border-bottom: none;
+}
+
+/* Review item label */
+.as-form-review-label {
+    font-weight: 600;
+    color: #666;
+    min-width: 200px;
+    font-size: 14px;
+}
+
+/* Review item value */
+.as-form-review-value {
+    color: #1d1d1f;
+    font-size: 14px;
+    flex: 1;
+}
+
+/* ============================================================================
+   SUCCESS MESSAGE
+   ============================================================================ */
+
+/* Success message container */
+.as-form-success {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+/* Success icon styling */
+.as-form-success-icon {
+    font-size: 64px;
+    color: #2D8659;
+    margin-bottom: 24px;
+}
+
+/* Success title */
+.as-form-success h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin: 0 0 16px;
+}
+
+/* Success description */
+.as-form-success p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 32px;
+}
+
+/* ============================================================================
+   CONDITIONAL FIELDS
+   ============================================================================ */
+
+/* Conditional text input styling */
+.as-form-field[id*="OtherField"] {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+}
+
+.as-form-field[id*="OtherField"] .as-form-label {
+    color: #4a4a4a;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.as-form-field[id*="OtherField"] .as-form-input {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+}
+
+.as-form-field[id*="OtherField"] .as-form-input:focus {
+    border-color: #2D8659;
+    box-shadow: 0 0 0 3px rgba(45, 134, 89, 0.1);
+}
+
+/* ============================================================================
+   MOBILE RESPONSIVENESS
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    /* Adjust container margins for mobile */
+    .as-form-container {
+        margin: 20px;
+        border-radius: 16px;
+    }
+
+    /* Reduce header padding on mobile */
+    .as-form-header {
+        padding: 24px;
+    }
+
+    /* Reduce section padding on mobile */
+    .as-form-section {
+        padding: 24px;
+    }
+
+    /* Stack navigation buttons on mobile */
+    .as-form-navigation {
+        padding: 16px 24px;
+        flex-direction: column;
+    }
+
+    /* Full width buttons on mobile */
+    .as-form-btn {
+        width: 100%;
+    }
+
+    /* Adjust progress padding on mobile */
+    .as-form-progress {
+        padding: 16px 24px;
+    }
+
+    /* Adjust logo size on mobile */
+    .as-form-logo {
+        max-height: 40px;
+        margin-bottom: 12px;
+    }
+
+    /* Adjust company name on mobile */
+    .as-form-company-name {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    /* Stack review items on mobile */
+    .as-form-review-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    /* Remove min-width on mobile */
+    .as-form-review-label {
+        min-width: auto;
+    }
+}
+</style>
+
+<!-- ============================================================================
+     FORM CONTAINER & STRUCTURE
+     ============================================================================ -->
+
+<div class="as-form-container">
+    
+    <!-- ========================================================================
+         FORM HEADER
+         ======================================================================== -->
+    
+    <div class="as-form-header">
+        <img src="https://cdn.prod.website-files.com/679f69f3dfc4c1b1c0ddff14/68f7abf7b14670fe2fd5ee0b_AS-logo.jpg" alt="Adventurous Systems Logo" class="as-form-logo">
+        <div class="as-form-company-name">Adventurous Systems</div>
+        <h1>AI Readiness Assessment</h1>
+        <p>Complete this assessment to receive your personalized AI & Data Integration Readiness Report</p>
+    </div>
+    
+    <!-- ========================================================================
+         PROGRESS INDICATOR
+         ======================================================================== -->
+    
+    <div class="as-form-progress">
+        <div class="as-form-progress-bar">
+            <div class="as-form-progress-fill" id="formProgressFill" style="width: 14.3%"></div>
+        </div>
+        <div class="as-form-progress-text" id="formProgressText">Step 1 of 7: Company Information</div>
+    </div>
+    
+    <!-- ========================================================================
+         MAIN FORM
+         ======================================================================== -->
+    
+    <form id="aiReadinessForm">
+        <!-- ========================================================================
+             SECTION 1: COMPANY INFORMATION
+             ======================================================================== -->
+        
+        <div class="as-form-section active" data-section="1">
+            <h3 class="as-form-section-title">Company Information</h3>
+            <p class="as-form-section-subtitle">Tell us about your organization</p>
+            
+            <!-- Company Name Field -->
+            <div class="as-form-field">
+                <label class="as-form-label">Company Name<span class="required">*</span></label>
+                <input type="text" name="companyName" class="as-form-input" required>
+                <div class="as-form-error">Company name is required</div>
+            </div>
+            
+            <!-- Contact Person Name Field -->
+            <div class="as-form-field">
+                <label class="as-form-label">Your Name<span class="required">*</span></label>
+                <input type="text" name="yourName" class="as-form-input" required>
+                <div class="as-form-error">Your name is required</div>
+            </div>
+            
+            <!-- Role/Title Field -->
+            <div class="as-form-field">
+                <label class="as-form-label">Role/Title<span class="required">*</span></label>
+                <input type="text" name="roleTitle" class="as-form-input" required>
+                <div class="as-form-error">Role/title is required</div>
+            </div>
+            
+            <!-- Email Field -->
+            <div class="as-form-field">
+                <label class="as-form-label">Email<span class="required">*</span></label>
+                <input type="email" name="email" class="as-form-input" required>
+                <div class="as-form-error">Valid email is required</div>
+            </div>
+            
+            <!-- Phone Field -->
+            <div class="as-form-field">
+                <label class="as-form-label">Phone</label>
+                <input type="tel" name="phone" class="as-form-input">
+            </div>
+            
+            <!-- Company Website Field (Optional) -->
+            <div class="as-form-field">
+                <label class="as-form-label">Company Website</label>
+                <input type="url" name="companyWebsite" class="as-form-input" placeholder="https://">
+            </div>
+            
+            <!-- Primary Sector Dropdown -->
+            <div class="as-form-field">
+                <label class="as-form-label">Primary Sector<span class="required">*</span></label>
+                <select name="primarySector" class="as-form-select" required>
+                    <option value="">Select...</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="Engineering (Structural/MEP)">Engineering (Structural/MEP)</option>
+                    <option value="Construction/General Contracting">Construction/General Contracting</option>
+                    <option value="Specialist Subcontractor">Specialist Subcontractor</option>
+                    <option value="Developer/Owner">Developer/Owner</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div class="as-form-error">Please select a sector</div>
+            </div>
+            
+            <!-- Company Size Dropdown -->
+            <div class="as-form-field">
+                <label class="as-form-label">Company Size (Employees)</label>
+                <select name="companySize" class="as-form-select">
+                    <option value="">Select...</option>
+                    <option value="0-20">0-20</option>
+                    <option value="20-50">20-50</option>
+                    <option value="51-100">51-100</option>
+                    <option value="101-250">101-250</option>
+                    <option value="251-500">251-500</option>
+                    <option value="500+">500+</option>
+                </select>
+            </div>
+            
+            <!-- Annual Revenue Dropdown (Optional) -->
+            <div class="as-form-field">
+                <label class="as-form-label">Annual Revenue</label>
+                <select name="annualRevenue" class="as-form-select">
+                    <option value="">Select...</option>
+                    <option value="Under £2M">Under £2M</option>
+                    <option value="Under £5M">Under £5M</option>
+                    <option value="£5M - £20M">£5M - £20M</option>
+                    <option value="£20M - £50M">£20M - £50M</option>
+                    <option value="£50M - £100M">£50M - £100M</option>
+                    <option value="Over £100M">Over £100M</option>
+                </select>
+            </div>
+        </div>
+        <!-- ========================================================================
+             SECTION 2: CURRENT TECHNOLOGY LANDSCAPE
+             ======================================================================== -->
+        
+        <div class="as-form-section" data-section="2">
+            <h3 class="as-form-section-title">Current Technology Landscape</h3>
+            <p class="as-form-section-subtitle">Help us understand your tech stack</p>
+            
+            <!-- Design/BIM Software Checkboxes -->
+            <div class="as-form-field">
+                <label class="as-form-label">Which design/BIM software do you primarily use? (Check all that apply)</label>
+                <div class="as-form-checkbox-group">
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="designSoftware" value="Revit" id="sw-revit">
+                        <label for="sw-revit">Revit</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="designSoftware" value="AutoCAD" id="sw-autocad">
+                        <label for="sw-autocad">AutoCAD</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="designSoftware" value="ArchiCAD" id="sw-archicad">
+                        <label for="sw-archicad">ArchiCAD</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="designSoftware" value="Bentley/MicroStation" id="sw-bentley">
+                        <label for="sw-bentley">Bentley/MicroStation</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="designSoftware" value="Rhino/Grasshopper" id="sw-rhino">
+                        <label for="sw-rhino">Rhino/Grasshopper</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="designSoftware" value="SketchUp" id="sw-sketchup">
+                        <label for="sw-sketchup">SketchUp</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="designSoftware" value="Blender" id="sw-blender">
+                        <label for="sw-blender">Blender</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="designSoftware" value="Vectorworks" id="sw-vectorworks">
+                        <label for="sw-vectorworks">Vectorworks</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Management Tools Checkboxes -->
+            <div class="as-form-field">
+                <label class="as-form-label">Project Management Tools (Check all that apply)</label>
+                <div class="as-form-checkbox-group">
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="pmTools" value="Microsoft Project" id="pm-msproject">
+                        <label for="pm-msproject">Microsoft Project</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="pmTools" value="Primavera P6" id="pm-primavera">
+                        <label for="pm-primavera">Primavera P6</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="pmTools" value="Procore" id="pm-procore">
+                        <label for="pm-procore">Procore</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="pmTools" value="Autodesk Construction Cloud" id="pm-acc">
+                        <label for="pm-acc">Autodesk Construction Cloud</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="pmTools" value="PlanGrid" id="pm-plangrid">
+                        <label for="pm-plangrid">PlanGrid</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="pmTools" value="Deltek" id="pm-deltek">
+                        <label for="pm-deltek">Deltek</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="pmTools" value="Internal/Custom System" id="pm-custom">
+                        <label for="pm-custom">Internal/Custom System</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="pmTools" value="Other" id="pm-other">
+                        <label for="pm-other">Other</label>
+                    </div>
+                </div>
+                
+                <!-- Conditional text input for "Other" PM tool -->
+                <div class="as-form-field" id="pmOtherField" style="display: none; margin-top: 12px;">
+                    <label class="as-form-label">Please specify the other project management tool:</label>
+                    <input type="text" name="pmToolsOther" class="as-form-input" placeholder="Enter the name of your project management tool">
+                </div>
+            </div>
+            
+            <!-- Data Storage & Collaboration Checkboxes -->
+            <div class="as-form-field">
+                <label class="as-form-label">Data Storage & Collaboration (Check all that apply)</label>
+                <div class="as-form-checkbox-group">
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="dataStorage" value="On-premise servers" id="ds-onprem">
+                        <label for="ds-onprem">On-premise servers</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="dataStorage" value="Cloud storage (Dropbox, Google Drive, etc.)" id="ds-cloud">
+                        <label for="ds-cloud">Cloud storage (Dropbox, Google Drive, etc.)</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="dataStorage" value="BIM 360/ACC" id="ds-bim360">
+                        <label for="ds-bim360">BIM 360/ACC</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="dataStorage" value="SharePoint" id="ds-sharepoint">
+                        <label for="ds-sharepoint">SharePoint</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="dataStorage" value="ProjectWise" id="ds-projectwise">
+                        <label for="ds-projectwise">ProjectWise</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Integration Level Radio Group -->
+            <div class="as-form-field">
+                <label class="as-form-label">Current Data Integration Level<span class="required">*</span></label>
+                <div class="as-form-radio-group">
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="integrationLevel" value="No integration - manual data transfer between systems" id="int-none" required>
+                        <label for="int-none">No integration - manual data transfer between systems</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="integrationLevel" value="Basic integration - some automated data exchange" id="int-basic">
+                        <label for="int-basic">Basic integration - some automated data exchange</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="integrationLevel" value="Moderate integration - key systems connected" id="int-moderate">
+                        <label for="int-moderate">Moderate integration - key systems connected</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="integrationLevel" value="Advanced integration - most systems interconnected" id="int-advanced">
+                        <label for="int-advanced">Advanced integration - most systems interconnected</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="integrationLevel" value="Fully integrated - comprehensive data platform" id="int-full">
+                        <label for="int-full">Fully integrated - comprehensive data platform</label>
+                    </div>
+                </div>
+                <div class="as-form-error">Please select an integration level</div>
+            </div>
+        </div>
+        
+        <!-- ========================================================================
+             SECTION 3: CURRENT CHALLENGES & PAIN POINTS
+             ======================================================================== -->
+        
+        <div class="as-form-section" data-section="3">
+            <h3 class="as-form-section-title">Current Challenges & Pain Points</h3>
+            <p class="as-form-section-subtitle">Help us understand what's not working</p>
+            
+            <!-- Top Challenges Checkboxes -->
+            <div class="as-form-field">
+                <label class="as-form-label">Top 3 Data/Technology Challenges (Select top 3)<span class="required">*</span></label>
+                <div class="as-form-checkbox-group">
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="topChallenges" value="Data silos between departments/systems" id="ch-silos">
+                        <label for="ch-silos">Data silos between departments/systems</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="topChallenges" value="Manual data re-entry and errors" id="ch-reentry">
+                        <label for="ch-reentry">Manual data re-entry and errors</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="topChallenges" value="Lack of real-time project visibility" id="ch-visibility">
+                        <label for="ch-visibility">Lack of real-time project visibility</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="topChallenges" value="Poor collaboration between disciplines" id="ch-collab">
+                        <label for="ch-collab">Poor collaboration between disciplines</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="topChallenges" value="Inability to leverage historical project data" id="ch-historical">
+                        <label for="ch-historical">Inability to leverage historical project data</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="topChallenges" value="Version control and document management" id="ch-version">
+                        <label for="ch-version">Version control and document management</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="topChallenges" value="Reporting and analytics limitations" id="ch-analytics">
+                        <label for="ch-analytics">Reporting and analytics limitations</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="topChallenges" value="Field-to-office data disconnection" id="ch-field">
+                        <label for="ch-field">Field-to-office data disconnection</label>
+                    </div>
+                </div>
+                <div class="as-form-error">Please select at least one challenge</div>
+            </div>
+            
+            <!-- Time/Money Loss Textarea -->
+            <div class="as-form-field">
+                <label class="as-form-label">Where do you lose the most time/money? (200 words max)<span class="required">*</span></label>
+                <textarea name="timeMoneyLoss" class="as-form-textarea" maxlength="1000" required></textarea>
+                <div class="as-form-error">This field is required</div>
+            </div>
+            
+            <!-- Failed Initiatives Textarea (Optional) -->
+            <div class="as-form-field">
+                <label class="as-form-label">Failed or struggling technology initiatives in the past 2 years (Optional)</label>
+                <textarea name="failedInitiatives" class="as-form-textarea" maxlength="1000"></textarea>
+            </div>
+        </div>
+        
+        <!-- ========================================================================
+             SECTION 4: AI & AUTOMATION INTEREST
+             ======================================================================== -->
+        
+        <div class="as-form-section" data-section="4">
+            <h3 class="as-form-section-title">AI & Automation Interest</h3>
+            <p class="as-form-section-subtitle">What are your priorities?</p>
+            
+            <!-- AI Priorities Checkboxes -->
+            <div class="as-form-field">
+                <label class="as-form-label">AI/Automation Priorities (Select top 3)<span class="required">*</span></label>
+                <div class="as-form-checkbox-group">
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Automated quantity takeoffs" id="ai-takeoffs">
+                        <label for="ai-takeoffs">Automated quantity takeoffs</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Predictive project scheduling" id="ai-scheduling">
+                        <label for="ai-scheduling">Predictive project scheduling</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Cost estimation optimization" id="ai-estimation">
+                        <label for="ai-estimation">Cost estimation optimization</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Automated clash detection" id="ai-clash">
+                        <label for="ai-clash">Automated clash detection</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Document analysis and RFI prediction" id="ai-docs">
+                        <label for="ai-docs">Document analysis and RFI prediction</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Safety monitoring and compliance" id="ai-safety">
+                        <label for="ai-safety">Safety monitoring and compliance</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Resource optimization" id="ai-resources">
+                        <label for="ai-resources">Resource optimization</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Quality control automation" id="ai-quality">
+                        <label for="ai-quality">Quality control automation</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Predictive maintenance (for owners/operators)" id="ai-maintenance">
+                        <label for="ai-maintenance">Predictive maintenance (for owners/operators)</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="aiPriorities" value="Energy performance optimization" id="ai-energy">
+                        <label for="ai-energy">Energy performance optimization</label>
+                    </div>
+                </div>
+                <div class="as-form-error">Please select at least one priority</div>
+            </div>
+            
+            <!-- Current AI Usage Radio Group -->
+            <div class="as-form-field">
+                <label class="as-form-label">Current AI/ML Usage<span class="required">*</span></label>
+                <div class="as-form-radio-group">
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="currentAiUsage" value="Not using any AI/ML" id="ai-none" required>
+                        <label for="ai-none">Not using any AI/ML</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="currentAiUsage" value="Exploring options" id="ai-exploring">
+                        <label for="ai-exploring">Exploring options</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="currentAiUsage" value="Running pilots" id="ai-pilots">
+                        <label for="ai-pilots">Running pilots</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="currentAiUsage" value="Some production use" id="ai-some">
+                        <label for="ai-some">Some production use</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="currentAiUsage" value="Extensive use" id="ai-extensive">
+                        <label for="ai-extensive">Extensive use</label>
+                    </div>
+                </div>
+                <div class="as-form-error">Please select current AI usage</div>
+            </div>
+            
+            <!-- Digital Twin Interest Radio Group -->
+            <div class="as-form-field">
+                <label class="as-form-label">Digital Twin Interest<span class="required">*</span></label>
+                <div class="as-form-radio-group">
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="digitalTwinInterest" value="Not familiar with digital twins" id="dt-unfamiliar" required>
+                        <label for="dt-unfamiliar">Not familiar with digital twins</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="digitalTwinInterest" value="Researching the concept" id="dt-researching">
+                        <label for="dt-researching">Researching the concept</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="digitalTwinInterest" value="Planning implementation" id="dt-planning">
+                        <label for="dt-planning">Planning implementation</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="digitalTwinInterest" value="Pilot project underway" id="dt-pilot">
+                        <label for="dt-pilot">Pilot project underway</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="digitalTwinInterest" value="Actively using digital twins" id="dt-using">
+                        <label for="dt-using">Actively using digital twins</label>
+                    </div>
+                </div>
+                <div class="as-form-error">Please select digital twin interest</div>
+            </div>
+        </div>
+        
+        <!-- ========================================================================
+             SECTION 5: DECISION MAKING & TIMELINE
+             ======================================================================== -->
+        
+        <div class="as-form-section" data-section="5">
+            <h3 class="as-form-section-title">Decision Making & Timeline</h3>
+            <p class="as-form-section-subtitle">Help us understand your decision process</p>
+            
+            <!-- Budget Range Dropdown -->
+            <div class="as-form-field">
+                <label class="as-form-label">Budget Range for Digital Transformation (Annual)</label>
+                <select name="budgetRange" class="as-form-select">
+                    <option value="">Select...</option>
+                    <option value="Under £25K">Under £25K</option>
+                    <option value="£25K - £50K">£25K - £50K</option>
+                    <option value="£50K - £100K">£50K - £100K</option>
+                    <option value="£100K - £250K">£100K - £250K</option>
+                    <option value="Over £250K">Over £250K</option>
+                    <option value="Not yet determined">Not yet determined</option>
+                </select>
+            </div>
+            
+            <!-- Implementation Timeline Radio Group -->
+            <div class="as-form-field">
+                <label class="as-form-label">Implementation Timeline<span class="required">*</span></label>
+                <div class="as-form-radio-group">
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="implementationTimeline" value="Immediate (within 3 months)" id="timeline-immediate" required>
+                        <label for="timeline-immediate">Immediate (within 3 months)</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="implementationTimeline" value="Short-term (3-6 months)" id="timeline-short">
+                        <label for="timeline-short">Short-term (3-6 months)</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="implementationTimeline" value="Medium-term (6-12 months)" id="timeline-medium">
+                        <label for="timeline-medium">Medium-term (6-12 months)</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="implementationTimeline" value="Long-term (12+ months)" id="timeline-long">
+                        <label for="timeline-long">Long-term (12+ months)</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="implementationTimeline" value="Exploratory only" id="timeline-exploratory">
+                        <label for="timeline-exploratory">Exploratory only</label>
+                    </div>
+                </div>
+                <div class="as-form-error">Please select implementation timeline</div>
+            </div>
+            
+            <!-- Decision Making Process Radio Group -->
+            <div class="as-form-field">
+                <label class="as-form-label">Decision Making Process<span class="required">*</span></label>
+                <div class="as-form-radio-group">
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="decisionMaking" value="I am the primary decision maker" id="decision-primary" required>
+                        <label for="decision-primary">I am the primary decision maker</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="decisionMaking" value="I influence the decision" id="decision-influence">
+                        <label for="decision-influence">I influence the decision</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="decisionMaking" value="Part of decision committee" id="decision-committee">
+                        <label for="decision-committee">Part of decision committee</label>
+                    </div>
+                    <div class="as-form-radio-item">
+                        <input type="radio" name="decisionMaking" value="Making recommendations to leadership" id="decision-recommend">
+                        <label for="decision-recommend">Making recommendations to leadership</label>
+                    </div>
+                </div>
+                <div class="as-form-error">Please select decision making process</div>
+            </div>
+            
+            <!-- Other Stakeholders Textarea -->
+            <div class="as-form-field">
+                <label class="as-form-label">Other Stakeholders to Include (Names and roles)</label>
+                <textarea name="otherStakeholders" class="as-form-textarea" placeholder="e.g. John Smith - CTO, Jane Doe - Operations Director"></textarea>
+            </div>
+        </div>
+        
+        <!-- ========================================================================
+             SECTION 6: ASSESSMENT GOALS
+             ======================================================================== -->
+        
+        <div class="as-form-section" data-section="6">
+            <h3 class="as-form-section-title">Assessment Goals</h3>
+            <p class="as-form-section-subtitle">What do you hope to achieve?</p>
+            
+            <!-- Assessment Goals Checkboxes -->
+            <div class="as-form-field">
+                <label class="as-form-label">What do you hope to gain from this assessment? (Check all that apply)<span class="required">*</span></label>
+                <div class="as-form-checkbox-group">
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="assessmentGoals" value="Understand our digital maturity level" id="goal-maturity">
+                        <label for="goal-maturity">Understand our digital maturity level</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="assessmentGoals" value="Identify quick wins for improvement" id="goal-wins">
+                        <label for="goal-wins">Identify quick wins for improvement</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="assessmentGoals" value="Build business case for investment" id="goal-business">
+                        <label for="goal-business">Build business case for investment</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="assessmentGoals" value="Compare options and approaches" id="goal-compare">
+                        <label for="goal-compare">Compare options and approaches</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="assessmentGoals" value="Find right technology partners" id="goal-partners">
+                        <label for="goal-partners">Find right technology partners</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="assessmentGoals" value="Create implementation roadmap" id="goal-roadmap">
+                        <label for="goal-roadmap">Create implementation roadmap</label>
+                    </div>
+                    <div class="as-form-checkbox-item">
+                        <input type="checkbox" name="assessmentGoals" value="Benchmark against competitors" id="goal-benchmark">
+                        <label for="goal-benchmark">Benchmark against competitors</label>
+                    </div>
+                </div>
+                <div class="as-form-error">Please select at least one goal</div>
+            </div>
+            
+            <!-- Specific Questions Textarea (Optional) -->
+            <div class="as-form-field">
+                <label class="as-form-label">Specific Questions or Areas of Focus (Optional)</label>
+                <textarea name="specificQuestions" class="as-form-textarea" placeholder="Tell us about any specific concerns or areas you'd like us to focus on..."></textarea>
+            </div>
+            
+            <!-- How Did You Hear About Us Dropdown -->
+            <div class="as-form-field">
+                <label class="as-form-label">How did you hear about us?</label>
+                <select name="heardAbout" class="as-form-select">
+                    <option value="">Select...</option>
+                    <option value="Web search">Web search</option>
+                    <option value="Industry publication">Industry publication</option>
+                    <option value="Conference/Event">Conference/Event</option>
+                    <option value="Referral">Referral</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Substack">Substack</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- ========================================================================
+             SECTION 7: REVIEW & SUBMIT
+             ======================================================================== -->
+        
+        <div class="as-form-section" data-section="7">
+            <h3 class="as-form-section-title">Review & Submit</h3>
+            <p class="as-form-section-subtitle">Please review your information before submitting</p>
+            
+            <!-- Dynamic Review Content Container -->
+            <div id="formReviewContent"></div>
+            
+            <!-- Benefits Information Box -->
+            <div style="background: #D4F4DD; border-left: 4px solid #2D8659; padding: 20px; border-radius: 8px; margin-top: 24px">
+                <p style="margin: 0; font-weight: 600; color: #1d1d1f">By submitting this assessment, you'll receive:</p>
+                <ul style="margin: 12px 0 0; padding-left: 20px; color: #1d1d1f">
+                    <li>A comprehensive AI Readiness Report</li>
+                    <li>Priority roadmap with ROI projections</li>
+                    <li>45-minute strategy session to discuss findings</li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    
+    <!-- ========================================================================
+         NAVIGATION BUTTONS
+         ======================================================================== -->
+    
+    <div class="as-form-navigation">
+        <button type="button" class="as-form-btn as-form-btn-back" id="formBackBtn" onclick="previousFormSection()">Back</button>
+        <button type="button" class="as-form-btn as-form-btn-next" id="formNextBtn" onclick="nextFormSection()">Save & Continue</button>
+        <button type="button" class="as-form-btn as-form-btn-submit" id="formSubmitBtn" onclick="submitFinalForm()" style="display: none;">Submit Assessment</button>
+    </div>
+</div>
+
+<!-- ============================================================================
+     CHARACTER COUNT & FILE INFO
+     ============================================================================ -->
+<!-- 
+Current character count: 49,727 characters
+Target limit: 50,000 characters per Webflow custom code embed
+Status: ✅ UNDER LIMIT (99.5% of limit used)
+-->
+
+<!-- 
+================================================================================
+END OF PART 1 - HTML & CSS
+================================================================================
+Part 2 (JavaScript) must be embedded separately in Webflow
+================================================================================
+-->
+

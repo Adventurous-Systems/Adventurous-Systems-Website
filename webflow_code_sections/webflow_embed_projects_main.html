@@ -1,0 +1,1028 @@
+<!-- Adventurous Systems - Projects Section & Learn More Modal -->
+
+<style>
+    /* Projects Section Styles */
+    .as-projects-section {
+        width: 100%;
+        padding: 50px 24px;
+        background-color: #ffffff;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .as-projects-container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .as-projects-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .as-projects-label {
+        font-size: 13px;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: #1d1d1f;
+        margin-bottom: 16px;
+        font-weight: 500;
+    }
+
+    .as-projects-title {
+        font-size: clamp(28px, 3vw, 36px);
+        font-weight: 600;
+        color: #1d1d1f;
+        margin: 0 0 12px;
+        line-height: 1.2;
+    }
+
+    .as-projects-subtitle {
+        font-size: 16px;
+        color: #4a4a4a;
+        font-weight: 400;
+        line-height: 1.55;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    /* Featured AI Readiness Banner */
+    .as-featured-banner {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        margin-bottom: 48px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px #D4F4DD; 
+    }
+
+    .as-featured-content {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 32px;
+        align-items: center;
+        padding: 40px;
+    }
+
+    @media (max-width: 860px) {
+        .as-featured-content {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 28px 24px;
+        }
+    }
+
+    .as-featured-text h3 {
+        margin: 0 0 12px;
+        font-weight: 700;
+        color: #1d1d1f;
+        font-size: clamp(24px, 3.5vw, 38px);
+        line-height: 1.2;
+    }
+
+    .as-featured-lede {
+        margin: 0 0 20px;
+        color: #6b7280;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .as-availability-badge {
+        display: inline-block;
+        background: #D4F4DD;
+        color: #2D8659;
+        /* border: 1px solid #65fa37; */
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin: 0 0 16px;
+        font-weight: 600;
+    }
+
+    .as-featured-benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .as-featured-benefits li {
+        background: #f6f7f9;
+        border: 1px solid #e6e6e6;
+        color: #1d1d1f;
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .as-featured-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .as-featured-btn {
+        display: inline-block;
+        padding: 14px 24px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+    }
+
+    .as-featured-btn.primary {
+        background: #111;
+        color: #fff;
+    }
+
+    .as-featured-btn.primary:hover {
+        background: #333;
+        transform: translateY(-2px);
+    }
+
+    .as-featured-btn.secondary {
+        background: transparent;
+        color: #111;
+        border: 1px solid #111;
+    }
+
+    .as-featured-btn.secondary:hover {
+        background: #f6f7f9;
+    }
+
+    .as-featured-art {
+        position: relative;
+        min-height: 260px;
+        border-left: 6px solid #D4F4DD;
+        border-radius: 12px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
+    .as-featured-art::after {
+        content: "";
+        position: absolute;
+        inset: 16px;
+        border: 1px dashed #e0d2b7;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 860px) {
+        .as-featured-art {
+            min-height: 200px;
+        }
+    }
+
+    /* Pilots Section Divider */
+    .as-pilots-divider {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .as-pilots-subtitle {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1d1d1f;
+        margin: 0;
+    }
+
+    .as-projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    @media (min-width: 1200px) {
+        .as-projects-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 1199px) and (min-width: 768px) {
+        .as-projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .as-projects-section {
+            padding: 30px 20px;
+        }
+        
+        .as-projects-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .as-projects-title {
+            font-size: 32px;
+        }
+    }
+
+    .as-project-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 3px solid #999;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .as-project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .as-project-image {
+        background: #e5e5e5;
+        border-radius: 12px;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+        font-size: 16px;
+        margin-bottom: 16px;
+        border: 2px solid #d0d0d0;
+    }
+
+    .as-project-status {
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+
+    .as-status-open {
+        background: #FFE5CC;
+        color: #FF8C00;
+    }
+
+    .as-status-active {
+        background: #D4F4DD;
+        color: #2D8659;
+    }
+
+    .as-status-partners {
+        background: #FFE5CC;
+        color: #FF8C00;
+    }
+
+    .as-status-discovery {
+        background: #D6E8FF;
+        color: #4169E1;
+    }
+
+    .as-project-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+        line-height: 1.3;
+        min-height: 56px;
+    }
+
+    .as-project-description-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #666;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    .as-project-description {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .as-project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .as-project-tag {
+        background: #f0f0f0;
+        color: #666;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        border: 1px solid #ddd;
+    }
+
+    .as-project-cta {
+        background: #000;
+        color: #fff;
+        border: none;
+        padding: 16px 24px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        width: 100%;
+        text-align: center;
+    }
+
+    .as-project-cta:hover {
+        background: #333;
+        transform: scale(1.02);
+    }
+
+    .as-project-cta:active {
+        transform: scale(0.98);
+    }
+
+    /* AI Readiness Modal Styles */
+    .as-modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 10000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .as-modal-overlay.active {
+        opacity: 1;
+    }
+
+    .as-modal-container {
+        max-width: 900px;
+        margin: 60px auto;
+        background: #ffffff;
+        border-radius: 20px;
+        position: relative;
+        transform: translateY(30px);
+        transition: transform 0.3s ease;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .as-modal-overlay.active .as-modal-container {
+        transform: translateY(0);
+    }
+
+    .as-modal-header {
+        position: sticky;
+        top: 0;
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 20px 40px;
+        border-radius: 20px 20px 0 0;
+        z-index: 100;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .as-modal-close {
+        background: transparent;
+        border: none;
+        font-size: 32px;
+        color: #666;
+        cursor: pointer;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+    }
+
+    .as-modal-close:hover {
+        background: #f0f0f0;
+        color: #000;
+    }
+
+    .as-modal-content {
+        padding: 40px 60px 120px;
+        color: #1d1d1f;
+    }
+
+    .as-modal-content h2 {
+        font-size: clamp(28px, 4vw, 42px);
+        font-weight: 700;
+        color: #1d1d1f;
+        margin: 0 0 16px;
+        line-height: 1.2;
+    }
+
+    .as-modal-content h3 {
+        font-size: clamp(22px, 3vw, 32px);
+        font-weight: 700;
+        color: #1d1d1f;
+        margin: 48px 0 16px;
+        line-height: 1.25;
+    }
+
+    .as-modal-content h4 {
+        font-size: clamp(18px, 2.5vw, 24px);
+        font-weight: 600;
+        color: #1d1d1f;
+        margin: 32px 0 12px;
+        line-height: 1.3;
+    }
+
+    .as-modal-content p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #4a4a4a;
+        margin: 0 0 20px;
+    }
+
+    .as-modal-content strong {
+        font-weight: 700;
+        color: #1d1d1f;
+    }
+
+    .as-modal-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+    }
+
+    .as-modal-content ul li {
+        padding-left: 28px;
+        position: relative;
+        margin-bottom: 12px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #4a4a4a;
+    }
+
+    .as-modal-content ul li::before {
+        content: "•";
+        position: absolute;
+        left: 10px;
+        color: #2D8659;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .as-modal-divider {
+        border: none;
+        border-top: 2px solid #e5e7eb;
+        margin: 48px 0;
+    }
+
+    .as-modal-highlight {
+        background: #D4F4DD;
+        border-left: 4px solid #2D8659;
+        padding: 24px;
+        border-radius: 8px;
+        margin: 32px 0;
+    }
+
+    .as-modal-highlight p {
+        margin: 0;
+        color: #1d1d1f;
+        font-weight: 500;
+    }
+
+    .as-modal-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 32px 0;
+    }
+
+    .as-modal-stat {
+        background: #f6f7f9;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+    }
+
+    .as-modal-stat strong {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #2D8659;
+    }
+
+    .as-modal-footer {
+        position: sticky;
+        bottom: 0;
+        background: #ffffff;
+        border-top: 1px solid #e5e7eb;
+        padding: 24px 60px;
+        border-radius: 0 0 20px 20px;
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .as-modal-cta {
+        display: inline-block;
+        padding: 16px 32px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        white-space: nowrap;
+    }
+
+    .as-modal-cta.primary {
+        background: #111;
+        color: #fff;
+    }
+
+    .as-modal-cta.primary:hover {
+        background: #333;
+        transform: translateY(-2px);
+    }
+
+    .as-modal-cta.secondary {
+        background: #2D8659;
+        color: #fff;
+    }
+
+    .as-modal-cta.secondary:hover {
+        background: #246e47;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .as-modal-container {
+            margin: 20px;
+            border-radius: 16px;
+        }
+
+        .as-modal-header {
+            padding: 16px 24px;
+        }
+
+        .as-modal-content {
+            padding: 32px 24px 100px;
+        }
+
+        .as-modal-footer {
+            padding: 16px 24px;
+            flex-direction: column;
+        }
+
+        .as-modal-cta {
+            width: 100%;
+            text-align: center;
+        }
+
+        .as-modal-stats {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    body.as-modal-open {
+        overflow: hidden;
+    }
+</style>
+
+<div class="as-projects-section">
+    <div class="as-projects-container">
+        <div class="as-projects-header">
+            <div class="as-projects-label">SERVICES & PROJECTS</div>
+            <h2 class="as-projects-title">Available Services</h2>
+            <p class="as-projects-subtitle">Research-backed advisory and integrations to unify AEC data and prove outcomes.</p>
+        </div>
+        
+        <!-- Featured AI Readiness Banner -->
+        <div class="as-featured-banner">
+            <div class="as-featured-content">
+                <div class="as-featured-text">
+                    <div class="as-availability-badge">Only 5 Assessments / Month</div>
+                    <h3>Your Building Data Process is Broken. We Can Fix It.</h3>
+                    <p class="as-featured-lede">Get a FREE 2-Week AI & Data Integration Readiness Assessment — discover exactly where your AEC firm stands.</p>
+                    <ul class="as-featured-benefits">
+                        <li>Map data flows & identify gaps</li>
+                        <li>Get AI-Ready across six dimensions</li>
+                        <li>Get help mapping your priorities with ROI projections</li>
+                        <li>Turn insights into actionable results</li>
+                    </ul>
+                    <div class="as-featured-ctas">
+                        <a href="https://calendar.app.google/jAchgNPohYxuodYv5" target="_blank" class="as-featured-btn primary">Book Free Strategy Session</a>
+                        <button class="as-featured-btn secondary" onclick="asHandleCTA('learn-more')">Learn More</button>
+                    </div>
+                </div>
+
+                <img src="https://cdn.prod.website-files.com/679f69f3dfc4c1b1c0ddff14/68ef99ccfc3e920d1bccbfde_AI_AEC_1_no_watermark.jpg" alt="AI AEC Data Integration Visualization" class="as-featured-art">
+
+                
+            </div>
+        </div>
+        
+        <!-- Active Pilots Section -->
+        <div class="as-pilots-divider">
+            <h2 class="as-projects-title">Active Pilots & Builds</h3>
+            <p class="as-projects-subtitle">Research-backed pilots and builds with partners.</p>
+        </div>
+
+        <div class="as-projects-grid">
+            <!-- Digital Twin Blockchain Pilot -->
+            <div class="as-project-card">
+                <div class="as-project-image" style="background-image: url('https://cdn.prod.website-files.com/679f69f3dfc4c1b1c0ddff14/68e41e0913fe963b659373a0_digital-twin-blockchain-pilot.png'); background-size: cover; background-position: center;"></div>
+                <span class="as-project-status as-status-active">ACTIVE</span>
+                <h3 class="as-project-title">Digital Twin Blockchain Pilot</h3>
+                <p class="as-project-description-title">Space- and Web3-enabled coordination for verifiable AEC delivery</p>
+                <p class="as-project-description">Using satellite data, IoT, AI, and blockchain, our pilot automates approvals and payments for cutting rework, verifying carbon savings, and speeding up retrofit delivery.</p>
+                <div class="as-project-tags">
+                    <span class="as-project-tag">Digital Twin</span>
+                    <span class="as-project-tag">Energy Efficiency</span>
+                    <span class="as-project-tag">Blockchain</span>
+                    <span class="as-project-tag">Linked Data</span>
+                </div>
+                <button class="as-project-cta" onclick="asHandleCTA('start-pilot')">START PILOT</button>
+            </div>
+
+            <!-- TRACE Marketplace Pilot -->
+            <div class="as-project-card">
+                <div class="as-project-image" style="background-image: url('https://cdn.prod.website-files.com/679f69f3dfc4c1b1c0ddff14/68e41e56647879796164b9c1_trace-marketplace-pilot.png'); background-size: cover; background-position: center;"></div>
+                <span class="as-project-status as-status-partners">OPEN TO PARTNERS</span>
+                <h3 class="as-project-title">TRACE Marketplace Pilot</h3>
+                <p class="as-project-description-title">Blockchain-enabled material passports & circular supply for construction materials</p>
+                <p class="as-project-description">TRACE connects reuse hubs, demolition contractors, and builders through blockchain-verified material passports — turning waste into traceable, reusable resources.</p>
+                <div class="as-project-tags">
+                    <span class="as-project-tag">Material Passports</span>
+                    <span class="as-project-tag">Payments</span>
+                    <span class="as-project-tag">Reuse</span>
+                    <span class="as-project-tag">Circular Economy</span>
+                </div>
+                <button class="as-project-cta" onclick="asHandleCTA('join-trace')">JOIN TRACE</button>
+            </div>
+
+            <!-- DeFab Pilot -->
+            <div class="as-project-card">
+                <div class="as-project-image" style="background-image: url('https://cdn.prod.website-files.com/679f69f3dfc4c1b1c0ddff14/68e41ef964d4b842d79de970_defab-pilot.png'); background-size: cover; background-position: center;"></div>
+                <span class="as-project-status as-status-discovery">IN DISCOVERY</span>
+                <h3 class="as-project-title">DeFab Pilot</h3>
+                <p class="as-project-description-title">Decentralised 3D printing for verifiable construction supply chains</p>
+                <p class="as-project-description">Localised, on-demand fabrication using blockchain and AI to verify materials, automate provenance, and advance circular 3D construction.</p>
+                <div class="as-project-tags">
+                    <span class="as-project-tag">3D Printing</span>
+                    <span class="as-project-tag">Manufacturing</span>
+                    <span class="as-project-tag">Circularity</span>
+                    <span class="as-project-tag">Blockchain</span>
+                </div>
+                <button class="as-project-cta" onclick="asHandleCTA('join-discovery-defab')">JOIN DISCOVERY</button>
+            </div>
+
+            <!-- Blockchain Weaving Pilot -->
+            <div class="as-project-card">
+                <div class="as-project-image" style="background-image: url('https://cdn.prod.website-files.com/679f69f3dfc4c1b1c0ddff14/68e8f004f2b132f71e6bfdfd_blockchain-weaving-pilot.png'); background-size: cover; background-position: center;"></div>
+                <span class="as-project-status as-status-discovery">IN DISCOVERY</span>
+                <h3 class="as-project-title">Blockchain Weaving Pilot</h3>
+                <p class="as-project-description-title">Encoding cultural heritage through blockchain and parametric design</p>
+                <p class="as-project-description">Preserving Al Sadu weaving heritage through blockchain and parametric design — turning traditional craft into verifiable digital memory.</p>
+                <div class="as-project-tags">
+                    <span class="as-project-tag">Preservation</span>
+                    <span class="as-project-tag">NFTs</span>
+                    <span class="as-project-tag">Cultural Heritage</span>
+                    <span class="as-project-tag">Parametric Design</span>
+                </div>
+                <button class="as-project-cta" onclick="asHandleCTA('join-discovery-weaving')">JOIN DISCOVERY</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI Readiness Modal - Info Content Only -->
+<div class="as-modal-overlay" id="aiReadinessModal">
+    <div class="as-modal-container">
+        <div class="as-modal-header">
+            <button class="as-modal-close" onclick="closeAIReadinessModal()" aria-label="Close modal">&times;</button>
+        </div>
+        
+        <!-- Info Content View -->
+        <div class="as-modal-content" id="modalInfoContent">
+            <!-- Hero Section -->
+            <h2>Your Building Data Process is Broken. We Can Fix It.</h2>
+            <p><strong>The construction industry loses £54 billion annually to poor data coordination, while a £191 billion annual profit pool awaits disrupters.</strong></p>
+            <p><strong>How much is it costing you?</strong></p>
+            <p>Get your <strong>FREE 2-Week AI & Data Integration Readiness Assessment</strong> and discover exactly where your AEC firm stands on the digital transformation journey.</p>
+
+            <hr class="as-modal-divider">
+
+            <!-- The Hidden Cost of Disconnected Data -->
+            <h3>The Hidden Cost of Disconnected Data</h3>
+            <p>Every day, your teams waste hours on:</p>
+            <ul>
+                <li><strong>Manual data re-entry</strong> between BIM, project management, and financial systems</li>
+                <li><strong>Version control chaos</strong> that leads to costly rework</li>
+                <li><strong>Lost insights</strong> buried in siloed systems</li>
+                <li><strong>Delayed decisions</strong> waiting for information to flow between departments</li>
+            </ul>
+
+            <p><strong>Meanwhile, leading firms are using Artificial Intelligence and integrated data to:</strong></p>
+            <ul>
+                <li>Predict project delays 6 weeks in advance</li>
+                <li>Reduce RFIs by 40% through automated clash detection</li>
+                <li>Cut estimation time by 50% with machine learning</li>
+                <li>Optimise resource allocation with predictive analytics</li>
+            </ul>
+
+            <hr class="as-modal-divider">
+
+            <!-- Your Free 2-Week AI Readiness Assessment -->
+            <h3>Your Free 2-Week AI Readiness Assessment</h3>
+            
+            <h4>What You'll Receive:</h4>
+            
+            <p><strong>Week 1: Discovery & Analysis</strong></p>
+            <ul>
+                <li>Deep-dive interviews with your key stakeholders</li>
+                <li>Complete mapping of your current software ecosystem</li>
+                <li>Data flow analysis identifying bottlenecks and inefficiencies</li>
+                <li>Process mapping and evaluation highlighting automation opportunities</li>
+            </ul>
+
+            <p><strong>Week 2: Strategic Recommendations</strong></p>
+            <ul>
+                <li><strong>Executive Report</strong> with your AI + automation Readiness Score across 6 critical dimensions</li>
+                <li><strong>Priority Roadmap</strong> showing quick wins and strategic initiatives</li>
+                <li><strong>Projections</strong> for recommended improvements</li>
+                <li><strong>Strategy Session</strong> to discuss findings and next steps</li>
+            </ul>
+
+            <h4>Delivered Value:</h4>
+            <p>You gain:</p>
+            <ul>
+                <li>Clear understanding of your firm's digital maturity level</li>
+                <li>Recommendations you can implement immediately</li>
+                <li>Benchmarking against best practices</li>
+                <li>Specific automation use cases tailored to your workflows</li>
+            </ul>
+
+            <div class="as-modal-highlight">
+                <p><strong>No obligations. No hidden costs. Just insights.</strong></p>
+            </div>
+
+            <hr class="as-modal-divider">
+
+            <!-- Why Your Firm Needs This Assessment Now -->
+            <h3>The AEC industry is transforming, fast.</h3>
+            <h4>Why Your Firm Needs This Assessment Now</h4>
+            
+            <div class="as-modal-stats">
+                <div class="as-modal-stat">
+                    <strong>73%</strong>
+                    <p>of top AEC firms are actively implementing AI solutions</p>
+                </div>
+                <div class="as-modal-stat">
+                    <strong>2027</strong>
+                    <p>Digital twins will be standard on major projects</p>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>73% of top AEC firms</strong> are actively implementing AI solutions</li>
+                <li><strong>Digital twins</strong> will be standard on major projects by 2027</li>
+                <li><strong>Customers increasingly demand</strong> frequent updates through real-time project data and predictive insights</li>
+                <li><strong>Early adopters remain competitive through improved quality and increased value to customers.</strong></li>
+            </ul>
+
+            <h4>Every Month of Delay Costs You:</h4>
+            <ul>
+                <li>Lost productivity from manual processes</li>
+                <li>Competitive disadvantage in winning projects</li>
+                <li>Higher risk of project overruns</li>
+                <li>Missed opportunities for operational savings</li>
+            </ul>
+
+            <hr class="as-modal-divider">
+
+            <!-- What Makes Our Assessment Different -->
+            <h3>What Makes Our Assessment Different</h3>
+            
+            <h4>AEC-Native Expertise</h4>
+            <p>We're not generic IT consultants. We are AEC engineers, with a deep expertise in digital automation.</p>
+            <p>Our team includes:</p>
+            <ul>
+                <li>Published researchers in computational design and digital twins</li>
+                <li>Engineers who've delivered £50M+ projects</li>
+                <li>Data scientists specialising in construction analytics</li>
+                <li>Expertise in building our own digital tools and digital processes</li>
+            </ul>
+
+            <h4>Research-Backed Methodology</h4>
+            <ul>
+                <li>Peer-reviewed assessment framework</li>
+                <li>Proven across 20+ AEC implementations</li>
+                <li>Continuously updated with industry best practices</li>
+            </ul>
+
+            <h4>Actionable, Not Theoretical</h4>
+            <ul>
+                <li>Specific recommendations for your tech stack</li>
+                <li>Clear prioritisation based on ROI</li>
+                <li>Templates and tools you can use immediately</li>
+            </ul>
+
+            <hr class="as-modal-divider">
+
+            <!-- Who Should Apply -->
+            <h3>Who Should Apply</h3>
+            <p>This assessment is designed for:</p>
+            <ul>
+                <li><strong>Architecture firms</strong> struggling with BIM-to-documentation workflows</li>
+                <li><strong>Engineering consultancies</strong> managing multi-disciplinary coordination</li>
+                <li><strong>Construction companies</strong> seeking better project controls and field data integration</li>
+                <li><strong>Firms considering</strong> digital twin implementation or AI adoption</li>
+            </ul>
+            <p><strong>We're looking for forward-thinking organisations ready to lead, not follow.</strong></p>
+
+            <hr class="as-modal-divider">
+
+            <!-- The Process is Simple -->
+            <h3>The Process is Simple</h3>
+            <ol style="list-style: decimal; padding-left: 28px;">
+                <li style="margin-bottom: 12px;"><strong>Book Free Strategy Session</strong> (1 minute) - Schedule your introductory call to get started.</li>
+                <li style="margin-bottom: 12px;"><strong>Complete Readiness Form</strong> (10-15 minutes) - Share key details about your firm and data workflows.</li>
+                <li style="margin-bottom: 12px;"><strong>Discovery Session Call</strong> (45 minutes) - We explore your challenges and goals.</li>
+                <li style="margin-bottom: 12px;"><strong>Assessment Delivery</strong> (2 weeks) - We analyse your systems and prepare recommendations.</li>
+                <li style="margin-bottom: 12px;"><strong>Strategic Session Call</strong> (45 minutes) - We present findings and outline next steps.</li>
+            </ol>
+
+            <div class="as-modal-highlight">
+                <p><strong>Only 5 assessments available per month to ensure quality.</strong></p>
+            </div>
+        
+            <div class="as-modal-footer">
+                <a href="https://calendar.app.google/jAchgNPohYxuodYv5" target="_blank" class="as-modal-cta primary">Book Free Strategy Session</a>
+            </div>
+        </div>
+        <!-- End Info Content View -->
+        
+    </div>
+    <!-- End Modal Container -->
+</div>
+<!-- End Modal Overlay -->
+
+<script>
+    // AI Readiness Modal Functions
+    function openAIReadinessModal() {
+        const modal = document.getElementById('aiReadinessModal');
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.classList.add('as-modal-open');
+            
+            // Trigger animation after display
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+            
+            // Scroll modal to top
+            modal.scrollTop = 0;
+        }
+    }
+
+    function closeAIReadinessModal() {
+        const modal = document.getElementById('aiReadinessModal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.classList.remove('as-modal-open');
+            
+            // Hide after animation
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+    }
+
+    // Modal CTA Handler (Legacy - now using direct links)
+    function asHandleModalCTA(action) {
+        console.log('AI Readiness Modal CTA clicked:', action);
+        
+        if (action === 'book-strategy-session') {
+            // Open Google Calendar booking
+            window.open('https://calendar.app.google/jAchgNPohYxuodYv5', '_blank');
+        }
+    }
+
+    // Modal Event Listeners
+    (function initModal() {
+        const modal = document.getElementById('aiReadinessModal');
+        
+        if (modal) {
+            // Close on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeAIReadinessModal();
+                }
+            });
+            
+            // Close when clicking overlay (not content)
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeAIReadinessModal();
+                }
+            });
+        }
+    })();
+
+    // CTA Button Handler for Adventurous Systems Projects
+    function asHandleCTA(action) {
+        console.log('AS Projects CTA clicked:', action);
+        
+        // Define actions for each button
+        const actions = {
+            'book-strategy-session': () => {
+                // Open Google Calendar to book a free strategy session
+                window.open('https://calendar.app.google/jAchgNPohYxuodYv5', '_blank');
+            },
+            'learn-more': () => {
+                // Open AI Readiness modal
+                openAIReadinessModal();
+            },
+            'start-pilot': () => {
+                // Digital Twin Pilot inquiry
+                window.open('https://github.com/Adventurous-Systems/CryptoTwin1', '_blank');
+            },
+            'join-trace': () => {
+                // TRACE Marketplace
+                window.open('https://trace.construction', '_blank');
+            },
+            'join-discovery-defab': () => {
+                // DeFab Pilot inquiry
+                window.open('mailto:systems@adventurous.systems?subject=DeFab Pilot Inquiry', '_blank');
+            },
+            'join-discovery-weaving': () => {
+                // Blockchain Weaving Pilot inquiry
+                window.open('mailto:systems@adventurous.systems?subject=Blockchain Weaving Pilot Inquiry', '_blank');
+            }
+        };
+
+        // Execute the corresponding action
+        if (actions[action]) {
+            actions[action]();
+        }
+    }
+
+    // Optional: Add smooth animation on scroll
+    (function() {
+        function asAnimateOnScroll() {
+            const cards = document.querySelectorAll('.as-project-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        }
+
+        // Initialize animations when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', asAnimateOnScroll);
+        } else {
+            asAnimateOnScroll();
+        }
+    })();
+</script>
+
