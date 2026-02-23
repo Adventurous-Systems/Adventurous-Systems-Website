@@ -4,6 +4,7 @@
  */
 
 import partnersData from '../components/data/partners.json';
+import { observeNewElements } from './main.js';
 
 /* ---------- Publications Data (extracted from webflow embed) ---------- */
 const publications = [
@@ -32,10 +33,63 @@ const priorityTags = ['Blockchain', 'AI', 'TRACE', 'BIM', 'DAO', 'Governance', '
 let activeTag = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+    initProjectFilters();
     renderPublicationFilters();
     renderPublications();
     renderPartners();
+    // Re-observe dynamically rendered elements for fade-in animation
+    observeNewElements();
 });
+
+/* ---------- Project Filters ---------- */
+function initProjectFilters() {
+    const filterBtns = document.querySelectorAll('#project-filters .filter-pill');
+    const sections = document.querySelectorAll('.project-section');
+    const dividers = document.querySelectorAll('.divider');
+
+    if (filterBtns.length === 0) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            filterBtns.forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            // Show/hide sections
+            sections.forEach(section => {
+                const status = section.getAttribute('data-status') || '';
+                if (filter === 'all' || status.includes(filter)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+
+            // Hide dividers when filtering to prevent weird spacing
+            dividers.forEach(divider => {
+                divider.style.display = filter === 'all' ? 'block' : 'none';
+            });
+
+            // Re-trigger animations by removing and re-adding fade-in class
+            sections.forEach(section => {
+                if (section.style.display === 'block') {
+                    const fadeEls = section.querySelectorAll('.fade-in');
+                    fadeEls.forEach(el => {
+                        el.classList.remove('is-visible');
+                        // Small timeout to allow reflow
+                        setTimeout(() => {
+                            if (el.getBoundingClientRect().top < window.innerHeight) {
+                                el.classList.add('is-visible');
+                            }
+                        }, 50);
+                    });
+                }
+            });
+        });
+    });
+}
 
 /* ---------- Publication Filters ---------- */
 function renderPublicationFilters() {
@@ -111,9 +165,10 @@ function renderPartners() {
 
     const partners = partnersData.partners;
     grid.innerHTML = partners.map(partner => `
-    <a href="${partner.url}" target="_blank" rel="noopener noreferrer" class="partner-card fade-in"
+    <a href="${partner.link}" target="_blank" rel="noopener noreferrer" class="partner-card fade-in"
        title="${partner.name} — ${partner.role}">
-      <img src="${partner.logo}" alt="${partner.name}" class="partner-card__logo" loading="lazy">
+      <img src="${partner.logo}" alt="${partner.name}" class="partner-card__logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <span class="partner-card__initials" style="display:none; width:64px; height:64px; align-items:center; justify-content:center; font-size:20px; font-weight:700; background:var(--color-surface-muted); color:var(--color-text-primary); border-radius:50%; margin:0 auto var(--space-4); border:1px solid var(--color-border);">${partner.name.substring(0, 2).toUpperCase()}</span>
       <span class="partner-card__name">${partner.name}</span>
       <span class="partner-card__role">${partner.role}</span>
     </a>

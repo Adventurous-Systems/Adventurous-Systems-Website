@@ -4,12 +4,12 @@
  */
 
 export function initFooter() {
-    const footerEl = document.getElementById('site-footer');
-    if (!footerEl) return;
+  const footerEl = document.getElementById('site-footer');
+  if (!footerEl) return;
 
-    const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-    footerEl.innerHTML = `
+  footerEl.innerHTML = `
     <footer class="footer">
       <div class="footer__inner container">
         <div class="footer__grid">
@@ -40,6 +40,7 @@ export function initFooter() {
               <li><a href="/what-we-do.html">What We Do</a></li>
               <li><a href="/our-work.html">Our Work</a></li>
               <li><a href="/about.html">About Us</a></li>
+              <li><a href="/blog.html">Insights</a></li>
               <li><a href="/contact.html">Contact</a></li>
             </ul>
           </div>
@@ -69,8 +70,8 @@ export function initFooter() {
         <div class="footer__bottom">
           <p class="footer__copyright">© ${currentYear} Adventurous Systems Ltd — Established 2023</p>
           <div class="footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
           </div>
         </div>
       </div>

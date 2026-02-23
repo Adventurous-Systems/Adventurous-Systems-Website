@@ -47,7 +47,7 @@ function initContactForm() {
             form.reset();
         } catch (error) {
             console.error('Form submission error:', error);
-            showStatus(statusEl, 'Something went wrong. Please email us directly at hello@adventuroussystems.co.uk', 'error');
+            showStatus(statusEl, 'Something went wrong. Please email us directly at systems@adventurous.systems', 'error');
         } finally {
             submitBtn.disabled = false;
             submitBtn.textContent = 'Send Message';

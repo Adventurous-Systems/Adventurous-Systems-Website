@@ -4,17 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Our Work — Adventurous Systems</title>
     <meta name="description"
         content="Explore our active pilots, research publications, and collaborations transforming the AEC industry through blockchain, digital twins, and AI.">
     <meta property="og:title" content="Our Work — Adventurous Systems">
     <meta property="og:description"
         content="Active pilots, research publications, and collaborations transforming AEC through blockchain, digital twins, and AI.">
-    <meta property="og:image" content="/images/og-image.svg">
+    <meta property="og:image" content="/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://adventuroussystems.co.uk/our-work.html">
     <meta property="og:site_name" content="Adventurous Systems">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Work — Adventurous Systems">
+    <meta name="twitter:description"
+        content="Active pilots, research publications, and collaborations transforming AEC through blockchain, digital twins, and AI.">
+    <meta name="twitter:image" content="/images/og-image.png">
     <link rel="canonical" href="https://adventuroussystems.co.uk/our-work.html">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 
@@ -59,7 +67,24 @@
           "datePublished": "2022",
           "isbn": "978-981-19-3759-0",
           "url": "https://link.springer.com/book/10.1007/978-981-19-3759-0"
-        }
+        },
+        { "@type": "ScholarlyArticle", "name": "Classification of AI Techniques for Early Architectural Design Stages", "url": "https://www.researchgate.net/publication/382564221", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Textual & Visual Interpretation in a Text-to-Image Accelerated Architectural Design Process", "url": "https://www.researchgate.net/publication/391064641", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Spatial Interpretation in a Diffusion-powered Architectural Design Process", "url": "https://www.researchgate.net/publication/391451019", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Blockchain Weaving as Architecture", "url": "https://www.researchgate.net/publication/396186043", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Decentralising Architectural Design Through Data Governance", "url": "https://www.researchgate.net/publication/391590351", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Digital Building Logbooks on the Blockchain", "url": "https://www.researchgate.net/publication/391584150", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Application of SBTs for DAOs in Architecture", "url": "https://www.researchgate.net/publication/395124725", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Potential Value of Tokens & Token Engineering for AEC", "url": "https://www.researchgate.net/publication/372244319", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Design Dimensions for Blockchain Oracles in AEC", "url": "https://www.researchgate.net/publication/372244225", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "The Promise of Blockchain for the Construction Industry", "url": "https://www.researchgate.net/publication/363711482", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "BIM & Blockchain Integration", "url": "https://www.researchgate.net/publication/344646823", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Smart Contracts for Decentralised BIM", "url": "https://www.researchgate.net/publication/343509689", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Non-Fungible Building Components (TRACE)", "url": "https://www.researchgate.net/publication/358607327", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Topology-Generated NFTs for Circular Design (TRACE)", "url": "https://www.researchgate.net/publication/367695586", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "The Architecture DAO", "url": "https://www.researchgate.net/publication/362404374", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Invoice Smart Contracts for Design SMEs", "url": "https://www.researchgate.net/publication/354413081", "author": { "@type": "Person", "name": "Dr Theo Dounas" } },
+        { "@type": "ScholarlyArticle", "name": "Collective Digital Factories for Buildings", "url": "https://www.researchgate.net/publication/363695488", "author": { "@type": "Person", "name": "Dr Theo Dounas" } }
       ]
     }
     </script>
@@ -81,8 +106,19 @@
             </div>
         </section>
 
+        <!-- Project Filters -->
+        <div class="container"
+            style="margin-top: var(--space-8); margin-bottom: calc(var(--space-8) * -1); position: relative; z-index: 10;">
+            <div class="project-filters pub-filters" id="project-filters">
+                <button class="filter-pill is-active" data-filter="all">All</button>
+                <button class="filter-pill" data-filter="active">Active Pilot</button>
+                <button class="filter-pill" data-filter="partners">Open to Partners</button>
+                <button class="filter-pill" data-filter="discovery">In Discovery</button>
+            </div>
+        </div>
+
         <!-- Featured Project: TRACE -->
-        <section class="section" id="trace">
+        <section class="section project-section" id="trace" data-status="active partners">
             <div class="container">
                 <div class="project-case">
                     <div class="project-case__header fade-in">
@@ -171,7 +207,7 @@
         <hr class="divider container">
 
         <!-- Project: Digital Twin Blockchain Pilot -->
-        <section class="section" id="dt-blockchain">
+        <section class="section project-section" id="dt-blockchain" data-status="active">
             <div class="container">
                 <div class="project-case">
                     <div class="project-case__header fade-in">
@@ -268,7 +304,7 @@
         <hr class="divider container">
 
         <!-- Smaller Projects Grid -->
-        <section class="section section--alt" id="more-projects">
+        <section class="section section--alt project-section" id="more-projects" data-status="discovery">
             <div class="container">
                 <div class="section-header fade-in">
                     <p class="kicker">DISCOVERY & RESEARCH</p>
@@ -338,7 +374,22 @@
                 </div>
 
                 <!-- Publications grid -->
-                <div class="pub-grid" id="pub-grid"></div>
+                <div class="pub-grid" id="pub-grid">
+                    <div class="pub-card skeleton--card"
+                        style="border: 1px solid var(--color-border); padding: var(--space-6); background: var(--color-surface); border-radius: var(--radius-lg);">
+                        <div class="skeleton skeleton__title"></div>
+                        <div class="skeleton skeleton__line"></div>
+                        <div class="skeleton skeleton__line"></div>
+                        <div class="skeleton skeleton__line" style="width: 70%;"></div>
+                    </div>
+                    <div class="pub-card skeleton--card"
+                        style="border: 1px solid var(--color-border); padding: var(--space-6); background: var(--color-surface); border-radius: var(--radius-lg);">
+                        <div class="skeleton skeleton__title"></div>
+                        <div class="skeleton skeleton__line"></div>
+                        <div class="skeleton skeleton__line"></div>
+                        <div class="skeleton skeleton__line" style="width: 70%;"></div>
+                    </div>
+                </div>
 
                 <div class="text-center" style="margin-top: var(--space-8);">
                     <p class="pub-featured-link">
@@ -358,7 +409,38 @@
                 </div>
 
                 <div class="partners-grid" id="partners-grid">
-                    <!-- Populated by JS from partners.json -->
+                    <div class="partner-card skeleton--card"
+                        style="text-align: center; border: 1px solid var(--color-border); padding: var(--space-6); background: var(--color-surface-alt); border-radius: var(--radius-xl);">
+                        <div class="skeleton"
+                            style="width: 64px; height: 64px; border-radius: 50%; margin: 0 auto var(--space-4);"></div>
+                        <div class="skeleton skeleton__line"></div>
+                        <div class="skeleton skeleton__line skeleton__line--sm" style="width: 60%; margin: 0 auto;">
+                        </div>
+                    </div>
+                    <div class="partner-card skeleton--card"
+                        style="text-align: center; border: 1px solid var(--color-border); padding: var(--space-6); background: var(--color-surface-alt); border-radius: var(--radius-xl);">
+                        <div class="skeleton"
+                            style="width: 64px; height: 64px; border-radius: 50%; margin: 0 auto var(--space-4);"></div>
+                        <div class="skeleton skeleton__line"></div>
+                        <div class="skeleton skeleton__line skeleton__line--sm" style="width: 60%; margin: 0 auto;">
+                        </div>
+                    </div>
+                    <div class="partner-card skeleton--card"
+                        style="text-align: center; border: 1px solid var(--color-border); padding: var(--space-6); background: var(--color-surface-alt); border-radius: var(--radius-xl);">
+                        <div class="skeleton"
+                            style="width: 64px; height: 64px; border-radius: 50%; margin: 0 auto var(--space-4);"></div>
+                        <div class="skeleton skeleton__line"></div>
+                        <div class="skeleton skeleton__line skeleton__line--sm" style="width: 60%; margin: 0 auto;">
+                        </div>
+                    </div>
+                    <div class="partner-card skeleton--card"
+                        style="text-align: center; border: 1px solid var(--color-border); padding: var(--space-6); background: var(--color-surface-alt); border-radius: var(--radius-xl);">
+                        <div class="skeleton"
+                            style="width: 64px; height: 64px; border-radius: 50%; margin: 0 auto var(--space-4);"></div>
+                        <div class="skeleton skeleton__line"></div>
+                        <div class="skeleton skeleton__line skeleton__line--sm" style="width: 60%; margin: 0 auto;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

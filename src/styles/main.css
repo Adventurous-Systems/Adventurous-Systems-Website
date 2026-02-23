@@ -9,21 +9,36 @@
 /* ---------- CSS Custom Properties (Design Tokens) ---------- */
 :root {
   /* === Colors === */
-  --color-primary-dark: #0f172a;       /* Deep slate — hero backgrounds, nav */
-  --color-primary: #1e293b;            /* Slate — section accents */
-  --color-accent: #2D8659;             /* Green — CTAs, highlights */
-  --color-accent-light: #4ade80;       /* Light green — gradients, hover */
-  --color-accent-bg: #D4F4DD;          /* Very light green — badges, highlights */
-  --color-surface: #ffffff;            /* White — cards, content areas */
-  --color-surface-alt: #f8fafc;        /* Off-white — alternate section bg */
-  --color-surface-muted: #f1f5f9;      /* Muted surface — input bg */
-  --color-border: #e2e8f0;             /* Light border */
-  --color-border-hover: #cbd5e1;       /* Border hover */
-  --color-text-primary: #0f172a;       /* Heading text */
-  --color-text-body: #475569;          /* Body text */
-  --color-text-muted: #94a3b8;         /* Muted/meta text */
-  --color-text-inverse: #ffffff;       /* Text on dark backgrounds */
-  --color-overlay: rgba(15, 23, 42, 0.85); /* Modal overlay */
+  --color-primary-dark: #0f172a;
+  /* Deep slate — hero backgrounds, nav */
+  --color-primary: #1e293b;
+  /* Slate — section accents */
+  --color-accent: #2D8659;
+  /* Green — CTAs, highlights */
+  --color-accent-light: #4ade80;
+  /* Light green — gradients, hover */
+  --color-accent-bg: #D4F4DD;
+  /* Very light green — badges, highlights */
+  --color-surface: #ffffff;
+  /* White — cards, content areas */
+  --color-surface-alt: #f8fafc;
+  /* Off-white — alternate section bg */
+  --color-surface-muted: #f1f5f9;
+  /* Muted surface — input bg */
+  --color-border: #e2e8f0;
+  /* Light border */
+  --color-border-hover: #cbd5e1;
+  /* Border hover */
+  --color-text-primary: #0f172a;
+  /* Heading text */
+  --color-text-body: #475569;
+  /* Body text */
+  --color-text-muted: #94a3b8;
+  /* Muted/meta text */
+  --color-text-inverse: #ffffff;
+  /* Text on dark backgrounds */
+  --color-overlay: rgba(15, 23, 42, 0.85);
+  /* Modal overlay */
 
   /* Status colors */
   --color-status-active: #2D8659;
@@ -37,16 +52,26 @@
   --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  --text-xs: 0.75rem;    /* 12px */
-  --text-sm: 0.875rem;   /* 14px */
-  --text-base: 1rem;     /* 16px */
-  --text-lg: 1.125rem;   /* 18px */
-  --text-xl: 1.25rem;    /* 20px */
-  --text-2xl: 1.5rem;    /* 24px */
-  --text-3xl: 1.875rem;  /* 30px */
-  --text-4xl: 2.25rem;   /* 36px */
-  --text-5xl: 3rem;      /* 48px */
-  --text-6xl: 3.75rem;   /* 60px */
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-lg: 1.125rem;
+  /* 18px */
+  --text-xl: 1.25rem;
+  /* 20px */
+  --text-2xl: 1.5rem;
+  /* 24px */
+  --text-3xl: 1.875rem;
+  /* 30px */
+  --text-4xl: 2.25rem;
+  /* 36px */
+  --text-5xl: 3rem;
+  /* 48px */
+  --text-6xl: 3.75rem;
+  /* 60px */
 
   --leading-tight: 1.2;
   --leading-snug: 1.375;
@@ -60,18 +85,30 @@
   --tracking-widest: 0.1em;
 
   /* === Spacing === */
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
-  --space-6: 1.5rem;    /* 24px */
-  --space-8: 2rem;      /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
-  --space-24: 6rem;     /* 96px */
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.25rem;
+  /* 20px */
+  --space-6: 1.5rem;
+  /* 24px */
+  --space-8: 2rem;
+  /* 32px */
+  --space-10: 2.5rem;
+  /* 40px */
+  --space-12: 3rem;
+  /* 48px */
+  --space-16: 4rem;
+  /* 64px */
+  --space-20: 5rem;
+  /* 80px */
+  --space-24: 6rem;
+  /* 96px */
 
   /* === Layout === */
   --max-width: 1280px;
@@ -154,11 +191,17 @@ button {
   background: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 600;
   color: var(--color-text-primary);
@@ -208,8 +251,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------- Utility: Text ---------- */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
 
 .kicker {
   font-family: var(--font-body);
@@ -263,16 +311,28 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-.fade-in-delay-1 { transition-delay: 0.1s; }
-.fade-in-delay-2 { transition-delay: 0.2s; }
-.fade-in-delay-3 { transition-delay: 0.3s; }
-.fade-in-delay-4 { transition-delay: 0.4s; }
+.fade-in-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.fade-in-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.fade-in-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.fade-in-delay-4 {
+  transition-delay: 0.4s;
+}
 
 /* ---------- Responsive Breakpoints ---------- */
 @media (max-width: 1024px) {
   :root {
     --container-padding: var(--space-5);
   }
+
   .section {
     padding: var(--space-16) 0;
   }
@@ -282,6 +342,7 @@ h1, h2, h3, h4, h5, h6 {
   :root {
     --container-padding: var(--space-4);
   }
+
   .section {
     padding: var(--space-12) 0;
   }
@@ -290,5 +351,50 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
   .section {
     padding: var(--space-10) 0;
+  }
+}
+
+/* ---------- Back to Top Button ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-accent-light);
+  transform: translateY(0) scale(1.05);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: var(--space-4);
+    right: var(--space-4);
+    width: 40px;
+    height: 40px;
   }
 }

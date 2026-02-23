@@ -21,27 +21,43 @@
     margin-bottom: var(--space-8);
 }
 
-/* Service Quick-Nav */
-.service-nav {
-    display: flex;
-    gap: var(--space-3);
-    flex-wrap: wrap;
+/* Sticky Jump Nav */
+.jump-nav-container {
+    position: sticky;
+    top: 60px;
+    /* Header height approx */
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 80;
+    padding: var(--space-3) 0;
 }
 
-.service-nav__link {
-    padding: 10px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.jump-nav {
+    display: flex;
+    gap: var(--space-3);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.jump-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.jump-nav__pill {
+    white-space: nowrap;
+    padding: 8px 20px;
+    background: var(--color-surface-muted);
+    color: var(--color-text-body);
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
     transition: all var(--transition-base);
 }
 
-.service-nav__link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.4);
-    color: var(--color-text-inverse);
+.jump-nav__pill:hover {
+    background: var(--color-border-hover);
+    color: var(--color-text-primary);
 }
 
 /* ---------- Service Block ---------- */

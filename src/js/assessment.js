@@ -214,7 +214,7 @@ function loadFormProgress() {
         if (saved) {
             const p = JSON.parse(saved);
             formData = p.formData || {};
-            currentSection = p.currentSection || 1;
+            currentSection = 1; // Always start at step 1 on page load
             restoreFormFields(formData);
         }
     } catch (e) {

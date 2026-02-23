@@ -3,6 +3,9 @@
  * Initializes shared header, footer, and scroll animations.
  */
 
+/** @type {IntersectionObserver|null} */
+let fadeObserver = null;
+
 // CSS imports — Vite processes and injects these into the page
 import '../styles/main.css';
 import '../styles/components.css';
@@ -22,28 +25,38 @@ document.addEventListener('DOMContentLoaded', () => {
     initFooter();
     initScrollAnimations();
     initSmoothScroll();
+    initBackToTop();
 });
 
 /**
  * Scroll-triggered fade-in animations using IntersectionObserver.
  */
 function initScrollAnimations() {
-    const elements = document.querySelectorAll('.fade-in');
-    if (!elements.length) return;
-
-    const observer = new IntersectionObserver(
+    fadeObserver = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
+                    fadeObserver.unobserve(entry.target);
                 }
             });
         },
         { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     );
 
-    elements.forEach((el) => observer.observe(el));
+    document.querySelectorAll('.fade-in').forEach((el) => fadeObserver.observe(el));
+}
+
+/**
+ * Call this after injecting new .fade-in elements into the DOM.
+ * Dynamically rendered content (partners, publications, team) needs this.
+ */
+export function observeNewElements(container) {
+    if (!fadeObserver) return;
+    const els = container
+        ? container.querySelectorAll('.fade-in:not(.is-visible)')
+        : document.querySelectorAll('.fade-in:not(.is-visible)');
+    els.forEach((el) => fadeObserver.observe(el));
 }
 
 /**
@@ -66,6 +79,33 @@ function initSmoothScroll() {
                     behavior: 'smooth',
                 });
             }
+        });
+    });
+}
+
+/**
+ * Back to top button functionality
+ */
+function initBackToTop() {
+    const btn = document.createElement('button');
+    btn.id = 'back-to-top';
+    btn.className = 'back-to-top';
+    btn.innerHTML = '↑';
+    btn.setAttribute('aria-label', 'Back to top');
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btn.classList.add('is-visible');
+        } else {
+            btn.classList.remove('is-visible');
+        }
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
 }

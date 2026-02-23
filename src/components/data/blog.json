@@ -1,0 +1,42 @@
+{
+    "posts": [
+        {
+            "id": "building-data-for-ai",
+            "title": "BIM Without Boundaries: Building Data for AI Workflows",
+            "summary": "How to structure architectural data to make it usable by large language models and machine learning systems.",
+            "url": "https://adventuroussystems.substack.com/p/bim-without-boundaries-building-data",
+            "date": "2024-03-12",
+            "tags": [
+                "AI",
+                "BIM",
+                "Data strategy"
+            ],
+            "image": "/images/og-image.png"
+        },
+        {
+            "id": "unlocking-digital-twins",
+            "title": "Unlocking City-Scale Capabilities with Digital Twins",
+            "summary": "Exploring the challenges of coordinating complex urban systems and how verifiable digital twins can provide the solution.",
+            "url": "https://adventuroussystems.substack.com/p/unlocking-city-scale-capabilities",
+            "date": "2024-02-05",
+            "tags": [
+                "Digital Twins",
+                "Smart Cities"
+            ],
+            "image": "/images/og-image.png"
+        },
+        {
+            "id": "blockchain-for-circularity",
+            "title": "Blockchain-Enabled Material Passports for Circularity",
+            "summary": "A deep dive into the TRACE project and why trustless verification is essential for scaling the reuse of construction materials.",
+            "url": "https://adventuroussystems.substack.com/p/blockchain-enabled-material-passports",
+            "date": "2023-11-20",
+            "tags": [
+                "Blockchain",
+                "TRACE",
+                "Circular Economy"
+            ],
+            "image": "/images/og-image.png"
+        }
+    ]
+}

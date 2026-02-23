@@ -4,9 +4,11 @@
  */
 
 import teamData from '../components/data/team.json';
+import { observeNewElements } from './main.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   renderTeam();
+  observeNewElements();
 });
 
 function renderTeam() {
@@ -17,12 +19,12 @@ function renderTeam() {
   grid.innerHTML = members.map(member => `
     <div class="team-card">
       <div class="team-card__photo">
-        <img src="${member.image}" alt="${member.name}" loading="lazy">
+        <img src="${member.photo}" alt="${member.name}" loading="lazy">
       </div>
       <div class="team-card__info">
         <h3 class="team-card__name">${member.name}</h3>
         <p class="team-card__role">${member.role}</p>
-        <p class="team-card__bio">${member.bio}</p>
+        <p class="team-card__bio">${member.bioShort}${member.bioFull || ''}</p>
         ${member.linkedin ? `
           <a href="${member.linkedin}" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">
             LinkedIn ↗
