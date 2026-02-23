@@ -3,6 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
     root: '.', // project root
+    base: '/Adventurous-Systems-Website/', // Required for GitHub Pages deployment
     publicDir: 'public', // static assets (images, favicon)
     build: {
         outDir: 'dist',
