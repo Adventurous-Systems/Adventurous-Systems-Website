@@ -1,42 +1,30 @@
 {
     "posts": [
         {
-            "id": "building-data-for-ai",
-            "title": "BIM Without Boundaries: Building Data for AI Workflows",
-            "summary": "How to structure architectural data to make it usable by large language models and machine learning systems.",
-            "url": "https://adventuroussystems.substack.com/p/bim-without-boundaries-building-data",
-            "date": "2024-03-12",
-            "tags": [
-                "AI",
-                "BIM",
-                "Data strategy"
-            ],
-            "image": "/images/og-image.png"
-        },
-        {
-            "id": "unlocking-digital-twins",
-            "title": "Unlocking City-Scale Capabilities with Digital Twins",
-            "summary": "Exploring the challenges of coordinating complex urban systems and how verifiable digital twins can provide the solution.",
-            "url": "https://adventuroussystems.substack.com/p/unlocking-city-scale-capabilities",
-            "date": "2024-02-05",
+            "id": "buildings-dont-fit-in-blockchains",
+            "title": "Buildings don't fit in blockchains",
+            "summary": "How we learned to love graphs: Tokenising Buildings: A Graph-Based Approach to Digital Twins on the Blockchain",
+            "url": "https://adventuroussystems.substack.com/p/buildings-dont-fit-in-blockchains",
+            "date": "2025-11-16",
             "tags": [
                 "Digital Twins",
-                "Smart Cities"
+                "Blockchain",
+                "Graphs"
             ],
-            "image": "/images/og-image.png"
+            "image": "https://substackcdn.com/image/fetch/$s_!IcUU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9029ec8a-e7a0-4307-bf15-97545db95b98_1684x1136.png"
         },
         {
-            "id": "blockchain-for-circularity",
-            "title": "Blockchain-Enabled Material Passports for Circularity",
-            "summary": "A deep dive into the TRACE project and why trustless verification is essential for scaling the reuse of construction materials.",
-            "url": "https://adventuroussystems.substack.com/p/blockchain-enabled-material-passports",
-            "date": "2023-11-20",
+            "id": "how-aec-firms-should-prepare-for",
+            "title": "How AEC Firms Should Prepare for Artificial Intelligence: Essential Steps for the UK Construction Industry",
+            "summary": "Transforming Architecture, Engineering & Construction Through Strategic AI Implementation",
+            "url": "https://adventuroussystems.substack.com/p/how-aec-firms-should-prepare-for",
+            "date": "2025-10-21",
             "tags": [
-                "Blockchain",
-                "TRACE",
-                "Circular Economy"
+                "AI",
+                "AEC",
+                "Strategic Planning"
             ],
-            "image": "/images/og-image.png"
+            "image": "https://substackcdn.com/image/fetch/$s_!7RSm!,w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0bfe05c6-5681-4b46-9b33-cc9a106c4a09_318x318.png"
         }
     ]
 }

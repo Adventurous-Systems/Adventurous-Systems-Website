@@ -72,19 +72,17 @@ function initProjectFilters() {
                 divider.style.display = filter === 'all' ? 'block' : 'none';
             });
 
-            // Re-trigger animations by removing and re-adding fade-in class
+            // Re-trigger animations by removing and re-observing fade-in class
             sections.forEach(section => {
                 if (section.style.display === 'block') {
                     const fadeEls = section.querySelectorAll('.fade-in');
                     fadeEls.forEach(el => {
                         el.classList.remove('is-visible');
-                        // Small timeout to allow reflow
-                        setTimeout(() => {
-                            if (el.getBoundingClientRect().top < window.innerHeight) {
-                                el.classList.add('is-visible');
-                            }
-                        }, 50);
                     });
+                    // Small timeout to allow reflow
+                    setTimeout(() => {
+                        observeNewElements(section);
+                    }, 50);
                 }
             });
         });
