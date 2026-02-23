@@ -11,6 +11,8 @@ import '../styles/home.css';
 import '../styles/services.css';
 import '../styles/our-work.css';
 import '../styles/about.css';
+import '../styles/contact.css';
+import '../styles/assessment.css';
 
 import { initHeader } from '../components/header.js';
 import { initFooter } from '../components/footer.js';

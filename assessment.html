@@ -6,28 +6,528 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Readiness Assessment — Adventurous Systems</title>
     <meta name="description"
-        content="Complete this assessment to receive your personalized AI & Data Integration Readiness Report for your AEC firm.">
+        content="Complete our AI & Data Integration Readiness Assessment to receive a personalized report and strategy session.">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
     <div id="site-header"></div>
+
     <main>
-        <section class="section"
-            style="text-align: center; min-height: 70vh; display: flex; align-items: center; justify-content: center;">
-            <div class="container">
-                <h1 class="section-title">AI Readiness Assessment</h1>
-                <p class="section-intro section-intro--centered" style="margin-bottom: var(--space-8);">
+        <!-- Page Hero (slim) -->
+        <section class="section section--dark page-hero"
+            style="padding-bottom: var(--space-6); padding-top: var(--space-8);">
+            <div class="container text-center">
+                <p class="kicker" style="color: var(--color-accent-light);">ASSESSMENT</p>
+                <h1 class="section-title page-hero__title" style="font-size: var(--text-3xl);">AI Readiness Assessment
+                </h1>
+                <p class="section-intro page-hero__intro"
+                    style="font-size: var(--text-sm); max-width: 600px; margin: 0 auto;">
                     Complete this assessment to receive your personalized AI & Data Integration Readiness Report.
-                </p>
-                <p style="font-size: var(--text-lg); color: var(--color-text-muted);">
-                    Full multi-step assessment form coming in Phase 7.
                 </p>
             </div>
         </section>
+
+        <!-- Assessment Form Container -->
+        <section class="section" style="padding-top: var(--space-6);">
+            <div class="as-form-container">
+                <!-- Progress Bar -->
+                <div class="as-form-progress">
+                    <div class="as-form-progress-bar">
+                        <div class="as-form-progress-fill" id="formProgressFill" style="width: 14.3%"></div>
+                    </div>
+                    <div class="as-form-progress-text" id="formProgressText">Step 1 of 7: Company Information</div>
+                </div>
+
+                <!-- Main Form -->
+                <form id="aiReadinessForm">
+                    <!-- SECTION 1: Company Information -->
+                    <div class="as-form-section active" data-section="1">
+                        <h3 class="as-form-section-title">Company Information</h3>
+                        <p class="as-form-section-subtitle">Tell us about your organization</p>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Company Name<span class="required">*</span></label>
+                            <input type="text" name="companyName" class="as-form-input" required>
+                            <div class="as-form-error">Company name is required</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Your Name<span class="required">*</span></label>
+                            <input type="text" name="yourName" class="as-form-input" required>
+                            <div class="as-form-error">Your name is required</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Role/Title<span class="required">*</span></label>
+                            <input type="text" name="roleTitle" class="as-form-input" required>
+                            <div class="as-form-error">Role/title is required</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Email<span class="required">*</span></label>
+                            <input type="email" name="email" class="as-form-input" required>
+                            <div class="as-form-error">Valid email is required</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Phone</label>
+                            <input type="tel" name="phone" class="as-form-input">
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Company Website</label>
+                            <input type="url" name="companyWebsite" class="as-form-input" placeholder="https://">
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Primary Sector<span class="required">*</span></label>
+                            <select name="primarySector" class="as-form-select" required>
+                                <option value="">Select...</option>
+                                <option value="Architecture">Architecture</option>
+                                <option value="Engineering (Structural/MEP)">Engineering (Structural/MEP)</option>
+                                <option value="Construction/General Contracting">Construction/General Contracting
+                                </option>
+                                <option value="Specialist Subcontractor">Specialist Subcontractor</option>
+                                <option value="Developer/Owner">Developer/Owner</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="as-form-error">Please select a sector</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Company Size (Employees)</label>
+                            <select name="companySize" class="as-form-select">
+                                <option value="">Select...</option>
+                                <option value="0-20">0-20</option>
+                                <option value="20-50">20-50</option>
+                                <option value="51-100">51-100</option>
+                                <option value="101-250">101-250</option>
+                                <option value="251-500">251-500</option>
+                                <option value="500+">500+</option>
+                            </select>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Annual Revenue</label>
+                            <select name="annualRevenue" class="as-form-select">
+                                <option value="">Select...</option>
+                                <option value="Under £2M">Under £2M</option>
+                                <option value="Under £5M">Under £5M</option>
+                                <option value="£5M - £20M">£5M - £20M</option>
+                                <option value="£20M - £50M">£20M - £50M</option>
+                                <option value="£50M - £100M">£50M - £100M</option>
+                                <option value="Over £100M">Over £100M</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Current Technology Landscape -->
+                    <div class="as-form-section" data-section="2">
+                        <h3 class="as-form-section-title">Current Technology Landscape</h3>
+                        <p class="as-form-section-subtitle">Help us understand your tech stack</p>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Which design/BIM software do you primarily use? (Check all that
+                                apply)</label>
+                            <div class="as-form-checkbox-group">
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="designSoftware"
+                                        value="Revit" id="sw-revit"><label for="sw-revit">Revit</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="designSoftware"
+                                        value="AutoCAD" id="sw-autocad"><label for="sw-autocad">AutoCAD</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="designSoftware"
+                                        value="ArchiCAD" id="sw-archicad"><label for="sw-archicad">ArchiCAD</label>
+                                </div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="designSoftware"
+                                        value="Bentley/MicroStation" id="sw-bentley"><label
+                                        for="sw-bentley">Bentley/MicroStation</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="designSoftware"
+                                        value="Rhino/Grasshopper" id="sw-rhino"><label
+                                        for="sw-rhino">Rhino/Grasshopper</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="designSoftware"
+                                        value="SketchUp" id="sw-sketchup"><label for="sw-sketchup">SketchUp</label>
+                                </div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="designSoftware"
+                                        value="Blender" id="sw-blender"><label for="sw-blender">Blender</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="designSoftware"
+                                        value="Vectorworks" id="sw-vectorworks"><label
+                                        for="sw-vectorworks">Vectorworks</label></div>
+                            </div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Project Management Tools (Check all that apply)</label>
+                            <div class="as-form-checkbox-group">
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="pmTools"
+                                        value="Microsoft Project" id="pm-msproject"><label for="pm-msproject">Microsoft
+                                        Project</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="pmTools"
+                                        value="Primavera P6" id="pm-primavera"><label for="pm-primavera">Primavera
+                                        P6</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="pmTools" value="Procore"
+                                        id="pm-procore"><label for="pm-procore">Procore</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="pmTools"
+                                        value="Autodesk Construction Cloud" id="pm-acc"><label for="pm-acc">Autodesk
+                                        Construction Cloud</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="pmTools"
+                                        value="PlanGrid" id="pm-plangrid"><label for="pm-plangrid">PlanGrid</label>
+                                </div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="pmTools" value="Deltek"
+                                        id="pm-deltek"><label for="pm-deltek">Deltek</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="pmTools"
+                                        value="Internal/Custom System" id="pm-custom"><label
+                                        for="pm-custom">Internal/Custom System</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="pmTools" value="Other"
+                                        id="pm-other"><label for="pm-other">Other</label></div>
+                            </div>
+                            <div class="as-form-field" id="pmOtherField" style="display: none; margin-top: 12px;">
+                                <label class="as-form-label">Please specify the other project management tool:</label>
+                                <input type="text" name="pmToolsOther" class="as-form-input"
+                                    placeholder="Enter the name of your project management tool">
+                            </div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Data Storage & Collaboration (Check all that apply)</label>
+                            <div class="as-form-checkbox-group">
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="dataStorage"
+                                        value="On-premise servers" id="ds-onprem"><label for="ds-onprem">On-premise
+                                        servers</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="dataStorage"
+                                        value="Cloud storage (Dropbox, Google Drive, etc.)" id="ds-cloud"><label
+                                        for="ds-cloud">Cloud storage (Dropbox, Google Drive, etc.)</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="dataStorage"
+                                        value="BIM 360/ACC" id="ds-bim360"><label for="ds-bim360">BIM 360/ACC</label>
+                                </div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="dataStorage"
+                                        value="SharePoint" id="ds-sharepoint"><label
+                                        for="ds-sharepoint">SharePoint</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="dataStorage"
+                                        value="ProjectWise" id="ds-projectwise"><label
+                                        for="ds-projectwise">ProjectWise</label></div>
+                            </div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Current Data Integration Level<span
+                                    class="required">*</span></label>
+                            <div class="as-form-radio-group">
+                                <div class="as-form-radio-item"><input type="radio" name="integrationLevel"
+                                        value="No integration - manual data transfer between systems" id="int-none"
+                                        required><label for="int-none">No integration - manual data transfer between
+                                        systems</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="integrationLevel"
+                                        value="Basic integration - some automated data exchange" id="int-basic"><label
+                                        for="int-basic">Basic integration - some automated data exchange</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="integrationLevel"
+                                        value="Moderate integration - key systems connected" id="int-moderate"><label
+                                        for="int-moderate">Moderate integration - key systems connected</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="integrationLevel"
+                                        value="Advanced integration - most systems interconnected"
+                                        id="int-advanced"><label for="int-advanced">Advanced integration - most systems
+                                        interconnected</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="integrationLevel"
+                                        value="Fully integrated - comprehensive data platform" id="int-full"><label
+                                        for="int-full">Fully integrated - comprehensive data platform</label></div>
+                            </div>
+                            <div class="as-form-error">Please select an integration level</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Current Challenges & Pain Points -->
+                    <div class="as-form-section" data-section="3">
+                        <h3 class="as-form-section-title">Current Challenges & Pain Points</h3>
+                        <p class="as-form-section-subtitle">Help us understand what's not working</p>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Top 3 Data/Technology Challenges (Select top 3)<span
+                                    class="required">*</span></label>
+                            <div class="as-form-checkbox-group">
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="topChallenges"
+                                        value="Data silos between departments/systems" id="ch-silos"><label
+                                        for="ch-silos">Data silos between departments/systems</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="topChallenges"
+                                        value="Manual data re-entry and errors" id="ch-reentry"><label
+                                        for="ch-reentry">Manual data re-entry and errors</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="topChallenges"
+                                        value="Lack of real-time project visibility" id="ch-visibility"><label
+                                        for="ch-visibility">Lack of real-time project visibility</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="topChallenges"
+                                        value="Poor collaboration between disciplines" id="ch-collab"><label
+                                        for="ch-collab">Poor collaboration between disciplines</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="topChallenges"
+                                        value="Inability to leverage historical project data" id="ch-historical"><label
+                                        for="ch-historical">Inability to leverage historical project data</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="topChallenges"
+                                        value="Version control and document management" id="ch-version"><label
+                                        for="ch-version">Version control and document management</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="topChallenges"
+                                        value="Reporting and analytics limitations" id="ch-analytics"><label
+                                        for="ch-analytics">Reporting and analytics limitations</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="topChallenges"
+                                        value="Field-to-office data disconnection" id="ch-field"><label
+                                        for="ch-field">Field-to-office data disconnection</label></div>
+                            </div>
+                            <div class="as-form-error">Please select at least one challenge</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Where do you lose the most time/money? (200 words max)<span
+                                    class="required">*</span></label>
+                            <textarea name="timeMoneyLoss" class="as-form-textarea" maxlength="1000"
+                                required></textarea>
+                            <div class="as-form-error">This field is required</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Failed or struggling technology initiatives in the past 2 years
+                                (Optional)</label>
+                            <textarea name="failedInitiatives" class="as-form-textarea" maxlength="1000"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: AI & Automation Interest -->
+                    <div class="as-form-section" data-section="4">
+                        <h3 class="as-form-section-title">AI & Automation Interest</h3>
+                        <p class="as-form-section-subtitle">What are your priorities?</p>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">AI/Automation Priorities (Select top 3)<span
+                                    class="required">*</span></label>
+                            <div class="as-form-checkbox-group">
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Automated quantity takeoffs" id="ai-takeoffs"><label
+                                        for="ai-takeoffs">Automated quantity takeoffs</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Predictive project scheduling" id="ai-scheduling"><label
+                                        for="ai-scheduling">Predictive project scheduling</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Cost estimation optimization" id="ai-estimation"><label
+                                        for="ai-estimation">Cost estimation optimization</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Automated clash detection" id="ai-clash"><label for="ai-clash">Automated
+                                        clash detection</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Document analysis and RFI prediction" id="ai-docs"><label
+                                        for="ai-docs">Document analysis and RFI prediction</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Safety monitoring and compliance" id="ai-safety"><label
+                                        for="ai-safety">Safety monitoring and compliance</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Resource optimization" id="ai-resources"><label
+                                        for="ai-resources">Resource optimization</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Quality control automation" id="ai-quality"><label
+                                        for="ai-quality">Quality control automation</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Predictive maintenance (for owners/operators)" id="ai-maintenance"><label
+                                        for="ai-maintenance">Predictive maintenance (for owners/operators)</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="aiPriorities"
+                                        value="Energy performance optimization" id="ai-energy"><label
+                                        for="ai-energy">Energy performance optimization</label></div>
+                            </div>
+                            <div class="as-form-error">Please select at least one priority</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Current AI/ML Usage<span class="required">*</span></label>
+                            <div class="as-form-radio-group">
+                                <div class="as-form-radio-item"><input type="radio" name="currentAiUsage"
+                                        value="Not using any AI/ML" id="ai-none" required><label for="ai-none">Not using
+                                        any AI/ML</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="currentAiUsage"
+                                        value="Exploring options" id="ai-exploring"><label for="ai-exploring">Exploring
+                                        options</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="currentAiUsage"
+                                        value="Running pilots" id="ai-pilots"><label for="ai-pilots">Running
+                                        pilots</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="currentAiUsage"
+                                        value="Some production use" id="ai-some"><label for="ai-some">Some production
+                                        use</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="currentAiUsage"
+                                        value="Extensive use" id="ai-extensive"><label for="ai-extensive">Extensive
+                                        use</label></div>
+                            </div>
+                            <div class="as-form-error">Please select current AI usage</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Digital Twin Interest<span class="required">*</span></label>
+                            <div class="as-form-radio-group">
+                                <div class="as-form-radio-item"><input type="radio" name="digitalTwinInterest"
+                                        value="Not familiar with digital twins" id="dt-unfamiliar" required><label
+                                        for="dt-unfamiliar">Not familiar with digital twins</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="digitalTwinInterest"
+                                        value="Researching the concept" id="dt-researching"><label
+                                        for="dt-researching">Researching the concept</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="digitalTwinInterest"
+                                        value="Planning implementation" id="dt-planning"><label
+                                        for="dt-planning">Planning implementation</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="digitalTwinInterest"
+                                        value="Pilot project underway" id="dt-pilot"><label for="dt-pilot">Pilot project
+                                        underway</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="digitalTwinInterest"
+                                        value="Actively using digital twins" id="dt-using"><label
+                                        for="dt-using">Actively using digital twins</label></div>
+                            </div>
+                            <div class="as-form-error">Please select digital twin interest</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Decision Making & Timeline -->
+                    <div class="as-form-section" data-section="5">
+                        <h3 class="as-form-section-title">Decision Making & Timeline</h3>
+                        <p class="as-form-section-subtitle">Help us understand your decision process</p>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Budget Range for Digital Transformation (Annual)</label>
+                            <select name="budgetRange" class="as-form-select">
+                                <option value="">Select...</option>
+                                <option value="Under £25K">Under £25K</option>
+                                <option value="£25K - £50K">£25K - £50K</option>
+                                <option value="£50K - £100K">£50K - £100K</option>
+                                <option value="£100K - £250K">£100K - £250K</option>
+                                <option value="Over £250K">Over £250K</option>
+                                <option value="Not yet determined">Not yet determined</option>
+                            </select>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Implementation Timeline<span class="required">*</span></label>
+                            <div class="as-form-radio-group">
+                                <div class="as-form-radio-item"><input type="radio" name="implementationTimeline"
+                                        value="Immediate (within 3 months)" id="timeline-immediate" required><label
+                                        for="timeline-immediate">Immediate (within 3 months)</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="implementationTimeline"
+                                        value="Short-term (3-6 months)" id="timeline-short"><label
+                                        for="timeline-short">Short-term (3-6 months)</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="implementationTimeline"
+                                        value="Medium-term (6-12 months)" id="timeline-medium"><label
+                                        for="timeline-medium">Medium-term (6-12 months)</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="implementationTimeline"
+                                        value="Long-term (12+ months)" id="timeline-long"><label
+                                        for="timeline-long">Long-term (12+ months)</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="implementationTimeline"
+                                        value="Exploratory only" id="timeline-exploratory"><label
+                                        for="timeline-exploratory">Exploratory only</label></div>
+                            </div>
+                            <div class="as-form-error">Please select implementation timeline</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Decision Making Process<span class="required">*</span></label>
+                            <div class="as-form-radio-group">
+                                <div class="as-form-radio-item"><input type="radio" name="decisionMaking"
+                                        value="I am the primary decision maker" id="decision-primary" required><label
+                                        for="decision-primary">I am the primary decision maker</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="decisionMaking"
+                                        value="I influence the decision" id="decision-influence"><label
+                                        for="decision-influence">I influence the decision</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="decisionMaking"
+                                        value="Part of decision committee" id="decision-committee"><label
+                                        for="decision-committee">Part of decision committee</label></div>
+                                <div class="as-form-radio-item"><input type="radio" name="decisionMaking"
+                                        value="Making recommendations to leadership" id="decision-recommend"><label
+                                        for="decision-recommend">Making recommendations to leadership</label></div>
+                            </div>
+                            <div class="as-form-error">Please select decision making process</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Other Stakeholders to Include (Names and roles)</label>
+                            <textarea name="otherStakeholders" class="as-form-textarea"
+                                placeholder="e.g. John Smith - CTO, Jane Doe - Operations Director"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Assessment Goals -->
+                    <div class="as-form-section" data-section="6">
+                        <h3 class="as-form-section-title">Assessment Goals</h3>
+                        <p class="as-form-section-subtitle">What do you hope to achieve?</p>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">What do you hope to gain from this assessment? (Check all that
+                                apply)<span class="required">*</span></label>
+                            <div class="as-form-checkbox-group">
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="assessmentGoals"
+                                        value="Understand our digital maturity level" id="goal-maturity"><label
+                                        for="goal-maturity">Understand our digital maturity level</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="assessmentGoals"
+                                        value="Identify quick wins for improvement" id="goal-wins"><label
+                                        for="goal-wins">Identify quick wins for improvement</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="assessmentGoals"
+                                        value="Build business case for investment" id="goal-business"><label
+                                        for="goal-business">Build business case for investment</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="assessmentGoals"
+                                        value="Compare options and approaches" id="goal-compare"><label
+                                        for="goal-compare">Compare options and approaches</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="assessmentGoals"
+                                        value="Find right technology partners" id="goal-partners"><label
+                                        for="goal-partners">Find right technology partners</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="assessmentGoals"
+                                        value="Create implementation roadmap" id="goal-roadmap"><label
+                                        for="goal-roadmap">Create implementation roadmap</label></div>
+                                <div class="as-form-checkbox-item"><input type="checkbox" name="assessmentGoals"
+                                        value="Benchmark against competitors" id="goal-benchmark"><label
+                                        for="goal-benchmark">Benchmark against competitors</label></div>
+                            </div>
+                            <div class="as-form-error">Please select at least one goal</div>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">Specific Questions or Areas of Focus (Optional)</label>
+                            <textarea name="specificQuestions" class="as-form-textarea"
+                                placeholder="Tell us about any specific concerns or areas you'd like us to focus on..."></textarea>
+                        </div>
+
+                        <div class="as-form-field">
+                            <label class="as-form-label">How did you hear about us?</label>
+                            <select name="heardAbout" class="as-form-select">
+                                <option value="">Select...</option>
+                                <option value="Web search">Web search</option>
+                                <option value="Industry publication">Industry publication</option>
+                                <option value="Conference/Event">Conference/Event</option>
+                                <option value="Referral">Referral</option>
+                                <option value="LinkedIn">LinkedIn</option>
+                                <option value="Substack">Substack</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Review & Submit -->
+                    <div class="as-form-section" data-section="7">
+                        <h3 class="as-form-section-title">Review & Submit</h3>
+                        <p class="as-form-section-subtitle">Please review your information before submitting</p>
+
+                        <div id="formReviewContent"></div>
+
+                        <div class="as-form-benefits-box">
+                            <p style="margin: 0; font-weight: 600; color: var(--color-text-primary)">By submitting this
+                                assessment, you'll receive:</p>
+                            <ul>
+                                <li>A comprehensive AI Readiness Report</li>
+                                <li>Priority roadmap with ROI projections</li>
+                                <li>45-minute strategy session to discuss findings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Navigation -->
+                <div class="as-form-navigation">
+                    <button type="button" class="as-form-btn as-form-btn-back" id="formBackBtn">Back</button>
+                    <button type="button" class="as-form-btn as-form-btn-next" id="formNextBtn">Save & Continue</button>
+                    <button type="button" class="as-form-btn as-form-btn-submit" id="formSubmitBtn"
+                        style="display: none;">Submit Assessment</button>
+                </div>
+            </div>
+        </section>
     </main>
+
     <div id="site-footer"></div>
     <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/assessment.js"></script>
 </body>
 
 </html>
