@@ -3,12 +3,6 @@
     "heading": "Who we work with",
     "partners": [
         {
-            "name": "Heriot-Watt University",
-            "role": "Research & Development Partner",
-            "logo": "/images/heriot_watt_university_logo.jpeg",
-            "link": "https://www.hw.ac.uk/"
-        },
-        {
             "name": "Robert Gordon University",
             "role": "Research & Validation Partner",
             "logo": "/images/robertgordonuniversity_logo.jpeg",
