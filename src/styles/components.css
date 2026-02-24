@@ -23,14 +23,14 @@
 }
 
 .btn--primary {
-    background-color: var(--color-accent);
+    background-color: #242E6E;
     color: var(--color-text-inverse);
 }
 
 .btn--primary:hover {
-    background-color: #246e47;
+    background-color: #1a2255;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(45, 134, 89, 0.3);
+    box-shadow: 0 4px 16px rgba(36, 46, 110, 0.3);
 }
 
 .btn--secondary {
