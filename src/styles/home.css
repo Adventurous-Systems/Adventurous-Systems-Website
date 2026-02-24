@@ -15,7 +15,7 @@
 .hero__bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #0f3324 80%, #0f172a 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1d242f 40%, #244256 80%, #0f1e42 100%);
     background-size: 300% 300%;
     animation: gradientShift 15s ease infinite;
     z-index: 0;
@@ -25,7 +25,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(45, 134, 89, 0.12) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 70% 50%, rgba(45, 75, 134, 0.12) 0%, transparent 60%);
 }
 
 @keyframes gradientShift {
@@ -141,7 +141,7 @@
     gap: var(--space-10);
     margin-top: var(--space-16);
     padding-top: var(--space-10);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .credential {
@@ -214,7 +214,7 @@
 
 /* ---------- CTA Section ---------- */
 .cta-section {
-    background: linear-gradient(135deg, #0f172a, #0f3324);
+    background: linear-gradient(135deg, #0f172a, #244256);
 }
 
 .cta-section .section-title {
