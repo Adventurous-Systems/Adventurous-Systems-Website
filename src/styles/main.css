@@ -9,13 +9,13 @@
 /* ---------- CSS Custom Properties (Design Tokens) ---------- */
 :root {
   /* === Colors === */
-  --color-primary-dark: #0f172a;
+  --color-primary-dark: #244256;
   /* Deep slate — hero backgrounds, nav */
-  --color-primary: #1e293b;
+  --color-primary: #A7C6DA;
   /* Slate — section accents */
-  --color-accent: #2D8659;
+  --color-accent: #EDFF71;
   /* Green — CTAs, highlights */
-  --color-accent-light: #4ade80;
+  --color-accent-light: #EEFCCE;
   /* Light green — gradients, hover */
   --color-accent-bg: #D4F4DD;
   /* Very light green — badges, highlights */
