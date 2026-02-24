@@ -94,12 +94,12 @@ export function initNetworkAnimation() {
                 // The actively inspected node glows intensely
                 ctx.fillStyle = '#ffffff';
                 ctx.shadowBlur = 15;
-                ctx.shadowColor = 'rgba(74, 222, 128, 1)';
+                ctx.shadowColor = 'rgba(21, 112, 225, 1)';
             } else if (isConnected) {
                 // Immediate network of the inspected node
-                ctx.fillStyle = 'rgba(74, 222, 128, 0.9)';
+                ctx.fillStyle = 'rgba(21, 112, 225, 0.9)';
                 ctx.shadowBlur = 10;
-                ctx.shadowColor = 'rgba(45, 134, 89, 0.8)';
+                ctx.shadowColor = 'rgba(21, 112, 225, 0.8)';
             } else {
                 // Idle nodes
                 ctx.fillStyle = this.color;
@@ -159,7 +159,7 @@ export function initNetworkAnimation() {
             ctx.arc(currentX, currentY, 1.5, 0, Math.PI * 2);
             ctx.fillStyle = '#ffffff';
             ctx.shadowBlur = 8;
-            ctx.shadowColor = '#4ade80'; // Green glowing data dot
+            ctx.shadowColor = '#1570E1'; // Blue glowing data dot
             ctx.fill();
             ctx.shadowBlur = 0;
         }
@@ -247,8 +247,8 @@ export function initNetworkAnimation() {
                     if (hoveredParticle) opacity = isHoverEdge ? baseOpacity * 0.9 : baseOpacity * 0.1;
 
                     ctx.strokeStyle = isHoverEdge ?
-                        `rgba(74, 222, 128, ${opacity})` :
-                        `rgba(45, 134, 89, ${opacity})`;
+                        `rgba(21, 112, 225, ${opacity})` :
+                        `rgba(21, 112, 225, ${opacity})`;
 
                     ctx.lineWidth = isHoverEdge ? 1.5 : 0.8;
 
