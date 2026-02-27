@@ -15,7 +15,7 @@
  */
 
 // Configuration
-const SHEET_NAME = 'Community Signups'; // Name of the sheet to write to
+const SHEET_NAME = 'Adventurous Leads'; // Name of the sheet to write to
 
 /**
  * Handles POST requests from the form
@@ -24,28 +24,26 @@ function doPost(e) {
   try {
     // Parse the incoming data
     const data = JSON.parse(e.postData.contents);
-    const email = data.email;
-    
+    const name = data.name || '';
+    const organisation = data.organisation || '';
+    const email = data.email || '';
+    const message = data.message || '';
+
     // Validate email
     if (!email || !isValidEmail(email)) {
       return createResponse(false, 'Please provide a valid email address.');
     }
-    
+
     // Get or create the spreadsheet sheet
     const sheet = getOrCreateSheet();
-    
-    // Check for duplicate email
-    if (isDuplicateEmail(sheet, email)) {
-      return createResponse(false, 'This email is already registered.');
-    }
-    
+
     // Add the data to the sheet
     const timestamp = new Date();
-    sheet.appendRow([timestamp, email]);
-    
+    sheet.appendRow([timestamp, name, organisation, email, message]);
+
     // Return success response
     return createResponse(true, 'Thank you for joining our community!');
-    
+
   } catch (error) {
     console.error('Error processing form:', error);
     return createResponse(false, 'An error occurred. Please try again later.');
@@ -78,19 +76,19 @@ function isValidEmail(email) {
 function getOrCreateSheet() {
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
-  
+
   // Create sheet if it doesn't exist
   if (!sheet) {
     sheet = spreadsheet.insertSheet(SHEET_NAME);
     // Add headers
-    sheet.appendRow(['Timestamp', 'Email']);
+    sheet.appendRow(['Timestamp', 'Name', 'Organisation', 'Email', 'How can we help?']);
     // Format headers
-    const headerRange = sheet.getRange(1, 1, 1, 2);
+    const headerRange = sheet.getRange(1, 1, 1, 5);
     headerRange.setFontWeight('bold');
     headerRange.setBackground('#4285f4');
     headerRange.setFontColor('#ffffff');
   }
-  
+
   return sheet;
 }
 
@@ -100,14 +98,14 @@ function getOrCreateSheet() {
 function isDuplicateEmail(sheet, email) {
   const data = sheet.getDataRange().getValues();
   const emailLower = email.toLowerCase();
-  
+
   // Skip header row (index 0)
   for (let i = 1; i < data.length; i++) {
     if (data[i][1] && data[i][1].toString().toLowerCase() === emailLower) {
       return true;
     }
   }
-  
+
   return false;
 }
 
@@ -119,7 +117,7 @@ function createResponse(success, message) {
     success: success,
     message: message
   };
-  
+
   return ContentService.createTextOutput(JSON.stringify(response))
     .setMimeType(ContentService.MimeType.JSON);
 }

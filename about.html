@@ -34,7 +34,7 @@
           "url": "https://www.adventurous.systems/about.html",
           "name": "About Us — Adventurous Systems",
           "isPartOf": { "@id": "https://www.adventurous.systems/#website" },
-          "mainEntity": { "@id": "https://www.adventurous.systems/#organization" }
+          "mainEntity": { "@id": "https://www.adventurous.systems/#organisation" }
         },
         {
           "@type": "Person",
@@ -42,7 +42,7 @@
           "name": "Dr Theo Dounas",
           "jobTitle": "Founder & Director",
           "description": "Architect, researcher, and technologist with 20 years at the intersection of computational design and emerging technology. Published author of 'Blockchain for Construction' (Springer, 2022). Elected Vice Chair of the European Council for Computing in Construction (EC3). Registered Architect (ARB).",
-          "worksFor": { "@id": "https://www.adventurous.systems/#organization" },
+          "worksFor": { "@id": "https://www.adventurous.systems/#organisation" },
           "affiliation": [
           
             { "@type": "EducationalOrganization", "name": "Xi'an Jiaotong-Liverpool University", "address": { "@type": "PostalAddress", "addressLocality": "Suzhou", "addressCountry": "CN" } }
@@ -54,16 +54,23 @@
           "memberOf": {
             "@type": "Organization",
             "name": "European Council for Computing in Construction (EC3)",
-            "description": "International research organization advancing digital construction"
+            "description": "International research organisation advancing digital construction"
           },
           "sameAs": ["https://www.linkedin.com/in/theodounas/"]
         },
         {
           "@type": "Person",
           "@id": "https://www.adventurous.systems/#hico",
-          "name": "Hico McDonald",
+          "name": "Hico Mc Donald",
           "jobTitle": "Co-Founder",
-          "worksFor": { "@id": "https://www.adventurous.systems/#organization" }
+          "description": "Civil & Web3 Engineer leading delivery operations, partnerships, and digital systems implementations for the AEC industry. Certified Blockchain Developer.",
+          "worksFor": { "@id": "https://www.adventurous.systems/#organisation" },
+          "sameAs": ["https://www.linkedin.com/in/hico-mc-donald-97b97864/"],
+          "knowsAbout": ["Construction QA/QC", "Project Management", "Digital Twins", "Blockchain Integration"],
+          "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "name": "B-Tech Civil Engineering" },
+            { "@type": "EducationalOccupationalCredential", "name": "Certified Blockchain Developer (ConsenSys Academy)" }
+          ]
         }
       ]
     }
@@ -98,14 +105,16 @@
                         </p>
                         <p>
                             Early research explored parametric design, digital fabrication, and shape grammars.
-                            By the mid-2010s, we recognized that computational design's real challenge wasn't
+                            By the mid-2010s, we recognised that computational design's real challenge wasn't
                             form generation — it was data coordination across fragmented industry systems.
                         </p>
                         <p>
-                            That realization led to deep research into graph databases, blockchain, and digital twins.
+                            That realisation led to deep research into graph databases, blockchain, and digital twins.
                             We are interested in developing this beyond prototypes. We want to solve
-                            construction's fundamental problems: lack of trust, fragmented information and coordination, and inability
-                            to verify outcomes.
+                            construction's fundamental problems: lack of trust, fragmented information and coordination,
+                            and inability
+                            to verify outcomes. We do this by deploying large language models (LLMs) and generative AI
+                            to solve complex architectural and engineering coordination issues.
                         </p>
                         <p>
                             In 2022, we published <strong>"Blockchain for Construction"</strong> with Springer,
@@ -150,7 +159,11 @@
             <div class="container">
                 <div class="section-header fade-in">
                     <p class="kicker">OUR TEAM</p>
-                    <h2 class="section-title">Meet the Founder</h2>
+                    <h2 class="section-title">Meet the Leadership Team</h2>
+                    <p class="section-intro section-intro--centreed" style="margin-top: var(--space-4);">
+                        Our leadership combines peer-reviewed research with practical delivery and Web3 implementation
+                        expertise.
+                    </p>
                 </div>
 
                 <div class="team-profile fade-in" id="team-grid">
@@ -178,7 +191,8 @@
                         <div class="value-card__icon">🌐</div>
                         <h3>Open Development</h3>
                         <p>We contribute to open-source tooling, publish our methods, and advance industry
-                            standards. Competitive advantage comes from execution, not information hoarding or gate keeping.</p>
+                            standards. Competitive advantage comes from execution, not information hoarding or gate
+                            keeping.</p>
                     </div>
                     <div class="value-card fade-in fade-in-delay-2">
                         <div class="value-card__icon">🔗</div>
@@ -195,7 +209,8 @@
                     <div class="value-card fade-in fade-in-delay-4">
                         <div class="value-card__icon">🌱</div>
                         <h3>Sustainable Systems</h3>
-                        <p>We focus on efficient construction, circular economy, material reuse, and verifiable outcomes. Technology
+                        <p>We focus on efficient construction, circular economy, material reuse, and verifiable
+                            outcomes. Technology
                             should enable construction's transition to dramatically reduced environmental impact.</p>
                     </div>
                 </div>
@@ -213,7 +228,8 @@
                 <div class="diff-grid">
                     <div class="diff-card fade-in">
                         <h4>Not a typical consultancy</h4>
-                        <p>We don't implement standard solutions only. We develop novel approaches grounded in research.</p>
+                        <p>We don't implement standard solutions only. We develop novel approaches grounded in research.
+                        </p>
                     </div>
                     <div class="diff-card fade-in fade-in-delay-1">
                         <h4>Not purely academic</h4>
@@ -240,29 +256,31 @@
                 </div>
 
                 <div class="partnerships-grid">
-                    <div class="partnership-card fade-in">
-                        <h3>Heriot Watt University</h3>
+                    <a href="https://www.hw.ac.uk" target="_blank" rel="noopener noreferrer"
+                        class="partnership-card fade-in" style="text-decoration: none; color: inherit;">
+                        <h3>Heriot-Watt University</h3>
                         <p class="partnership-card__location">Edinburgh, Scotland</p>
                         <p>Research Partner in Circular Economy.</p>
-                    </div>
-                <div class="partnerships-grid">
-                    <div class="partnership-card fade-in">
+                    </a>
+                    <a href="https://www.rgu.ac.uk" target="_blank" rel="noopener noreferrer"
+                        class="partnership-card fade-in" style="text-decoration: none; color: inherit;">
                         <h3>Robert Gordon University</h3>
                         <p class="partnership-card__location">Aberdeen, Scotland</p>
                         <p>Research Partner in Circular Economy.</p>
-                    </div>
-                    <div class="partnership-card fade-in fade-in-delay-2">
+                    </a>
+                    <a href="https://www.constructionblockchain.org" target="_blank" rel="noopener noreferrer"
+                        class="partnership-card fade-in fade-in-delay-2" style="text-decoration: none; color: inherit;">
                         <h3>Construction Blockchain Consortium</h3>
                         <p class="partnership-card__location">UK</p>
                         <p>Members of the Technical committee for the Construction Blockchain.</p>
-                    </div>
-                    <div class="partnership-card fade-in fade-in-delay-3">
+                    </a>
+                    <a href="https://www.xjtlu.edu.cn" target="_blank" rel="noopener noreferrer"
+                        class="partnership-card fade-in fade-in-delay-3" style="text-decoration: none; color: inherit;">
                         <h3>Xi'an Jiaotong-Liverpool University</h3>
                         <p class="partnership-card__location">Suzhou, China</p>
                         <p>Former faculty position, ongoing research collaboration.</p>
-                    </div>
+                    </a>
                 </div>
-            </div>
         </section>
 
         <!-- Professional Standing -->
@@ -274,7 +292,8 @@
                         <h3 style="margin-bottom: var(--space-6);">Professional Standing</h3>
                         <div class="affiliation-item">
                             <strong>European Council for Computing in Construction (EC3)</strong>
-                            <p>Elected Vice Chair of the EC3 Board — International research organization advancing digital construction
+                            <p>Elected Vice Chair of the EC3 Board — International research organisation advancing
+                                digital construction
                             </p>
                         </div>
                         <div class="affiliation-item">
@@ -304,7 +323,8 @@
                             <span class="funding-amount">Active</span>
                             <div>
                                 <strong>BE-ST and Innovate UK</strong>
-                                <p>Research on Digital Skills in Construction, Scottish Standards, Circular Timber panels</p>
+                                <p>Research on Digital Skills in Construction, Scottish Standards, Circular Timber
+                                    panels</p>
                             </div>
                         </div>
                     </div>
@@ -343,9 +363,9 @@
 
         <!-- CTA -->
         <section class="section section--dark cta-section">
-            <div class="container text-center">
+            <div class="container text-centre">
                 <h2 class="section-title fade-in" style="color: var(--color-text-inverse);">Want to work with us?</h2>
-                <p class="section-intro section-intro--centered fade-in"
+                <p class="section-intro section-intro--centreed fade-in"
                     style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-8);">
                     For research collaborations, pilot partnerships, advisory engagements, or general inquiries.
                 </p>

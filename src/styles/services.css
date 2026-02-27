@@ -24,8 +24,8 @@
 /* Sticky Jump Nav */
 .jump-nav-container {
     position: sticky;
-    top: 60px;
-    /* Header height approx */
+    top: 0;
+    /* Header flush */
     background: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
     z-index: 80;
