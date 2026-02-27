@@ -39,29 +39,31 @@ export function initHeader() {
           <span class="hamburger__line"></span>
         </button>
       </div>
-
-      <!-- Mobile navigation overlay -->
-      <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-        <nav class="mobile-nav__inner">
-          <a href="./" class="mobile-nav__link ${getActiveClass('/')}">Home</a>
-          <a href="./what-we-do.html" class="mobile-nav__link ${getActiveClass('/what-we-do')}">What We Do</a>
-          <a href="./our-work.html" class="mobile-nav__link ${getActiveClass('/our-work')}">Our Work</a>
-          <a href="./about.html" class="mobile-nav__link ${getActiveClass('/about')}">About</a>
-          <a href="./blog.html" class="mobile-nav__link ${getActiveClass('/blog')}">Insights</a>
-          <a href="./contact.html" class="mobile-nav__link ${getActiveClass('/contact')}">Contact</a>
-          <a href="./contact.html" class="btn btn--primary btn--lg mobile-nav__cta">Work With Us</a>
-        </nav>
-      </div>
     </header>
+
+    <!-- Mobile navigation overlay -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <nav class="mobile-nav__inner">
+        <a href="./" class="mobile-nav__link ${getActiveClass('/')}">Home</a>
+        <a href="./what-we-do.html" class="mobile-nav__link ${getActiveClass('/what-we-do')}">What We Do</a>
+        <a href="./our-work.html" class="mobile-nav__link ${getActiveClass('/our-work')}">Our Work</a>
+        <a href="./about.html" class="mobile-nav__link ${getActiveClass('/about')}">About</a>
+        <a href="./blog.html" class="mobile-nav__link ${getActiveClass('/blog')}">Insights</a>
+        <a href="./contact.html" class="mobile-nav__link ${getActiveClass('/contact')}">Contact</a>
+        <a href="./contact.html" class="btn btn--primary btn--lg mobile-nav__cta">Work With Us</a>
+      </nav>
+    </div>
   `;
 
   // Hamburger toggle
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobile-nav');
+  const header = document.querySelector('.header');
 
   hamburger.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('is-open');
     mobileNav.classList.toggle('is-open');
+    header.classList.toggle('menu-open', isOpen);
     hamburger.setAttribute('aria-expanded', isOpen);
     mobileNav.setAttribute('aria-hidden', !isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -72,6 +74,7 @@ export function initHeader() {
     link.addEventListener('click', () => {
       hamburger.classList.remove('is-open');
       mobileNav.classList.remove('is-open');
+      header.classList.remove('menu-open');
       hamburger.setAttribute('aria-expanded', 'false');
       mobileNav.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
