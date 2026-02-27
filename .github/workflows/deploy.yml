@@ -32,6 +32,8 @@ jobs:
 
       - name: Build (Vite)
         run: npm run build
+        env:
+          VITE_GOOGLE_SCRIPT_URL: ${{ secrets.VITE_GOOGLE_SCRIPT_URL }}
 
       # IMPORTANT: Upload the build output folder, not the repo root
       - name: Upload Pages artifact
