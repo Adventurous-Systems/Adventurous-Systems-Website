@@ -84,7 +84,7 @@ function initContactForm() {
     const statusEl = document.getElementById('homeContactStatus');
 
     // Google Apps Script URL (same as community signup)
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxLB-1QDEyjeTE9sCttRewkMPTFAOvKC7dF7_ZqxfRabHFzKwzmXt43i6Qyz9yNcLHa/exec';
+    const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
