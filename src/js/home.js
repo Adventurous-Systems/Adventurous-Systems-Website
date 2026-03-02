@@ -5,9 +5,11 @@
 
 import projectsData from '../components/data/projects.json';
 import { initNetworkAnimation } from './network-animation.js';
+import { initGraphAnimation } from './graph-animation.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNetworkAnimation();
+    initGraphAnimation('hero-graph-canvas', 'hero-graph-panel', 'hero-graph-legend');
     renderProjectCards();
     initContactForm();
 });

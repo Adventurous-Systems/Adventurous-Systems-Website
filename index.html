@@ -106,42 +106,52 @@
         <canvas id="hero-network" class="hero__network-canvas"></canvas>
       </div>
       <div class="container hero__content parallax" data-speed="0.15">
-        <div class="hero__text">
-          <p class="kicker">RESEARCH-LED DIGITAL TRANSFORMATION</p>
-          <h1 class="hero__title">
-            <span class="text-reveal"><span class="reveal-inner">We solve the AEC industry's</span></span><br>
-            <span class="text-reveal"><span class="reveal-inner">data coordination problem</span></span>
-          </h1>
-          <p class="hero__description">
-            Adventurous Systems builds <strong>Web3- and AI-enabled digital twins</strong> that unify
-            design, construction, and operations data. Backed by peer-reviewed research and
-            open-source development, we help the AEC industry build with trust, transparency,
-            and circularity.
-          </p>
-          <div class="hero__actions">
-            <a href="./contact.html" class="btn btn--primary btn--lg">Explore Collaboration</a>
-            <a href="./what-we-do.html" class="btn btn--outline-light btn--lg">What We Do</a>
+        <div class="hero__left">
+          <div class="hero__text">
+            <p class="kicker">RESEARCH-LED DIGITAL TRANSFORMATION</p>
+            <h1 class="hero__title">
+              <span class="text-reveal"><span class="reveal-inner">We solve the AEC industry's</span></span><br>
+              <span class="text-reveal"><span class="reveal-inner">data coordination problem</span></span>
+            </h1>
+            <p class="hero__description">
+              Adventurous Systems builds <strong>Web3- and AI-enabled digital twins</strong> that unify
+              design, construction, and operations data. Backed by peer-reviewed research and
+              open-source development, we help the AEC industry build with trust, transparency,
+              and circularity.
+            </p>
+            <div class="hero__actions">
+              <a href="./contact.html" class="btn btn--primary btn--lg">Explore Collaboration</a>
+              <a href="./what-we-do.html" class="btn btn--outline-light btn--lg">What We Do</a>
+            </div>
+          </div>
+
+          <!-- Credentials Bar -->
+          <div class="hero__credentials">
+            <div class="credential fade-in">
+              <span class="credential__number" data-target="375" data-prefix="£" data-suffix="k+">0</span>
+              <span class="credential__label">Research Funded</span>
+            </div>
+            <div class="credential fade-in fade-in-delay-1">
+              <span class="credential__number" data-target="30" data-suffix="+">0</span>
+              <span class="credential__label">Publications</span>
+            </div>
+            <div class="credential fade-in fade-in-delay-2">
+              <span class="credential__number" data-target="20" data-suffix="+">0</span>
+              <span class="credential__label">Years Experience</span>
+            </div>
+            <div class="credential fade-in fade-in-delay-3">
+              <span class="credential__number" data-target="3">0</span>
+              <span class="credential__label">Continents</span>
+            </div>
           </div>
         </div>
 
-        <!-- Credentials Bar -->
-        <div class="hero__credentials">
-          <div class="credential fade-in">
-            <span class="credential__number" data-target="375" data-prefix="£" data-suffix="k+">0</span>
-            <span class="credential__label">Research Funded</span>
-          </div>
-          <div class="credential fade-in fade-in-delay-1">
-            <span class="credential__number" data-target="30" data-suffix="+">0</span>
-            <span class="credential__label">Publications</span>
-          </div>
-          <div class="credential fade-in fade-in-delay-2">
-            <span class="credential__number" data-target="20" data-suffix="+">0</span>
-            <span class="credential__label">Years Experience</span>
-          </div>
-          <div class="credential fade-in fade-in-delay-3">
-            <span class="credential__number" data-target="3">0</span>
-            <span class="credential__label">Continents</span>
-          </div>
+        <!-- AECO Knowledge Graph Panel -->
+        <div class="hero__graph-panel" id="hero-graph-panel" aria-hidden="true"
+          title="Click to explore next relationship flow">
+          <canvas id="hero-graph-canvas"></canvas>
+          <div class="hero__graph-legend" id="hero-graph-legend"></div>
+          <div class="hero__graph-hint">Click to explore next flow ↗</div>
         </div>
       </div>
     </section>

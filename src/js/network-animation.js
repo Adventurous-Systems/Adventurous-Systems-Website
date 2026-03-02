@@ -171,9 +171,10 @@ export function initNetworkAnimation() {
         // Calculate particle count relative to screen area so sparse but readable
         let numParticles = Math.floor((width * height) / 12000);
 
-        // Cap particles for performance and clarity
-        if (numParticles > 120) numParticles = 120;
-        if (numParticles < 40) numParticles = 40;
+        // Cap particles for performance – slightly lower now the graph panel
+        // carries the main visual weight on the right
+        if (numParticles > 80) numParticles = 80;
+        if (numParticles < 30) numParticles = 30;
 
         for (let i = 0; i < numParticles; i++) {
             particles.push(new Particle(i));
