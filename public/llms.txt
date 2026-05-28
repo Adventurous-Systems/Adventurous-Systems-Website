@@ -1,0 +1,26 @@
+# Adventurous Systems
+
+> Adventurous Systems is a research-led consultancy that builds Web3- and AI-enabled digital twins unifying design, construction, and operations data for the architecture, engineering, and construction (AEC) industry. Founded in 2023 by Dr Theo Dounas, it bridges peer-reviewed academic research with practical industry delivery across digital twins, blockchain, and AI advisory.
+
+Adventurous Systems Ltd is based in Edinburgh, UK, and serves clients globally. Its work is grounded in £375,000+ of combined research funding (EPSRC, Scottish Enterprise, Interface/SFC) and active participation in the European Council on Computing in Construction (EC3) and the Construction Blockchain Consortium (CBC). Founder Dr Theo Dounas is a registered architect (UK, Greece), EC3 board member, and author of *Blockchain for Construction* (Springer, 2022).
+
+## Services
+- [What We Do](https://www.adventurous.systems/what-we-do.html): Digital twin integration, blockchain for construction, and AI readiness advisory services
+- [Digital Twin Integration](https://www.adventurous.systems/what-we-do.html#digital-twins): Web3-enabled digital twins that unify design, construction, and operations data
+- [Blockchain for Construction](https://www.adventurous.systems/what-we-do.html#blockchain): Smart contracts for verification, transparency, and circular material tracking
+- [AI Readiness Assessment](https://www.adventurous.systems/assessment.html): Two-week engagement scoring AEC firms across six AI-readiness dimensions
+
+## Work
+- [Our Work](https://www.adventurous.systems/our-work.html): Pilots and builds in material passports, circular construction, and decentralised AEC delivery
+- [TRACE Marketplace](https://www.adventurous.systems/our-work.html): Scottish Government-funded blockchain marketplace for reusable construction materials
+
+## Company
+- [About](https://www.adventurous.systems/about.html): Company background, team, mission, and research partnerships
+- [Contact](https://www.adventurous.systems/contact.html): Enquiries via systems@adventurous.systems
+
+## Content
+- [Blog](https://www.adventurous.systems/blog.html): Insights on digital twins, blockchain, and AI for the AEC industry
+- [Substack](https://adventuroussystems.substack.com/): Long-form research writing and industry analysis
+
+## Optional
+- [LinkedIn](https://www.linkedin.com/company/adventurous-systems/): Company updates and announcements

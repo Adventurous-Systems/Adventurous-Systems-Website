@@ -10,7 +10,7 @@
     <meta name="description" content="Explore our active pilots, research publications, and collaborations transforming the AEC industry through blockchain, digital twins, and AI.">
     <meta property="og:title" content="Our Work — Adventurous Systems">
     <meta property="og:description" content="Active pilots, research publications, and collaborations transforming AEC through blockchain, digital twins, and AI.">
-    <meta property="og:image" content="./images/og-image.png">
+    <meta property="og:image" content="https://www.adventurous.systems/images/og-image.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
@@ -19,7 +19,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Work — Adventurous Systems">
     <meta name="twitter:description" content="Active pilots, research publications, and collaborations transforming AEC through blockchain, digital twins, and AI.">
-    <meta name="twitter:image" content="./images/og-image.png">
+    <meta name="twitter:image" content="https://www.adventurous.systems/images/og-image.svg">
     <link rel="canonical" href="https://www.adventurous.systems/our-work.html">
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
 
@@ -33,7 +33,18 @@
           "url": "https://www.adventurous.systems/our-work.html",
           "name": "Our Work — Adventurous Systems",
           "isPartOf": { "@id": "https://www.adventurous.systems/#website" },
-          "description": "Active pilots, research publications, and collaborations transforming AEC through blockchain, digital twins, and AI."
+          "description": "Active pilots, research publications, and collaborations transforming AEC through blockchain, digital twins, and AI.",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".page-hero__title", ".page-hero__intro"]
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.adventurous.systems/" },
+            { "@type": "ListItem", "position": 2, "name": "Our Work", "item": "https://www.adventurous.systems/our-work.html" }
+          ]
         },
         {
           "@type": "ResearchProject",
@@ -85,6 +96,8 @@
       ]
     }
     </script>
+
+</head>
 
 <body>
     <div id="site-header"></div>

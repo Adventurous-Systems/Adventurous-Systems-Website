@@ -21,4 +21,4 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://adventuroussystems.co.uk/sitemap.xml
+Sitemap: https://www.adventurous.systems/sitemap.xml

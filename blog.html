@@ -15,7 +15,7 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Insights & Research — Adventurous Systems">
     <meta property="og:description" content="Read our latest insights, research, and thinking on digital transformation, AI, and blockchain in the AEC industry.">
-    <meta property="og:image" content="./images/og-image.png">
+    <meta property="og:image" content="https://www.adventurous.systems/images/og-image.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
@@ -26,13 +26,63 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Insights & Research — Adventurous Systems">
     <meta name="twitter:description" content="Read our latest insights, research, and thinking on digital transformation, AI, and blockchain in the AEC industry.">
-    <meta name="twitter:image" content="./images/og-image.png">
+    <meta name="twitter:image" content="https://www.adventurous.systems/images/og-image.svg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.adventurous.systems/blog.html">
 
     <!-- Favicon -->
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+
+    <!-- JSON-LD: Blog CollectionPage + Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "url": "https://www.adventurous.systems/blog.html",
+          "name": "Insights & Research — Adventurous Systems",
+          "isPartOf": { "@id": "https://www.adventurous.systems/#website" },
+          "about": { "@id": "https://www.adventurous.systems/#organization" },
+          "description": "Insights, research, and thinking on digital twins, blockchain, and AI for the architecture, engineering, and construction (AEC) industry.",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".page-hero__title", ".page-hero__intro"]
+          },
+          "hasPart": [
+            {
+              "@type": "BlogPosting",
+              "headline": "Buildings don't fit in blockchains",
+              "description": "How we learned to love graphs: Tokenising Buildings — A Graph-Based Approach to Digital Twins on the Blockchain.",
+              "url": "https://adventuroussystems.substack.com/p/buildings-dont-fit-in-blockchains",
+              "datePublished": "2025-11-16",
+              "author": { "@id": "https://www.adventurous.systems/#organization" },
+              "publisher": { "@id": "https://www.adventurous.systems/#organization" },
+              "keywords": ["Digital Twins", "Blockchain", "Graphs"]
+            },
+            {
+              "@type": "BlogPosting",
+              "headline": "How AEC Firms Should Prepare for Artificial Intelligence: Essential Steps for the UK Construction Industry",
+              "description": "Transforming Architecture, Engineering & Construction through strategic AI implementation.",
+              "url": "https://adventuroussystems.substack.com/p/how-aec-firms-should-prepare-for",
+              "datePublished": "2025-10-21",
+              "author": { "@id": "https://www.adventurous.systems/#organization" },
+              "publisher": { "@id": "https://www.adventurous.systems/#organization" },
+              "keywords": ["AI", "AEC", "Strategic Planning"]
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.adventurous.systems/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.adventurous.systems/blog.html" }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -59,29 +109,32 @@
                     <p>Unable to load the latest posts. Please visit our <a href="https://adventuroussystems.substack.com/" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-weight: 500;">Substack</a> directly.</p>
                 </div>
 
+                <!-- Static post list (server-rendered for crawlers/AI; enhanced by blog.js for users) -->
                 <div class="grid grid--3" id="blog-grid">
-                    <!-- Skeleton Loaders -->
-                    <div class="card skeleton--card">
-                        <div class="skeleton skeleton__image"></div>
-                        <div class="skeleton skeleton__badge"></div>
-                        <div class="skeleton skeleton__title"></div>
-                        <div class="skeleton skeleton__line"></div>
-                        <div class="skeleton skeleton__line skeleton__line--sm" style="width: 80%;"></div>
-                    </div>
-                    <div class="card skeleton--card">
-                        <div class="skeleton skeleton__image"></div>
-                        <div class="skeleton skeleton__badge"></div>
-                        <div class="skeleton skeleton__title"></div>
-                        <div class="skeleton skeleton__line"></div>
-                        <div class="skeleton skeleton__line skeleton__line--sm" style="width: 80%;"></div>
-                    </div>
-                    <div class="card skeleton--card">
-                        <div class="skeleton skeleton__image"></div>
-                        <div class="skeleton skeleton__badge"></div>
-                        <div class="skeleton skeleton__title"></div>
-                        <div class="skeleton skeleton__line"></div>
-                        <div class="skeleton skeleton__line skeleton__line--sm" style="width: 80%;"></div>
-                    </div>
+                    <a href="https://adventuroussystems.substack.com/p/buildings-dont-fit-in-blockchains" target="_blank" rel="noopener noreferrer" class="card card--article" style="display: flex; flex-direction: column; text-decoration: none; color: inherit;">
+                        <img src="https://www.adventurous.systems/images/og-image.svg" alt="Buildings don't fit in blockchains" class="card__image" loading="lazy">
+                        <div style="flex: 1;">
+                            <div class="card__tags" style="margin-bottom: var(--space-2);">
+                                <span class="tag">Digital Twins</span><span class="tag">Blockchain</span><span class="tag">Graphs</span>
+                            </div>
+                            <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">16 November 2025</p>
+                            <h3 class="card__title" style="margin-bottom: var(--space-3);">Buildings don't fit in blockchains</h3>
+                            <p class="card__body" style="margin-bottom: 0;">How we learned to love graphs: Tokenising Buildings — A Graph-Based Approach to Digital Twins on the Blockchain.</p>
+                        </div>
+                        <div style="margin-top: var(--space-5); display: inline-flex; align-items: center; font-size: var(--text-sm); font-weight: 600; color: var(--color-accent);">Read Article <span style="margin-left: 4px;">→</span></div>
+                    </a>
+                    <a href="https://adventuroussystems.substack.com/p/how-aec-firms-should-prepare-for" target="_blank" rel="noopener noreferrer" class="card card--article" style="display: flex; flex-direction: column; text-decoration: none; color: inherit;">
+                        <img src="https://www.adventurous.systems/images/og-image.svg" alt="How AEC Firms Should Prepare for Artificial Intelligence" class="card__image" loading="lazy">
+                        <div style="flex: 1;">
+                            <div class="card__tags" style="margin-bottom: var(--space-2);">
+                                <span class="tag">AI</span><span class="tag">AEC</span><span class="tag">Strategic Planning</span>
+                            </div>
+                            <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-2);">21 October 2025</p>
+                            <h3 class="card__title" style="margin-bottom: var(--space-3);">How AEC Firms Should Prepare for Artificial Intelligence: Essential Steps for the UK Construction Industry</h3>
+                            <p class="card__body" style="margin-bottom: 0;">Transforming Architecture, Engineering &amp; Construction through strategic AI implementation.</p>
+                        </div>
+                        <div style="margin-top: var(--space-5); display: inline-flex; align-items: center; font-size: var(--text-sm); font-weight: 600; color: var(--color-accent);">Read Article <span style="margin-left: 4px;">→</span></div>
+                    </a>
                 </div>
 
                 <div class="text-center" style="margin-top: var(--space-12);">
