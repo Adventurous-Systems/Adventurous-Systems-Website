@@ -182,6 +182,8 @@ def check_required_sources(failures: list[str]) -> None:
     start_count = len(failures)
     required = [
         ROOT / 'src/js/analytics.js',
+        ROOT / 'src/js/platforms.js',
+        ROOT / 'src/components/data/featured.json',
         ROOT / 'privacy.html',
         ROOT / 'terms.html',
         ROOT / 'public/images/og-image.png',
@@ -204,8 +206,20 @@ def check_required_sources(failures: list[str]) -> None:
         if not image or not (ROOT / 'public' / image).is_file():
             fail(f'project image missing: {project.get("id")} -> {image}', failures)
 
+    featured_path = ROOT / 'src/components/data/featured.json'
+    try:
+        featured = json.loads(featured_path.read_text(encoding='utf-8'))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(f'cannot read featured platform data: {exc}', failures)
+        featured = {}
+
+    for platform in featured.get('platforms', []):
+        image = platform.get('image', '').lstrip('/')
+        if not image or not (ROOT / 'public' / image).is_file():
+            fail(f'platform image missing: {platform.get("id")} -> {image}', failures)
+
     if len(failures) == start_count:
-        ok('required legal, analytics, and project assets exist')
+        ok('required legal, analytics, project, and platform assets exist')
 
 
 def check_analytics_config(failures: list[str]) -> None:
@@ -227,6 +241,10 @@ def check_analytics_config(failures: list[str]) -> None:
             fail(f'analytics wrapper missing {symbol}', failures)
     if main.count('initAnalytics();') != 1:
         fail('main.js must initialize analytics exactly once', failures)
+
+    platforms = (ROOT / 'src/js/platforms.js').read_text(encoding='utf-8')
+    if 'data-analytics-event="showcase_card_click"' not in platforms:
+        fail('platforms.js must wire the showcase_card_click analytics event', failures)
 
     if len(failures) == start_count:
         ok('analytics integration and environment contract checked')

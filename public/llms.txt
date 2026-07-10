@@ -14,6 +14,10 @@ Adventurous Systems Ltd is based in Edinburgh, UK, and serves clients globally. 
 - [Our Work](https://www.adventurous.systems/our-work.html): Pilots and builds in material passports, circular construction, and decentralised AEC delivery
 - [TRACE Marketplace](https://www.adventurous.systems/our-work.html): Scottish Government-funded blockchain marketplace for reusable construction materials
 
+## Platforms
+- [AFlow](https://aflow.adventurous.systems): Node-based AI design studio for architects — connect text, image, 3D, and reasoning nodes on one canvas into a governed design process with full authorship tracking and IFC/BIM export (live, invite-only)
+- [Data Hard Hats: AEC Unlocked](https://datahardhats.adventurous.systems): Free, Scottish Government-funded programme helping Scottish AEC SMEs unlock the value in their data and build confidence with AI, across four regional cohorts
+
 ## Company
 - [About](https://www.adventurous.systems/about.html): Company background, team, mission, and research partnerships
 - [Contact](https://www.adventurous.systems/contact.html): Enquiries via systems@adventurous.systems

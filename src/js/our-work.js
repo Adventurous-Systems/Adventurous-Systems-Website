@@ -5,6 +5,7 @@
 
 import partnersData from '../components/data/partners.json';
 import { observeNewElements } from './main.js';
+import { renderPlatformCards } from './platforms.js';
 import { trackEvent } from './analytics.js';
 
 /* ---------- Publications Data (extracted from webflow embed) ---------- */
@@ -34,6 +35,7 @@ const priorityTags = ['Blockchain', 'AI', 'TRACE', 'BIM', 'DAO', 'Governance', '
 let activeTag = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+    renderPlatformCards('platforms-grid');
     initProjectFilters();
     renderPublicationFilters();
     renderPublications();

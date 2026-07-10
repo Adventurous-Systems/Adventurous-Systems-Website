@@ -205,7 +205,8 @@
     border-radius: var(--radius-lg);
 }
 
-.projects-grid .card__tags {
+.projects-grid .card__tags,
+.platforms-grid .card__tags {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);

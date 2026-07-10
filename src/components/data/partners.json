@@ -31,6 +31,12 @@
             "role": "Web3 Collaboration Partner",
             "logo": "/images/ArchiDAO.jpg",
             "link": "https://archidao.io/"
+        },
+        {
+            "name": "The Ecosystem Fund",
+            "role": "Data Hard Hats Funder (Scottish Government)",
+            "logo": "/images/ecosystem-fund-icon.png",
+            "link": "https://www.ecosystemfund.co.uk/2026-awardees"
         }
     ]
 }
