@@ -7,9 +7,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:jsonld": "python3 scripts/validate_jsonld.py",
+    "check:site": "python3 scripts/check_site.py",
+    "check": "npm run validate:jsonld && npm run check:site"
   },
   "devDependencies": {
-    "vite": "^6.0.0"
+    "vite": "^6.4.3"
   }
 }

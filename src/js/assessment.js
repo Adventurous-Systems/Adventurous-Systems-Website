@@ -1,3 +1,5 @@
+import { trackEvent } from './analytics.js';
+
 /**
  * AI Readiness Assessment — Form Logic
  * Migrated from Webflow inline script to ES module.
@@ -7,9 +9,19 @@
    CONFIGURATION
    ============================================================================ */
 
-const FORM_SUBMIT_URL = 'https://script.google.com/macros/s/AKfycbwyvNqSngQKRH76AGf70xj6jTNQvJkvUQbfmHZotG7TOz-k5KJ-BuyTlcXKcPYA_cmu/exec';
+const DEFAULT_FORM_SUBMIT_URL = 'https://script.google.com/macros/s/AKfycbwyvNqSngQKRH76AGf70xj6jTNQvJkvUQbfmHZotG7TOz-k5KJ-BuyTlcXKcPYA_cmu/exec';
+const FORM_SUBMIT_URL = import.meta.env.VITE_ASSESSMENT_SCRIPT_URL || import.meta.env.VITE_GOOGLE_SCRIPT_URL || DEFAULT_FORM_SUBMIT_URL;
 const TOTAL_SECTIONS = 7;
 const LOCAL_STORAGE_KEY = 'aiReadinessFormData';
+const SECTION_NAMES = [
+    'Company Information',
+    'Technology Landscape',
+    'Challenges & Pain Points',
+    'AI & Automation Interest',
+    'Decision Making & Timeline',
+    'Assessment Goals',
+    'Review & Submit'
+];
 
 /* ============================================================================
    STATE
@@ -28,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProgressIndicator(currentSection, TOTAL_SECTIONS);
     setupPmToolsOtherToggle();
     setupNavigationButtons();
-    console.log('Assessment form initialized');
+    trackEvent('assessment_started', { step: currentSection, section: sectionLabel(currentSection) });
 });
 
 function setupNavigationButtons() {
@@ -53,13 +65,18 @@ function showFormSection(sectionNum) {
 
     updateNavigationButtons(sectionNum);
     updateProgressIndicator(sectionNum, TOTAL_SECTIONS);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     currentSection = sectionNum;
+    trackEvent('assessment_step_view', { step: sectionNum, section: sectionLabel(sectionNum) });
 }
 
 function nextFormSection() {
-    if (!validateSection(currentSection)) return;
+    if (!validateSection(currentSection)) {
+        trackEvent('assessment_validation_error', { step: currentSection, section: sectionLabel(currentSection) });
+        return;
+    }
     saveFormProgress();
+    trackEvent('assessment_step_completed', { step: currentSection, section: sectionLabel(currentSection) });
     submitSectionToSheets(currentSection, false);
     if (currentSection < TOTAL_SECTIONS) showFormSection(currentSection + 1);
 }
@@ -93,16 +110,7 @@ function updateProgressIndicator(current, total) {
 
     if (fill) fill.style.width = pct + '%';
     if (text) {
-        const names = [
-            'Company Information',
-            'Technology Landscape',
-            'Challenges & Pain Points',
-            'AI & Automation Interest',
-            'Decision Making & Timeline',
-            'Assessment Goals',
-            'Review & Submit'
-        ];
-        text.textContent = `Step ${current} of ${total}: ${names[current - 1] || ''}`;
+        text.textContent = `Step ${current} of ${total}: ${sectionLabel(current)}`;
     }
 }
 
@@ -265,6 +273,11 @@ function clearFormProgress() {
    ============================================================================ */
 
 function submitSectionToSheets(sectionNum, isComplete) {
+    if (!FORM_SUBMIT_URL) {
+        trackEvent('assessment_submit_config_missing', { step: sectionNum });
+        return;
+    }
+
     const submission = {
         ...collectFormData(),
         status: isComplete ? 'complete' : 'partial',
@@ -282,13 +295,23 @@ function submitSectionToSheets(sectionNum, isComplete) {
 
 function submitFinalForm() {
     if (!validateSection(currentSection)) {
+        trackEvent('assessment_validation_error', { step: currentSection, section: sectionLabel(currentSection) });
         alert('Please review and complete all required fields.');
         return;
     }
 
     const submitBtn = document.getElementById('formSubmitBtn');
+    trackEvent('assessment_submit_attempt', { step: TOTAL_SECTIONS });
     submitBtn.textContent = 'Submitting...';
     submitBtn.disabled = true;
+
+    if (!FORM_SUBMIT_URL) {
+        trackEvent('assessment_submit_config_missing', { step: TOTAL_SECTIONS });
+        alert('Assessment submission is not configured. Please contact us directly.');
+        submitBtn.textContent = 'Submit Assessment';
+        submitBtn.disabled = false;
+        return;
+    }
 
     const submission = {
         ...collectFormData(),
@@ -303,9 +326,11 @@ function submitFinalForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(submission)
     }).then(() => {
+        trackEvent('assessment_submit_success', { step: TOTAL_SECTIONS });
         clearFormProgress();
         showSuccessMessage();
     }).catch(() => {
+        trackEvent('assessment_submit_error', { step: TOTAL_SECTIONS });
         alert('There was an error. Please try again or contact us directly.');
         submitBtn.textContent = 'Submit Assessment';
         submitBtn.disabled = false;
@@ -327,7 +352,11 @@ function showSuccessMessage() {
             </ul>
             <a href="./" class="as-form-btn as-form-btn-next" style="display: inline-block; text-decoration: none;">Return to Home</a>
         </div>`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+}
+
+function sectionLabel(sectionNum) {
+    return SECTION_NAMES[sectionNum - 1] || `Step ${sectionNum}`;
 }
 
 /* ============================================================================

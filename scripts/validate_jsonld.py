@@ -1,27 +1,47 @@
-import json, re
+#!/usr/bin/env python3
+"""Validate JSON-LD syntax in every built public HTML page."""
 
-def check_file(filepath):
-    with open(filepath, "r") as f:
-        content = f.read()
-    
-    matches = re.finditer(r"<script type=[\"']application/ld\+json[\"']>([\s\S]*?)</script>", content)
-    
-    all_valid = True
-    count = 0
-    for i, match in enumerate(matches):
-        count += 1
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+SCRIPT_RE = re.compile(
+    r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>',
+    re.IGNORECASE,
+)
+
+
+def check_file(filepath: Path) -> bool:
+    content = filepath.read_text(encoding="utf-8")
+    matches = list(SCRIPT_RE.finditer(content))
+
+    if not matches:
+        print(f"{filepath}: INVALID - no JSON-LD blocks found")
+        return False
+
+    valid = True
+    for index, match in enumerate(matches, start=1):
         json_str = match.group(1).strip()
         try:
             json.loads(json_str)
-            print(f"{filepath} Block {i+1}: Valid JSON")
-        except json.JSONDecodeError as e:
-            print(f"{filepath} Block {i+1}: Invalid JSON - {e}")
-            all_valid = False
-            
-    if count == 0:
-        print(f"{filepath} No JSON-LD blocks found")
-        
-    return all_valid
+            print(f"{filepath} block {index}: valid")
+        except json.JSONDecodeError as exc:
+            print(f"{filepath} block {index}: INVALID - {exc}")
+            valid = False
+    return valid
 
-all_valid = check_file("index.html") and check_file("about.html") and check_file("what-we-do.html")
-print("All JSON-LD blocks valid:", all_valid)
+
+def main() -> int:
+    files = sorted(Path('dist').glob('*.html'))
+    if not files:
+        print('dist: INVALID - no built HTML files found; run npm run build first')
+        return 1
+    all_valid = all([check_file(path) for path in files])
+    print('All JSON-LD blocks valid:', all_valid)
+    return 0 if all_valid else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

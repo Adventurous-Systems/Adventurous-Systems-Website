@@ -5,6 +5,7 @@
 
 import projectsData from '../components/data/projects.json';
 import { initNetworkAnimation } from './network-animation.js';
+import { trackEvent } from './analytics.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNetworkAnimation();
@@ -99,9 +100,12 @@ function initContactForm() {
 
         // Basic validation
         if (!formData.name || !formData.email || !formData.message) {
+            trackEvent('contact_form_validation_error', { form: 'home' });
             showStatus(statusEl, 'Please fill in all required fields.', 'error');
             return;
         }
+
+        trackEvent('contact_form_submit_attempt', { form: 'home' });
 
         // Show loading state
         submitBtn.disabled = true;
@@ -116,10 +120,12 @@ function initContactForm() {
             });
 
             // With no-cors we can't read the response, assume success
+            trackEvent('contact_form_request_sent', { form: 'home' });
             showStatus(statusEl, 'Thank you! We\'ll be in touch soon.', 'success');
             form.reset();
         } catch (error) {
             console.error('Form submission error:', error);
+            trackEvent('contact_form_submit_error', { form: 'home' });
             showStatus(statusEl, 'Something went wrong. Please try again or email us directly.', 'error');
         } finally {
             submitBtn.disabled = false;

@@ -1,6 +1,6 @@
 /**
  * Main JavaScript — runs on every page.
- * Initializes shared header, footer, and scroll animations.
+ * Initializes shared header, footer, analytics, and scroll animations.
  */
 
 /** @type {IntersectionObserver|null} */
@@ -19,8 +19,10 @@ import '../styles/assessment.css';
 
 import { initHeader } from '../components/header.js';
 import { initFooter } from '../components/footer.js';
+import { initAnalytics } from './analytics.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    initAnalytics();
     initHeader();
     initFooter();
     initScrollAnimations();

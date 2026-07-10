@@ -1,3 +1,5 @@
+import { trackEvent } from './analytics.js';
+
 /**
  * Contact Page JavaScript
  * Handles the contact form submission via Google Apps Script.
@@ -28,9 +30,12 @@ function initContactForm() {
         };
 
         if (!formData.name || !formData.email || !formData.message) {
+            trackEvent('contact_form_validation_error', { form: 'contact' });
             showStatus(statusEl, 'Please fill in all required fields.', 'error');
             return;
         }
+
+        trackEvent('contact_form_submit_attempt', { form: 'contact' });
 
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
@@ -43,10 +48,12 @@ function initContactForm() {
                 body: JSON.stringify(formData),
             });
 
+            trackEvent('contact_form_request_sent', { form: 'contact' });
             showStatus(statusEl, "Thank you! We'll be in touch within 48 hours.", 'success');
             form.reset();
         } catch (error) {
             console.error('Form submission error:', error);
+            trackEvent('contact_form_submit_error', { form: 'contact' });
             showStatus(statusEl, 'Something went wrong. Please email us directly at systems@adventurous.systems', 'error');
         } finally {
             submitBtn.disabled = false;

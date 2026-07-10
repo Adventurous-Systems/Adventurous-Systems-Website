@@ -358,6 +358,30 @@ h1 {
   transition-delay: 0.4s;
 }
 
+
+/* ---------- Legal Content ---------- */
+.legal-content {
+  font-size: var(--text-base);
+}
+
+.legal-content h2 {
+  font-size: var(--text-2xl);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-3);
+}
+
+.legal-content p {
+  margin-bottom: var(--space-5);
+}
+
+.legal-content a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 /* ---------- Responsive Breakpoints ---------- */
 @media (max-width: 1024px) {
   :root {

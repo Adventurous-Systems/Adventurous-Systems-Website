@@ -5,6 +5,7 @@
 
 import partnersData from '../components/data/partners.json';
 import { observeNewElements } from './main.js';
+import { trackEvent } from './analytics.js';
 
 /* ---------- Publications Data (extracted from webflow embed) ---------- */
 const publications = [
@@ -56,6 +57,7 @@ function initProjectFilters() {
             btn.classList.add('is-active');
 
             const filter = btn.getAttribute('data-filter');
+            trackEvent('project_filter_selected', { filter });
 
             // Show/hide sections
             sections.forEach(section => {
@@ -99,6 +101,7 @@ function renderPublicationFilters() {
     allBtn.textContent = 'All';
     allBtn.addEventListener('click', () => {
         activeTag = null;
+        trackEvent('publication_filter_selected', { filter: 'all' });
         updateActiveFilter(container, allBtn);
         renderPublications();
     });
@@ -110,6 +113,7 @@ function renderPublicationFilters() {
         btn.textContent = tag;
         btn.addEventListener('click', () => {
             activeTag = tag;
+            trackEvent('publication_filter_selected', { filter: tag });
             updateActiveFilter(container, btn);
             renderPublications();
         });
