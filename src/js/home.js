@@ -5,10 +5,12 @@
 
 import projectsData from '../components/data/projects.json';
 import { initNetworkAnimation } from './network-animation.js';
+import { renderPlatformCards } from './platforms.js';
 import { trackEvent } from './analytics.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNetworkAnimation();
+    renderPlatformCards('platforms-grid');
     renderProjectCards();
     initContactForm();
 });

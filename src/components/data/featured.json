@@ -1,0 +1,38 @@
+{
+    "platforms": [
+        {
+            "id": "aflow",
+            "title": "AFlow",
+            "subtitle": "Design with AI, without losing the design.",
+            "description": "A node-based studio where architects create, govern, and trace design decisions on a single canvas. Connect text, image, 3D, and reasoning nodes into a process that remembers your intent, records who made what, and lets you lock the parts that define a scheme. Exports to IFC/BIM.",
+            "image": "/images/aflow-platform.png",
+            "href": "https://aflow.adventurous.systems",
+            "status": "active",
+            "statusLabel": "LIVE · INVITE-ONLY",
+            "tags": [
+                "AI Design",
+                "Node Graph",
+                "Provenance",
+                "IFC/BIM"
+            ],
+            "cta": "Explore AFlow"
+        },
+        {
+            "id": "datahardhats",
+            "title": "Data Hard Hats",
+            "subtitle": "AEC Unlocked — free, government-funded data & AI training.",
+            "description": "A Scottish Government-funded programme helping AEC SMEs unlock the value in their data and build confidence with AI. Four regional cohorts move through three hands-on sessions, backed by one-to-one consultancy and a personalised Data Readiness Report. No tech background required.",
+            "image": "/images/datahardhats-platform.png",
+            "href": "https://datahardhats.adventurous.systems",
+            "status": "open",
+            "statusLabel": "NOW ENROLLING",
+            "tags": [
+                "AI Training",
+                "Data Readiness",
+                "Scotland",
+                "Ecosystem Fund"
+            ],
+            "cta": "Register interest"
+        }
+    ]
+}
